@@ -1,0 +1,15 @@
+D:\ATM\BazeDate\Proiect\Proiect\bin\Debug\Proiect.exe.config
+D:\ATM\BazeDate\Proiect\Proiect\bin\Debug\Proiect.exe
+D:\ATM\BazeDate\Proiect\Proiect\bin\Debug\Proiect.pdb
+D:\ATM\BazeDate\Proiect\Proiect\obj\Debug\Proiect.csprojResolveAssemblyReference.cache
+D:\ATM\BazeDate\Proiect\Proiect\obj\Debug\Proiect.Properties.Resources.resources
+D:\ATM\BazeDate\Proiect\Proiect\obj\Debug\Proiect.csproj.GenerateResource.Cache
+D:\ATM\BazeDate\Proiect\Proiect\obj\Debug\Proiect.exe
+D:\ATM\BazeDate\Proiect\Proiect\obj\Debug\Proiect.pdb
+D:\ATM\BazeDate\Proiect\Proiect\obj\Debug\Proiect.FormLogin.resources
+D:\ATM\BazeDate\Proiect\Proiect\obj\Debug\Proiect.FormMenu.resources
+D:\ATM\BazeDate\Proiect\Proiect\obj\Debug\Proiect.FormAngajatNou.resources
+D:\ATM\BazeDate\Proiect\Proiect\bin\Debug\EntityFramework.dll
+D:\ATM\BazeDate\Proiect\Proiect\bin\Debug\EntityFramework.SqlServer.dll
+D:\ATM\BazeDate\Proiect\Proiect\bin\Debug\EntityFramework.xml
+D:\ATM\BazeDate\Proiect\Proiect\bin\Debug\EntityFramework.SqlServer.xml
