@@ -57,6 +57,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adrese.cs">
+      <DependentUpon>HR_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Angajati.cs">
+      <DependentUpon>HR_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Angajati_Departament.cs">
+      <DependentUpon>HR_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Departamente.cs">
+      <DependentUpon>HR_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fise_Medicale.cs">
+      <DependentUpon>HR_Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,8 +90,47 @@
     <Compile Include="FormAngajatNou.Designer.cs">
       <DependentUpon>FormAngajatNou.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTabelRude.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTabelRude.Designer.cs">
+      <DependentUpon>FormTabelRude.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Functii.cs">
+      <DependentUpon>HR_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Grade.cs">
+      <DependentUpon>HR_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HR_Model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HR_Model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HR_Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HR_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HR_Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HR_Model.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="Proiecte.cs">
+      <DependentUpon>HR_Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Salarii.cs">
+      <DependentUpon>HR_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>HR_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tabel_Rude.cs">
+      <DependentUpon>HR_Model.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -85,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAngajatNou.resx">
       <DependentUpon>FormAngajatNou.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTabelRude.resx">
+      <DependentUpon>FormTabelRude.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -95,6 +152,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EntityDeploy Include="HR_Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HR_Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="HR_Model.edmx.diagram">
+      <DependentUpon>HR_Model.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -111,6 +175,18 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HR_Model.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HR_Model.edmx</DependentUpon>
+      <LastGenOutput>HR_Model.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="HR_Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HR_Model.edmx</DependentUpon>
+      <LastGenOutput>HR_Model.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

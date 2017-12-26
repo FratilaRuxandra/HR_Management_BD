@@ -39,28 +39,31 @@ namespace Proiect
 
         private void buttonConectare_Click(object sender, EventArgs e)
         {
-            SqlConnectionStringBuilder bu = new SqlConnectionStringBuilder();
+            //SqlConnectionStringBuilder bu = new SqlConnectionStringBuilder();
 
-            bu.DataSource = ".";
-            bu.InitialCatalog = "HR";
-            bu.IntegratedSecurity = false;
-            bu.UserID = username;
-            bu.Password = password;
+            //bu.DataSource = ".";
+            //bu.InitialCatalog = "HR";
+            //bu.IntegratedSecurity = false;
+            //bu.UserID = username;
+            //bu.Password = password;
 
-            SqlConnection con = new SqlConnection(bu.ConnectionString);
-            try
+            //SqlConnection con = new SqlConnection(bu.ConnectionString);
+            //try
+            //{
+            //    con.Open();
+            //}catch(SqlException exp)
+            //{
+            //    ///////////de facut o exceptie ptr conexiune esuata si una ptr username/parola incorecta
+            //    MessageBox.Show("Username sau parola incorecta");
+            //    this.Close();
+            //}
+            if (username == "DepHR" && password == "parolahr")
             {
-                con.Open();
-            }catch(SqlException exp)
-            {
-                ///////////de facut o exceptie ptr conexiune esuata si una ptr username/parola incorecta
-                MessageBox.Show("Username sau parola incorecta");
+                FormMenu f2 = new FormMenu();
+                this.Hide();
+                f2.ShowDialog();
                 this.Close();
             }
-            FormMenu f2 = new FormMenu();
-            this.Hide();
-            f2.ShowDialog();
-            this.Close();
 
         }
        

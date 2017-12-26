@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HRModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Adrese">
+    <Key>
+      <PropertyRef Name="Id_Adresa" />
+    </Key>
+    <Property Name="Id_Adresa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Strada" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nr_Strada" Type="Int32" Nullable="false" />
+    <Property Name="Bloc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Apartament" Type="Int32" />
+    <Property Name="Oras" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Judet_Sector" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Angajati" Relationship="Self.FK__Angajati__Id_Adr__2A4B4B5E" FromRole="Adrese" ToRole="Angajati" />
+  </EntityType>
+  <EntityType Name="Angajati">
+    <Key>
+      <PropertyRef Name="Id_Angajat" />
+    </Key>
+    <Property Name="Id_Angajat" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Grad" Type="Int32" />
+    <Property Name="Nume_Angajat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Prenume_Angajat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CNP" Type="String" MaxLength="13" FixedLength="true" Unicode="false" />
+    <Property Name="Numar_Telefon" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Data_Nastere" Type="DateTime" Precision="0" />
+    <Property Name="Data_Angajare" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Data_Plecare" Type="DateTime" Precision="0" />
+    <Property Name="Observatii" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Id_Adresa" Type="Int32" />
+    <Property Name="Id_Salariu" Type="Int32" />
+    <Property Name="Id_Functie" Type="Int32" />
+    <Property Name="Id_Departament" Type="Int32" />
+    <Property Name="Id_Proiect_Curent" Type="Int32" />
+    <Property Name="Id_Tabel_Rude" Type="Int32" />
+    <Property Name="Id_Fisa_Med" Type="Int32" />
+    <NavigationProperty Name="Adrese" Relationship="Self.FK__Angajati__Id_Adr__2A4B4B5E" FromRole="Angajati" ToRole="Adrese" />
+    <NavigationProperty Name="Angajati_Departament" Relationship="Self.FK__Angajati___Id_An__31EC6D26" FromRole="Angajati" ToRole="Angajati_Departament" />
+    <NavigationProperty Name="Departamente" Relationship="Self.FK__Angajati__Id_Dep__2D27B809" FromRole="Angajati" ToRole="Departamente" />
+    <NavigationProperty Name="Fise_Medicale" Relationship="Self.FK__Angajati__Id_Fis__300424B4" FromRole="Angajati" ToRole="Fise_Medicale" />
+    <NavigationProperty Name="Functii" Relationship="Self.FK__Angajati__Id_Fun__2C3393D0" FromRole="Angajati" ToRole="Functii" />
+    <NavigationProperty Name="Grade" Relationship="Self.FK__Angajati__Id_Gra__29572725" FromRole="Angajati" ToRole="Grade" />
+    <NavigationProperty Name="Proiecte" Relationship="Self.FK__Angajati__Id_Pro__2E1BDC42" FromRole="Angajati" ToRole="Proiecte" />
+    <NavigationProperty Name="Salarii" Relationship="Self.FK__Angajati__Id_Sal__2B3F6F97" FromRole="Angajati" ToRole="Salarii" />
+    <NavigationProperty Name="Tabel_Rude" Relationship="Self.FK__Angajati__Id_Tab__2F10007B" FromRole="Angajati" ToRole="Tabel_Rude" />
+  </EntityType>
+  <EntityType Name="Departamente">
+    <Key>
+      <PropertyRef Name="Id_Departament" />
+    </Key>
+    <Property Name="Id_Departament" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nume_Departament" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Id_Sef_Departament" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Angajati" Relationship="Self.FK__Angajati__Id_Dep__2D27B809" FromRole="Departamente" ToRole="Angajati" />
+    <NavigationProperty Name="Angajati_Departament" Relationship="Self.FK__Angajati___Id_De__32E0915F" FromRole="Departamente" ToRole="Angajati_Departament" />
+  </EntityType>
+  <EntityType Name="Fise_Medicale">
+    <Key>
+      <PropertyRef Name="Id_FisaMed" />
+    </Key>
+    <Property Name="Id_FisaMed" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Grupa_Sange" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Inaltime" Type="Double" />
+    <Property Name="Greutate" Type="Int32" />
+    <Property Name="Stare_Sanatate" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Observatii" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Angajati" Relationship="Self.FK__Angajati__Id_Fis__300424B4" FromRole="Fise_Medicale" ToRole="Angajati" />
+  </EntityType>
+  <EntityType Name="Functii">
+    <Key>
+      <PropertyRef Name="Id_Functie" />
+    </Key>
+    <Property Name="Id_Functie" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Denumire" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Solda_functie" Type="Int32" />
+    <NavigationProperty Name="Angajati" Relationship="Self.FK__Angajati__Id_Fun__2C3393D0" FromRole="Functii" ToRole="Angajati" />
+    <NavigationProperty Name="Salarii" Relationship="Self.Functii_Salarii" FromRole="Functii" ToRole="Salarii" />
+  </EntityType>
+  <EntityType Name="Grade">
+    <Key>
+      <PropertyRef Name="Id_Grad" />
+    </Key>
+    <Property Name="Id_Grad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Denumire" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Solda_grad" Type="Int32" />
+    <NavigationProperty Name="Angajati" Relationship="Self.FK__Angajati__Id_Gra__29572725" FromRole="Grade" ToRole="Angajati" />
+    <NavigationProperty Name="Salarii" Relationship="Self.Grade_Salarii" FromRole="Grade" ToRole="Salarii" />
+  </EntityType>
+  <EntityType Name="Proiecte">
+    <Key>
+      <PropertyRef Name="Id_Proiect" />
+    </Key>
+    <Property Name="Id_Proiect" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nume_Proiect" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Id_Responsabil" Type="Int32" Nullable="false" />
+    <Property Name="Data_Inceput" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Data_Sfarsit" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Angajati" Relationship="Self.FK__Angajati__Id_Pro__2E1BDC42" FromRole="Proiecte" ToRole="Angajati" />
+  </EntityType>
+  <EntityType Name="Salarii">
+    <Key>
+      <PropertyRef Name="Id_Salariu" />
+    </Key>
+    <Property Name="Id_Salariu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Solda_functie" Type="Int32" />
+    <Property Name="Solda_grad" Type="Int32" />
+    <Property Name="Spor_conditii_de_munca" Type="Int32" />
+    <Property Name="Total" Type="Int32" />
+    <NavigationProperty Name="Angajati" Relationship="Self.FK__Angajati__Id_Sal__2B3F6F97" FromRole="Salarii" ToRole="Angajati" />
+    <NavigationProperty Name="Functii" Relationship="Self.Functii_Salarii" FromRole="Salarii" ToRole="Functii" />
+    <NavigationProperty Name="Grade" Relationship="Self.Grade_Salarii" FromRole="Salarii" ToRole="Grade" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Tabel_Rude">
+    <Key>
+      <PropertyRef Name="ID_Tabel_Rude" />
+    </Key>
+    <Property Name="ID_Tabel_Rude" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Grad_Rudenie" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nume" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Prenume" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CNP" Type="String" MaxLength="13" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Angajati" Relationship="Self.FK__Angajati__Id_Tab__2F10007B" FromRole="Tabel_Rude" ToRole="Angajati" />
+  </EntityType>
+  <EntityType Name="Angajati_Departament">
+    <Key>
+      <PropertyRef Name="Id_Angajat" />
+      <PropertyRef Name="Id_Departament" />
+      <PropertyRef Name="Data_Inceput" />
+    </Key>
+    <Property Name="Id_Angajat" Type="Int32" Nullable="false" />
+    <Property Name="Id_Departament" Type="Int32" Nullable="false" />
+    <Property Name="Data_Inceput" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Data_Sfarsit" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Angajati" Relationship="Self.FK__Angajati___Id_An__31EC6D26" FromRole="Angajati_Departament" ToRole="Angajati" />
+    <NavigationProperty Name="Departamente" Relationship="Self.FK__Angajati___Id_De__32E0915F" FromRole="Angajati_Departament" ToRole="Departamente" />
+  </EntityType>
+  <Association Name="FK__Angajati__Id_Adr__2A4B4B5E">
+    <End Role="Adrese" Type="Self.Adrese" Multiplicity="0..1" />
+    <End Role="Angajati" Type="Self.Angajati" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Adrese">
+        <PropertyRef Name="Id_Adresa" />
+      </Principal>
+      <Dependent Role="Angajati">
+        <PropertyRef Name="Id_Adresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Angajati___Id_An__31EC6D26">
+    <End Role="Angajati" Type="Self.Angajati" Multiplicity="1" />
+    <End Role="Angajati_Departament" Type="Self.Angajati_Departament" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Angajati">
+        <PropertyRef Name="Id_Angajat" />
+      </Principal>
+      <Dependent Role="Angajati_Departament">
+        <PropertyRef Name="Id_Angajat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Angajati__Id_Dep__2D27B809">
+    <End Role="Departamente" Type="Self.Departamente" Multiplicity="0..1" />
+    <End Role="Angajati" Type="Self.Angajati" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departamente">
+        <PropertyRef Name="Id_Departament" />
+      </Principal>
+      <Dependent Role="Angajati">
+        <PropertyRef Name="Id_Departament" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Angajati__Id_Fis__300424B4">
+    <End Role="Fise_Medicale" Type="Self.Fise_Medicale" Multiplicity="0..1" />
+    <End Role="Angajati" Type="Self.Angajati" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fise_Medicale">
+        <PropertyRef Name="Id_FisaMed" />
+      </Principal>
+      <Dependent Role="Angajati">
+        <PropertyRef Name="Id_Fisa_Med" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Angajati__Id_Fun__2C3393D0">
+    <End Role="Functii" Type="Self.Functii" Multiplicity="0..1" />
+    <End Role="Angajati" Type="Self.Angajati" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Functii">
+        <PropertyRef Name="Id_Functie" />
+      </Principal>
+      <Dependent Role="Angajati">
+        <PropertyRef Name="Id_Functie" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Angajati__Id_Gra__29572725">
+    <End Role="Grade" Type="Self.Grade" Multiplicity="0..1" />
+    <End Role="Angajati" Type="Self.Angajati" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Grade">
+        <PropertyRef Name="Id_Grad" />
+      </Principal>
+      <Dependent Role="Angajati">
+        <PropertyRef Name="Id_Grad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Angajati__Id_Pro__2E1BDC42">
+    <End Role="Proiecte" Type="Self.Proiecte" Multiplicity="0..1" />
+    <End Role="Angajati" Type="Self.Angajati" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proiecte">
+        <PropertyRef Name="Id_Proiect" />
+      </Principal>
+      <Dependent Role="Angajati">
+        <PropertyRef Name="Id_Proiect_Curent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Angajati__Id_Sal__2B3F6F97">
+    <End Role="Salarii" Type="Self.Salarii" Multiplicity="0..1" />
+    <End Role="Angajati" Type="Self.Angajati" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Salarii">
+        <PropertyRef Name="Id_Salariu" />
+      </Principal>
+      <Dependent Role="Angajati">
+        <PropertyRef Name="Id_Salariu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Angajati__Id_Tab__2F10007B">
+    <End Role="Tabel_Rude" Type="Self.Tabel_Rude" Multiplicity="0..1" />
+    <End Role="Angajati" Type="Self.Angajati" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tabel_Rude">
+        <PropertyRef Name="ID_Tabel_Rude" />
+      </Principal>
+      <Dependent Role="Angajati">
+        <PropertyRef Name="Id_Tabel_Rude" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Angajati___Id_De__32E0915F">
+    <End Role="Departamente" Type="Self.Departamente" Multiplicity="1" />
+    <End Role="Angajati_Departament" Type="Self.Angajati_Departament" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departamente">
+        <PropertyRef Name="Id_Departament" />
+      </Principal>
+      <Dependent Role="Angajati_Departament">
+        <PropertyRef Name="Id_Departament" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Functii_Salarii">
+    <End Role="Functii" Type="Self.Functii" Multiplicity="*" />
+    <End Role="Salarii" Type="Self.Salarii" Multiplicity="*" />
+  </Association>
+  <Association Name="Grade_Salarii">
+    <End Role="Grade" Type="Self.Grade" Multiplicity="*" />
+    <End Role="Salarii" Type="Self.Salarii" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="HREntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Adrese" EntityType="Self.Adrese" />
+    <EntitySet Name="Angajati" EntityType="Self.Angajati" />
+    <EntitySet Name="Departamente" EntityType="Self.Departamente" />
+    <EntitySet Name="Fise_Medicale" EntityType="Self.Fise_Medicale" />
+    <EntitySet Name="Functii" EntityType="Self.Functii" />
+    <EntitySet Name="Grade" EntityType="Self.Grade" />
+    <EntitySet Name="Proiecte" EntityType="Self.Proiecte" />
+    <EntitySet Name="Salarii" EntityType="Self.Salarii" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Tabel_Rude" EntityType="Self.Tabel_Rude" />
+    <EntitySet Name="Angajati_Departament" EntityType="Self.Angajati_Departament" />
+    <AssociationSet Name="FK__Angajati__Id_Adr__2A4B4B5E" Association="Self.FK__Angajati__Id_Adr__2A4B4B5E">
+      <End Role="Adrese" EntitySet="Adrese" />
+      <End Role="Angajati" EntitySet="Angajati" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Angajati___Id_An__31EC6D26" Association="Self.FK__Angajati___Id_An__31EC6D26">
+      <End Role="Angajati" EntitySet="Angajati" />
+      <End Role="Angajati_Departament" EntitySet="Angajati_Departament" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Angajati__Id_Dep__2D27B809" Association="Self.FK__Angajati__Id_Dep__2D27B809">
+      <End Role="Departamente" EntitySet="Departamente" />
+      <End Role="Angajati" EntitySet="Angajati" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Angajati__Id_Fis__300424B4" Association="Self.FK__Angajati__Id_Fis__300424B4">
+      <End Role="Fise_Medicale" EntitySet="Fise_Medicale" />
+      <End Role="Angajati" EntitySet="Angajati" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Angajati__Id_Fun__2C3393D0" Association="Self.FK__Angajati__Id_Fun__2C3393D0">
+      <End Role="Functii" EntitySet="Functii" />
+      <End Role="Angajati" EntitySet="Angajati" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Angajati__Id_Gra__29572725" Association="Self.FK__Angajati__Id_Gra__29572725">
+      <End Role="Grade" EntitySet="Grade" />
+      <End Role="Angajati" EntitySet="Angajati" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Angajati__Id_Pro__2E1BDC42" Association="Self.FK__Angajati__Id_Pro__2E1BDC42">
+      <End Role="Proiecte" EntitySet="Proiecte" />
+      <End Role="Angajati" EntitySet="Angajati" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Angajati__Id_Sal__2B3F6F97" Association="Self.FK__Angajati__Id_Sal__2B3F6F97">
+      <End Role="Salarii" EntitySet="Salarii" />
+      <End Role="Angajati" EntitySet="Angajati" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Angajati__Id_Tab__2F10007B" Association="Self.FK__Angajati__Id_Tab__2F10007B">
+      <End Role="Tabel_Rude" EntitySet="Tabel_Rude" />
+      <End Role="Angajati" EntitySet="Angajati" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Angajati___Id_De__32E0915F" Association="Self.FK__Angajati___Id_De__32E0915F">
+      <End Role="Departamente" EntitySet="Departamente" />
+      <End Role="Angajati_Departament" EntitySet="Angajati_Departament" />
+    </AssociationSet>
+    <AssociationSet Name="Functii_Salarii" Association="Self.Functii_Salarii">
+      <End Role="Functii" EntitySet="Functii" />
+      <End Role="Salarii" EntitySet="Salarii" />
+    </AssociationSet>
+    <AssociationSet Name="Grade_Salarii" Association="Self.Grade_Salarii">
+      <End Role="Grade" EntitySet="Grade" />
+      <End Role="Salarii" EntitySet="Salarii" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -8,23 +8,99 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Proiect
 {
     public partial class FormAngajatNou : Form
     {
-        string nume, prenume, grad, cnp, telefon, 
-            email, strada, nr_strada, 
+        string nume, prenume, grad, cnp, telefon,
+            email, strada, nr_strada,
             bloc, apartament, localitate, jud_sector,
-            functie, departament,proiect;
+            functie, departament, proiect, data_nasterestring;
         DateTime data_nastere;
+        bool tabelrudeopened = false;
+        bool fisamedicalaopened = false;
+        bool cvuploaded = false;
+
+
+
         public FormAngajatNou()
         {
             InitializeComponent();
         }
 
+        private void populate_Grade()
+        {
+            using (var context = new HREntities1())
+            {
+                var results = from c in context.Grade
+                              select new
+                              {
+                                  c.Denumire
+                              };
+                foreach (var item in results)
+                {
+                    comboBoxGrade.Items.Add(item.Denumire);
+                }
+            }
+
+        }
+        private void populate_Functii()
+        {
+            using (var context = new HREntities1())
+            {
+                var results = from c in context.Functii
+                              select new
+                              {
+                                  c.Denumire
+                              };
+                foreach (var item in results)
+                {
+                    comboBoxFunctii.Items.Add(item.Denumire);
+                }
+            }
+        }
+        private void populate_Departamente()
+        {
+            using (var context = new HREntities1())
+            {
+                var results = from c in context.Departamente
+                              select new
+                              {
+                                  c.Nume_Departament
+                              };
+                foreach (var item in results)
+                {
+                    comboBoxDepartamente.Items.Add(item.Nume_Departament);
+                }
+            }
+        }
+        private void populate_Proiecte()
+        {
+            using (var context = new HREntities1())
+            {
+                var results = from c in context.Proiecte
+                              select new
+                              {
+                                  c.Nume_Proiect
+                              };
+                foreach (var item in results)
+                {
+                    comboBoxProiect.Items.Add(item.Nume_Proiect);
+                }
+            }
+        }
+        private void FormAngajatNou_Load(object sender, EventArgs e)
+        {
+            populate_Grade();
+            populate_Functii();
+            populate_Departamente();
+            populate_Proiecte();
+
+        }
         private void labelTelefon_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void textNume_TextChanged(object sender, EventArgs e)
@@ -39,7 +115,7 @@ namespace Proiect
 
         private void labelNume_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void labelPrenume_Click(object sender, EventArgs e)
@@ -54,8 +130,10 @@ namespace Proiect
 
         private void comboBoxGrade_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             grad = comboBoxGrade.Text;
         }
+
 
         private void labelCNP_Click(object sender, EventArgs e)
         {
@@ -81,26 +159,14 @@ namespace Proiect
         {
             email = textEmail.Text;
         }
-
-        private void labelFunctie_Click(object sender, EventArgs e)
+        private void textDataNastere_TextChanged(object sender, EventArgs e)
         {
+            data_nasterestring = textDataNastere.Text;
+            
 
         }
 
-        private void comboBoxFunctii_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            functie = comboBoxFunctii.Text;
-        }
-
-        private void labelDepartament_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBoxDepartamente_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            departament = comboBoxDepartamente.Text;
-        }
+      
 
         private void labelDataNastere_Click(object sender, EventArgs e)
         {
@@ -109,15 +175,11 @@ namespace Proiect
 
         private void labelStrada_Click(object sender, EventArgs e)
         {
-            
-        }
-
-        private void textDataNastere_TextChanged(object sender, EventArgs e)
-        {
-            IFormatProvider culture = new System.Globalization.CultureInfo("fr-FR", true);
-            data_nastere = DateTime.Parse(textDataNastere.Text, culture, System.Globalization.DateTimeStyles.AssumeLocal);
 
         }
+
+      
+
 
         private void textStrada_TextChanged(object sender, EventArgs e)
         {
@@ -132,6 +194,28 @@ namespace Proiect
         private void textNrStrada_TextChanged(object sender, EventArgs e)
         {
             nr_strada = textNrStrada.Text;
+        }
+
+        private void buttonFisaMedicala_Click(object sender, EventArgs e)
+        {
+            fisamedicalaopened = true;
+        }
+
+        private void buttonCV_Click(object sender, EventArgs e)
+        {
+            cvuploaded = true;
+        }
+
+        private void labelOptional_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonTabelRude_Click(object sender, EventArgs e)
+        {
+            FormTabelRude f = new FormTabelRude();
+            f.ShowDialog();
+            tabelrudeopened = true;
         }
 
         private void labelBloc_Click(object sender, EventArgs e)
@@ -173,7 +257,24 @@ namespace Proiect
         {
             jud_sector = textJudet.Text;
         }
+        private void labelDepartament_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void comboBoxDepartamente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            departament = comboBoxDepartamente.Text;
+        }
+        private void labelFunctie_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxFunctii_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            functie = comboBoxFunctii.Text;
+        }
         private void labelProiect_Click(object sender, EventArgs e)
         {
 
@@ -186,7 +287,109 @@ namespace Proiect
 
         private void buttonAddAngajat_Click(object sender, EventArgs e)
         {
+            IFormatProvider culture = new System.Globalization.CultureInfo("fr-FR", true);
+            data_nastere = DateTime.Parse(data_nasterestring, culture, System.Globalization.DateTimeStyles.AssumeLocal);
+            using (var context = new HREntities1())
+            {
+                var results_grad =( from c in context.Grade
+                              where c.Denumire == grad
+                              select new
+                              {
+                                  c.Id_Grad
+                              }).First();
+                var results_functie = (from c in context.Functii
+                                       where c.Denumire == functie
+                                       select new
+                                       {
+                                           c.Id_Functie
+                                       }).First();
+                var solda_functie = (from c in context.Functii
+                                     where c.Denumire == functie
+                                     select new
+                                     {
+                                         c.Solda_functie
+                                     }).First();
+                var solda_grad = (from c in context.Grade
+                                  where c.Denumire == grad
+                                  select new
+                                  {
+                                      c.Solda_grad
+                                  }).First();
+                var results_departament = (from c in context.Departamente
+                                           where c.Nume_Departament == departament
+                                           select new
+                                           {
+                                               c.Id_Departament
+                                           }).First();
+                var results_proiect = (from c in context.Proiecte
+                                       where c.Nume_Proiect== proiect
+                                       select new
+                                       {
+                                           c.Id_Proiect
+                                       }).First();
 
+                var newAdresa = new Adrese()
+                {
+                    Strada = strada,
+                    Nr_Strada = Convert.ToInt32(nr_strada),
+                    Bloc=bloc,
+                    Apartament=Convert.ToInt32(apartament),
+                    Oras=localitate,
+                    Judet_Sector=jud_sector,
+                   
+                };
+                context.Adrese.Add(newAdresa);
+                context.SaveChanges();
+                var newSalariu = new Salarii()
+                {
+                    Solda_functie = solda_functie.Solda_functie,
+                    Solda_grad = solda_grad.Solda_grad,
+                    Spor_conditii_de_munca = 500,
+                    Total = solda_functie.Solda_functie + solda_grad.Solda_grad + 100
+
+                };
+                context.Salarii.Add(newSalariu);
+                context.SaveChanges();
+                if (tabelrudeopened == true)
+                {
+                    
+                }
+                var newAngajat = new Angajati()
+                {
+                    Nume_Angajat = nume,
+                    Prenume_Angajat = prenume,
+                    Numar_Telefon = telefon,
+                    Email = email,
+                    Id_Grad = results_grad.Id_Grad,
+                    CNP = cnp,
+                    Data_Nastere = data_nastere,
+                    Id_Salariu=newSalariu.Id_Salariu,
+
+                    Id_Adresa = newAdresa.Id_Adresa,
+                    Id_Functie = results_functie.Id_Functie,
+                    Id_Departament = results_departament.Id_Departament,
+                    Id_Proiect_Curent = results_proiect.Id_Proiect,
+                    Data_Angajare = DateTime.Now
+                    
+                  };
+            context.Angajati.Add(newAngajat);
+            context.SaveChanges();
+                //var newAngDep = new Angajati_Departament()
+                //{
+                //    Id_Angajat = newAngajat.Id_Angajat,
+                //    Id_Departament = results_departament.Id_Departament,
+                //    Data_Inceput = newAngajat.Data_Angajare
+                    
+                     
+                //};
+                //context.Angajati_Departament.Add(newAngDep);
+                //context.SaveChanges();
+                
+                
+                this.Close();
+
+            }
+            
         }
     }
 }
