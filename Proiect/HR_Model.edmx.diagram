@@ -14,7 +14,6 @@
         <EntityTypeShape EntityType="HRModel.Proiecte" Width="1.5" PointX="0.75" PointY="19.375" IsExpanded="true" />
         <EntityTypeShape EntityType="HRModel.Salarii" Width="1.5" PointX="0.75" PointY="22.375" IsExpanded="true" />
         <EntityTypeShape EntityType="HRModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HRModel.Tabel_Rude" Width="1.5" PointX="0.75" PointY="25.625" IsExpanded="true" />
         <EntityTypeShape EntityType="HRModel.Angajati_Departament" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" />
         <AssociationConnector Association="HRModel.FK__Angajati__Id_Adr__2A4B4B5E" ManuallyRouted="false" />
         <AssociationConnector Association="HRModel.FK__Angajati___Id_An__31EC6D26" ManuallyRouted="false" />
@@ -24,10 +23,11 @@
         <AssociationConnector Association="HRModel.FK__Angajati__Id_Gra__29572725" ManuallyRouted="false" />
         <AssociationConnector Association="HRModel.FK__Angajati__Id_Pro__2E1BDC42" ManuallyRouted="false" />
         <AssociationConnector Association="HRModel.FK__Angajati__Id_Sal__2B3F6F97" ManuallyRouted="false" />
-        <AssociationConnector Association="HRModel.FK__Angajati__Id_Tab__2F10007B" ManuallyRouted="false" />
         <AssociationConnector Association="HRModel.FK__Angajati___Id_De__32E0915F" ManuallyRouted="false" />
         <AssociationConnector Association="HRModel.Functii_Salarii" ManuallyRouted="false" />
         <AssociationConnector Association="HRModel.Grade_Salarii" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="HRModel.Rude" Width="1.5" PointX="5.625" PointY="0.5" />
+        <AssociationConnector Association="HRModel.FK__Rude__Id_Angajat__49C3F6B7" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

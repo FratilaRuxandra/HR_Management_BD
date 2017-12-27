@@ -24,5 +24,10 @@ namespace Proiect
             formAngajatNou.ShowDialog();
             this.Show();
         }
+
+        private void buttonModificariAngajati_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -12,7 +12,7 @@ using System.Windows.Forms;
 //neterminata ptr ca am  gresit baza de date #lacrima 
 namespace Proiect
 {
-    public partial class FormTabelRude : Form
+    public partial class  FormTabelRude : Form
     {
         string grad_rudenie, nume, prenume, cnp;
         public FormTabelRude()
@@ -79,19 +79,23 @@ namespace Proiect
         {
             using (var context = new HREntities1())
             {
-                var newRuda = new Tabel_Rude()
+                var newRuda = new Rude()
                 {
-                    Grad_Rudenie=grad_rudenie,
+                    Grad_rudenie=grad_rudenie,
                     Nume = nume,
                     Prenume=prenume,
                     CNP=cnp
+                    
+                    
                 };
-                context.Tabel_Rude.Add(newRuda);
+                context.Rude.Add(newRuda);
                 context.SaveChanges();
+                ClearTextBoxes();
+                
 
             }
 
-            ClearTextBoxes();
+            
 
         }
     }

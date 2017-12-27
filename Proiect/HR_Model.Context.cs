@@ -34,7 +34,7 @@ namespace Proiect
         public virtual DbSet<Proiecte> Proiecte { get; set; }
         public virtual DbSet<Salarii> Salarii { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<Tabel_Rude> Tabel_Rude { get; set; }
         public virtual DbSet<Angajati_Departament> Angajati_Departament { get; set; }
+        public virtual DbSet<Rude> Rude { get; set; }
     }
 }

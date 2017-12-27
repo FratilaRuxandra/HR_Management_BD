@@ -33,7 +33,6 @@
           <ScalarProperty Name="Id_Functie" ColumnName="Id_Functie" />
           <ScalarProperty Name="Id_Departament" ColumnName="Id_Departament" />
           <ScalarProperty Name="Id_Proiect_Curent" ColumnName="Id_Proiect_Curent" />
-          <ScalarProperty Name="Id_Tabel_Rude" ColumnName="Id_Tabel_Rude" />
           <ScalarProperty Name="Id_Fisa_Med" ColumnName="Id_Fisa_Med" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -110,17 +109,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Tabel_Rude">
-      <EntityTypeMapping TypeName="HRModel.Tabel_Rude">
-        <MappingFragment StoreEntitySet="Tabel_Rude">
-          <ScalarProperty Name="ID_Tabel_Rude" ColumnName="ID_Tabel_Rude" />
-          <ScalarProperty Name="Grad_Rudenie" ColumnName="Grad_Rudenie" />
-          <ScalarProperty Name="Nume" ColumnName="Nume" />
-          <ScalarProperty Name="Prenume" ColumnName="Prenume" />
-          <ScalarProperty Name="CNP" ColumnName="CNP" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Angajati_Departament">
       <EntityTypeMapping TypeName="HRModel.Angajati_Departament">
         <MappingFragment StoreEntitySet="Angajati_Departament">
@@ -147,5 +135,17 @@
         <ScalarProperty Name="Id_Salariu" ColumnName="Id_Salariu" />
       </EndProperty>
     </AssociationSetMapping>
+    <EntitySetMapping Name="Rude">
+      <EntityTypeMapping TypeName="HRModel.Rude">
+        <MappingFragment StoreEntitySet="Rude">
+          <ScalarProperty Name="Grad_rudenie" ColumnName="Grad_rudenie" />
+          <ScalarProperty Name="Id_Angajat" ColumnName="Id_Angajat" />
+          <ScalarProperty Name="CNP" ColumnName="CNP" />
+          <ScalarProperty Name="Prenume" ColumnName="Prenume" />
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="Id_Ruda" ColumnName="Id_Ruda" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

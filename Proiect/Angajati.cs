@@ -18,6 +18,7 @@ namespace Proiect
         public Angajati()
         {
             this.Angajati_Departament = new HashSet<Angajati_Departament>();
+            this.Rude = new HashSet<Rude>();
         }
     
         public int Id_Angajat { get; set; }
@@ -36,7 +37,6 @@ namespace Proiect
         public Nullable<int> Id_Functie { get; set; }
         public Nullable<int> Id_Departament { get; set; }
         public Nullable<int> Id_Proiect_Curent { get; set; }
-        public Nullable<int> Id_Tabel_Rude { get; set; }
         public Nullable<int> Id_Fisa_Med { get; set; }
     
         public virtual Adrese Adrese { get; set; }
@@ -48,6 +48,7 @@ namespace Proiect
         public virtual Grade Grade { get; set; }
         public virtual Proiecte Proiecte { get; set; }
         public virtual Salarii Salarii { get; set; }
-        public virtual Tabel_Rude Tabel_Rude { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Rude> Rude { get; set; }
     }
 }

@@ -72,6 +72,12 @@
     <Compile Include="Fise_Medicale.cs">
       <DependentUpon>HR_Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="FormFisaMed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFisaMed.Designer.cs">
+      <DependentUpon>FormFisaMed.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,15 +128,18 @@
       <DependentUpon>HR_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rude.cs">
+      <DependentUpon>HR_Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Salarii.cs">
       <DependentUpon>HR_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>HR_Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Tabel_Rude.cs">
-      <DependentUpon>HR_Model.tt</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="FormFisaMed.resx">
+      <DependentUpon>FormFisaMed.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="HRModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="HRModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Adrese">
           <Key>
             <PropertyRef Name="Id_Adresa" />
@@ -37,7 +37,6 @@
           <Property Name="Id_Functie" Type="int" />
           <Property Name="Id_Departament" Type="int" />
           <Property Name="Id_Proiect_Curent" Type="int" />
-          <Property Name="Id_Tabel_Rude" Type="int" />
           <Property Name="Id_Fisa_Med" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
@@ -118,6 +117,17 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
           <Property Name="Data_Inceput" Type="date" Nullable="false" />
           <Property Name="Data_Sfarsit" Type="date" />
         </EntityType>
+        <EntityType Name="Rude">
+          <Key>
+            <PropertyRef Name="Id_Ruda" />
+          </Key>
+          <Property Name="Id_Ruda" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nume" Type="nvarchar" MaxLength="50" />
+          <Property Name="Prenume" Type="nvarchar" MaxLength="50" />
+          <Property Name="CNP" Type="char" MaxLength="13" />
+          <Property Name="Id_Angajat" Type="int" />
+          <Property Name="Grad_rudenie" Type="nvarchar" MaxLength="20" />
+        </EntityType>
         <EntityType Name="Salarii">
           <Key>
             <PropertyRef Name="Id_Salariu" />
@@ -137,16 +147,6 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
           <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
-        <EntityType Name="Tabel_Rude">
-          <Key>
-            <PropertyRef Name="ID_Tabel_Rude" />
-          </Key>
-          <Property Name="ID_Tabel_Rude" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Grad_Rudenie" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="Nume" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Prenume" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="CNP" Type="char" MaxLength="13" Nullable="false" />
         </EntityType>
         <Association Name="FK__Angajati___Id_An__31EC6D26">
           <End Role="Angajati" Type="Self.Angajati" Multiplicity="1" />
@@ -256,18 +256,6 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Angajati__Id_Tab__2F10007B">
-          <End Role="Tabel_Rude" Type="Self.Tabel_Rude" Multiplicity="0..1" />
-          <End Role="Angajati" Type="Self.Angajati" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Tabel_Rude">
-              <PropertyRef Name="ID_Tabel_Rude" />
-            </Principal>
-            <Dependent Role="Angajati">
-              <PropertyRef Name="Id_Tabel_Rude" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__Functii_S__Id_Fu__1A14E395">
           <End Role="Functii" Type="Self.Functii" Multiplicity="1" />
           <End Role="Functii_Salarii" Type="Self.Functii_Salarii" Multiplicity="*" />
@@ -316,6 +304,18 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__Rude__Id_Angajat__49C3F6B7">
+          <End Role="Angajati" Type="Self.Angajati" Multiplicity="0..1" />
+          <End Role="Rude" Type="Self.Rude" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Angajati">
+              <PropertyRef Name="Id_Angajat" />
+            </Principal>
+            <Dependent Role="Rude">
+              <PropertyRef Name="Id_Angajat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="HRModelStoreContainer">
           <EntitySet Name="Adrese" EntityType="Self.Adrese" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Angajati" EntityType="Self.Angajati" Schema="dbo" store:Type="Tables" />
@@ -324,9 +324,9 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
           <EntitySet Name="Functii" EntityType="Self.Functii" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Grade" EntityType="Self.Grade" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Proiecte" EntityType="Self.Proiecte" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rude" EntityType="Self.Rude" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Salarii" EntityType="Self.Salarii" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Tabel_Rude" EntityType="Self.Tabel_Rude" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Angajati_Departament" EntityType="Self.Angajati_Departament" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [Angajati_Departament].[Id_Angajat] AS [Id_Angajat], 
@@ -383,10 +383,6 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
             <End Role="Salarii" EntitySet="Salarii" />
             <End Role="Angajati" EntitySet="Angajati" />
           </AssociationSet>
-          <AssociationSet Name="FK__Angajati__Id_Tab__2F10007B" Association="Self.FK__Angajati__Id_Tab__2F10007B">
-            <End Role="Tabel_Rude" EntitySet="Tabel_Rude" />
-            <End Role="Angajati" EntitySet="Angajati" />
-          </AssociationSet>
           <AssociationSet Name="FK__Functii_S__Id_Fu__1A14E395" Association="Self.FK__Functii_S__Id_Fu__1A14E395">
             <End Role="Functii" EntitySet="Functii" />
             <End Role="Functii_Salarii" EntitySet="Functii_Salarii" />
@@ -403,9 +399,12 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
             <End Role="Salarii" EntitySet="Salarii" />
             <End Role="Grade_Salarii" EntitySet="Grade_Salarii" />
           </AssociationSet>
+          <AssociationSet Name="FK__Rude__Id_Angajat__49C3F6B7" Association="Self.FK__Rude__Id_Angajat__49C3F6B7">
+            <End Role="Angajati" EntitySet="Angajati" />
+            <End Role="Rude" EntitySet="Rude" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="HRModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -442,7 +441,6 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
           <Property Name="Id_Functie" Type="Int32" />
           <Property Name="Id_Departament" Type="Int32" />
           <Property Name="Id_Proiect_Curent" Type="Int32" />
-          <Property Name="Id_Tabel_Rude" Type="Int32" />
           <Property Name="Id_Fisa_Med" Type="Int32" />
           <NavigationProperty Name="Adrese" Relationship="Self.FK__Angajati__Id_Adr__2A4B4B5E" FromRole="Angajati" ToRole="Adrese" />
           <NavigationProperty Name="Angajati_Departament" Relationship="Self.FK__Angajati___Id_An__31EC6D26" FromRole="Angajati" ToRole="Angajati_Departament" />
@@ -452,7 +450,7 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
           <NavigationProperty Name="Grade" Relationship="Self.FK__Angajati__Id_Gra__29572725" FromRole="Angajati" ToRole="Grade" />
           <NavigationProperty Name="Proiecte" Relationship="Self.FK__Angajati__Id_Pro__2E1BDC42" FromRole="Angajati" ToRole="Proiecte" />
           <NavigationProperty Name="Salarii" Relationship="Self.FK__Angajati__Id_Sal__2B3F6F97" FromRole="Angajati" ToRole="Salarii" />
-          <NavigationProperty Name="Tabel_Rude" Relationship="Self.FK__Angajati__Id_Tab__2F10007B" FromRole="Angajati" ToRole="Tabel_Rude" />
+          <NavigationProperty Name="Rude" Relationship="HRModel.FK__Rude__Id_Angajat__49C3F6B7" FromRole="Angajati" ToRole="Rude" />
         </EntityType>
         <EntityType Name="Departamente">
           <Key>
@@ -529,17 +527,6 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
           <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
-        <EntityType Name="Tabel_Rude">
-          <Key>
-            <PropertyRef Name="ID_Tabel_Rude" />
-          </Key>
-          <Property Name="ID_Tabel_Rude" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Grad_Rudenie" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Nume" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Prenume" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="CNP" Type="String" MaxLength="13" FixedLength="true" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Angajati" Relationship="Self.FK__Angajati__Id_Tab__2F10007B" FromRole="Tabel_Rude" ToRole="Angajati" />
         </EntityType>
         <EntityType Name="Angajati_Departament">
           <Key>
@@ -650,18 +637,6 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Angajati__Id_Tab__2F10007B">
-          <End Role="Tabel_Rude" Type="Self.Tabel_Rude" Multiplicity="0..1" />
-          <End Role="Angajati" Type="Self.Angajati" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Tabel_Rude">
-              <PropertyRef Name="ID_Tabel_Rude" />
-            </Principal>
-            <Dependent Role="Angajati">
-              <PropertyRef Name="Id_Tabel_Rude" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__Angajati___Id_De__32E0915F">
           <End Role="Departamente" Type="Self.Departamente" Multiplicity="1" />
           <End Role="Angajati_Departament" Type="Self.Angajati_Departament" Multiplicity="*" />
@@ -692,7 +667,6 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
           <EntitySet Name="Proiecte" EntityType="Self.Proiecte" />
           <EntitySet Name="Salarii" EntityType="Self.Salarii" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
-          <EntitySet Name="Tabel_Rude" EntityType="Self.Tabel_Rude" />
           <EntitySet Name="Angajati_Departament" EntityType="Self.Angajati_Departament" />
           <AssociationSet Name="FK__Angajati__Id_Adr__2A4B4B5E" Association="Self.FK__Angajati__Id_Adr__2A4B4B5E">
             <End Role="Adrese" EntitySet="Adrese" />
@@ -726,10 +700,6 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
             <End Role="Salarii" EntitySet="Salarii" />
             <End Role="Angajati" EntitySet="Angajati" />
           </AssociationSet>
-          <AssociationSet Name="FK__Angajati__Id_Tab__2F10007B" Association="Self.FK__Angajati__Id_Tab__2F10007B">
-            <End Role="Tabel_Rude" EntitySet="Tabel_Rude" />
-            <End Role="Angajati" EntitySet="Angajati" />
-          </AssociationSet>
           <AssociationSet Name="FK__Angajati___Id_De__32E0915F" Association="Self.FK__Angajati___Id_De__32E0915F">
             <End Role="Departamente" EntitySet="Departamente" />
             <End Role="Angajati_Departament" EntitySet="Angajati_Departament" />
@@ -742,7 +712,36 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
             <End Role="Grade" EntitySet="Grade" />
             <End Role="Salarii" EntitySet="Salarii" />
           </AssociationSet>
+          <EntitySet Name="Rude" EntityType="HRModel.Rude" />
+          <AssociationSet Name="FK__Rude__Id_Angajat__49C3F6B7" Association="HRModel.FK__Rude__Id_Angajat__49C3F6B7">
+            <End Role="Angajati" EntitySet="Angajati" />
+            <End Role="Rude" EntitySet="Rude" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Rude">
+          <Key>
+            <PropertyRef Name="Id_Ruda" />
+          </Key>
+          <Property Name="Id_Ruda" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nume" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Prenume" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CNP" Type="String" MaxLength="13" FixedLength="true" Unicode="false" />
+          <Property Name="Id_Angajat" Type="Int32" />
+          <Property Name="Grad_rudenie" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Angajati" Relationship="HRModel.FK__Rude__Id_Angajat__49C3F6B7" FromRole="Rude" ToRole="Angajati" />
+        </EntityType>
+        <Association Name="FK__Rude__Id_Angajat__49C3F6B7">
+          <End Type="HRModel.Angajati" Role="Angajati" Multiplicity="0..1" />
+          <End Type="HRModel.Rude" Role="Rude" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Angajati">
+              <PropertyRef Name="Id_Angajat" />
+            </Principal>
+            <Dependent Role="Rude">
+              <PropertyRef Name="Id_Angajat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -781,7 +780,6 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
                 <ScalarProperty Name="Id_Functie" ColumnName="Id_Functie" />
                 <ScalarProperty Name="Id_Departament" ColumnName="Id_Departament" />
                 <ScalarProperty Name="Id_Proiect_Curent" ColumnName="Id_Proiect_Curent" />
-                <ScalarProperty Name="Id_Tabel_Rude" ColumnName="Id_Tabel_Rude" />
                 <ScalarProperty Name="Id_Fisa_Med" ColumnName="Id_Fisa_Med" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -858,17 +856,6 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Tabel_Rude">
-            <EntityTypeMapping TypeName="HRModel.Tabel_Rude">
-              <MappingFragment StoreEntitySet="Tabel_Rude">
-                <ScalarProperty Name="ID_Tabel_Rude" ColumnName="ID_Tabel_Rude" />
-                <ScalarProperty Name="Grad_Rudenie" ColumnName="Grad_Rudenie" />
-                <ScalarProperty Name="Nume" ColumnName="Nume" />
-                <ScalarProperty Name="Prenume" ColumnName="Prenume" />
-                <ScalarProperty Name="CNP" ColumnName="CNP" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Angajati_Departament">
             <EntityTypeMapping TypeName="HRModel.Angajati_Departament">
               <MappingFragment StoreEntitySet="Angajati_Departament">
@@ -895,6 +882,18 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
               <ScalarProperty Name="Id_Salariu" ColumnName="Id_Salariu" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="Rude">
+            <EntityTypeMapping TypeName="HRModel.Rude">
+              <MappingFragment StoreEntitySet="Rude">
+                <ScalarProperty Name="Grad_rudenie" ColumnName="Grad_rudenie" />
+                <ScalarProperty Name="Id_Angajat" ColumnName="Id_Angajat" />
+                <ScalarProperty Name="CNP" ColumnName="CNP" />
+                <ScalarProperty Name="Prenume" ColumnName="Prenume" />
+                <ScalarProperty Name="Nume" ColumnName="Nume" />
+                <ScalarProperty Name="Id_Ruda" ColumnName="Id_Ruda" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

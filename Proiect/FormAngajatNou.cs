@@ -18,9 +18,7 @@ namespace Proiect
             bloc, apartament, localitate, jud_sector,
             functie, departament, proiect, data_nasterestring;
         DateTime data_nastere;
-        bool tabelrudeopened = false;
-        bool fisamedicalaopened = false;
-        bool cvuploaded = false;
+        int id_fisamed = -1;
 
 
 
@@ -198,12 +196,13 @@ namespace Proiect
 
         private void buttonFisaMedicala_Click(object sender, EventArgs e)
         {
-            fisamedicalaopened = true;
+            FormFisaMed f = new FormFisaMed();
+            f.ShowDialog();
+            id_fisamed = f.getIdFisa(); 
         }
 
         private void buttonCV_Click(object sender, EventArgs e)
         {
-            cvuploaded = true;
         }
 
         private void labelOptional_Click(object sender, EventArgs e)
@@ -215,7 +214,7 @@ namespace Proiect
         {
             FormTabelRude f = new FormTabelRude();
             f.ShowDialog();
-            tabelrudeopened = true;
+            
         }
 
         private void labelBloc_Click(object sender, EventArgs e)
@@ -350,10 +349,6 @@ namespace Proiect
                 };
                 context.Salarii.Add(newSalariu);
                 context.SaveChanges();
-                if (tabelrudeopened == true)
-                {
-                    
-                }
                 var newAngajat = new Angajati()
                 {
                     Nume_Angajat = nume,
@@ -364,7 +359,7 @@ namespace Proiect
                     CNP = cnp,
                     Data_Nastere = data_nastere,
                     Id_Salariu=newSalariu.Id_Salariu,
-
+                    Id_Fisa_Med=id_fisamed,
                     Id_Adresa = newAdresa.Id_Adresa,
                     Id_Functie = results_functie.Id_Functie,
                     Id_Departament = results_departament.Id_Departament,
@@ -374,18 +369,19 @@ namespace Proiect
                   };
             context.Angajati.Add(newAngajat);
             context.SaveChanges();
-                //var newAngDep = new Angajati_Departament()
-                //{
-                //    Id_Angajat = newAngajat.Id_Angajat,
-                //    Id_Departament = results_departament.Id_Departament,
-                //    Data_Inceput = newAngajat.Data_Angajare
-                    
-                     
-                //};
-                //context.Angajati_Departament.Add(newAngDep);
-                //context.SaveChanges();
-                
-                
+                var update_rude = from c in context.Rude
+                                  where c.Id_Angajat == null
+                                  select c;
+                                  
+                foreach(var item in update_rude)
+                {
+                    item.Id_Angajat= newAngajat.Id_Angajat;
+                }
+                context.SaveChanges();
+
+
+
+
                 this.Close();
 
             }
