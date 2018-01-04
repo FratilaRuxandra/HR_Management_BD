@@ -12,6 +12,8 @@ namespace Proiect
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class HREntities1 : DbContext
     {
@@ -36,5 +38,60 @@ namespace Proiect
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Angajati_Departament> Angajati_Departament { get; set; }
         public virtual DbSet<Rude> Rude { get; set; }
+    
+        public virtual int MoveAngajat(string numeAngajat, string prenumeAngajat, string noulDepartament, string nouaFunctie)
+        {
+            var numeAngajatParameter = numeAngajat != null ?
+                new ObjectParameter("NumeAngajat", numeAngajat) :
+                new ObjectParameter("NumeAngajat", typeof(string));
+    
+            var prenumeAngajatParameter = prenumeAngajat != null ?
+                new ObjectParameter("PrenumeAngajat", prenumeAngajat) :
+                new ObjectParameter("PrenumeAngajat", typeof(string));
+    
+            var noulDepartamentParameter = noulDepartament != null ?
+                new ObjectParameter("NoulDepartament", noulDepartament) :
+                new ObjectParameter("NoulDepartament", typeof(string));
+    
+            var nouaFunctieParameter = nouaFunctie != null ?
+                new ObjectParameter("NouaFunctie", nouaFunctie) :
+                new ObjectParameter("NouaFunctie", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("MoveAngajat", numeAngajatParameter, prenumeAngajatParameter, noulDepartamentParameter, nouaFunctieParameter);
+        }
+    
+        public virtual int MoveDepartament(string numeAngajat, string prenumeAngajat, string noulDepartament)
+        {
+            var numeAngajatParameter = numeAngajat != null ?
+                new ObjectParameter("NumeAngajat", numeAngajat) :
+                new ObjectParameter("NumeAngajat", typeof(string));
+    
+            var prenumeAngajatParameter = prenumeAngajat != null ?
+                new ObjectParameter("PrenumeAngajat", prenumeAngajat) :
+                new ObjectParameter("PrenumeAngajat", typeof(string));
+    
+            var noulDepartamentParameter = noulDepartament != null ?
+                new ObjectParameter("NoulDepartament", noulDepartament) :
+                new ObjectParameter("NoulDepartament", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("MoveDepartament", numeAngajatParameter, prenumeAngajatParameter, noulDepartamentParameter);
+        }
+    
+        public virtual int MoveFunctie(string numeAngajat, string prenumeAngajat, string nouaFunctie)
+        {
+            var numeAngajatParameter = numeAngajat != null ?
+                new ObjectParameter("NumeAngajat", numeAngajat) :
+                new ObjectParameter("NumeAngajat", typeof(string));
+    
+            var prenumeAngajatParameter = prenumeAngajat != null ?
+                new ObjectParameter("PrenumeAngajat", prenumeAngajat) :
+                new ObjectParameter("PrenumeAngajat", typeof(string));
+    
+            var nouaFunctieParameter = nouaFunctie != null ?
+                new ObjectParameter("NouaFunctie", nouaFunctie) :
+                new ObjectParameter("NouaFunctie", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("MoveFunctie", numeAngajatParameter, prenumeAngajatParameter, nouaFunctieParameter);
+        }
     }
 }

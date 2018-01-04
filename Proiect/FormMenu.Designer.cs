@@ -73,6 +73,7 @@
             this.buttonTransfer.TabIndex = 3;
             this.buttonTransfer.Text = "Transfera Angajat";
             this.buttonTransfer.UseVisualStyleBackColor = true;
+            this.buttonTransfer.Click += new System.EventHandler(this.buttonTransfer_Click);
             // 
             // buttonRezerva
             // 
@@ -96,7 +97,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(701, 405);
+            this.ClientSize = new System.Drawing.Size(241, 405);
             this.Controls.Add(this.buttonSalariu);
             this.Controls.Add(this.buttonRezerva);
             this.Controls.Add(this.buttonTransfer);

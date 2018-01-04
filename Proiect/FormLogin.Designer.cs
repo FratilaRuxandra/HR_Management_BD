@@ -85,7 +85,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(701, 405);
+            this.ClientSize = new System.Drawing.Size(310, 405);
             this.Controls.Add(this.buttonConectare);
             this.Controls.Add(this.labelPasswd);
             this.Controls.Add(this.labelUsername);

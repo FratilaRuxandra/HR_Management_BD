@@ -147,5 +147,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="MoveAngajat" FunctionName="HRModel.Store.MoveAngajat" />
+    <FunctionImportMapping FunctionImportName="MoveDepartament" FunctionName="HRModel.Store.MoveDepartament" />
+    <FunctionImportMapping FunctionImportName="MoveFunctie" FunctionName="HRModel.Store.MoveFunctie" />
   </EntityContainerMapping>
 </Mapping>

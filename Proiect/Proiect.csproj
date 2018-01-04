@@ -102,6 +102,12 @@
     <Compile Include="FormTabelRude.Designer.cs">
       <DependentUpon>FormTabelRude.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTransfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTransfer.Designer.cs">
+      <DependentUpon>FormTransfer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Functii.cs">
       <DependentUpon>HR_Model.tt</DependentUpon>
     </Compile>
@@ -151,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormTabelRude.resx">
       <DependentUpon>FormTabelRude.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTransfer.resx">
+      <DependentUpon>FormTransfer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

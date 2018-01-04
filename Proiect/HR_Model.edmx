@@ -316,6 +316,22 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="MoveAngajat" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NumeAngajat" Type="nvarchar" Mode="In" />
+          <Parameter Name="PrenumeAngajat" Type="nvarchar" Mode="In" />
+          <Parameter Name="NoulDepartament" Type="nvarchar" Mode="In" />
+          <Parameter Name="NouaFunctie" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="MoveDepartament" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NumeAngajat" Type="nvarchar" Mode="In" />
+          <Parameter Name="PrenumeAngajat" Type="nvarchar" Mode="In" />
+          <Parameter Name="NoulDepartament" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="MoveFunctie" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NumeAngajat" Type="nvarchar" Mode="In" />
+          <Parameter Name="PrenumeAngajat" Type="nvarchar" Mode="In" />
+          <Parameter Name="NouaFunctie" Type="nvarchar" Mode="In" />
+        </Function>
         <EntityContainer Name="HRModelStoreContainer">
           <EntitySet Name="Adrese" EntityType="Self.Adrese" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Angajati" EntityType="Self.Angajati" Schema="dbo" store:Type="Tables" />
@@ -717,6 +733,22 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
             <End Role="Angajati" EntitySet="Angajati" />
             <End Role="Rude" EntitySet="Rude" />
           </AssociationSet>
+          <FunctionImport Name="MoveAngajat">
+            <Parameter Name="NumeAngajat" Mode="In" Type="String" />
+            <Parameter Name="PrenumeAngajat" Mode="In" Type="String" />
+            <Parameter Name="NoulDepartament" Mode="In" Type="String" />
+            <Parameter Name="NouaFunctie" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="MoveDepartament">
+            <Parameter Name="NumeAngajat" Mode="In" Type="String" />
+            <Parameter Name="PrenumeAngajat" Mode="In" Type="String" />
+            <Parameter Name="NoulDepartament" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="MoveFunctie">
+            <Parameter Name="NumeAngajat" Mode="In" Type="String" />
+            <Parameter Name="PrenumeAngajat" Mode="In" Type="String" />
+            <Parameter Name="NouaFunctie" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="Rude">
           <Key>
@@ -894,6 +926,9 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="MoveAngajat" FunctionName="HRModel.Store.MoveAngajat" />
+          <FunctionImportMapping FunctionImportName="MoveDepartament" FunctionName="HRModel.Store.MoveDepartament" />
+          <FunctionImportMapping FunctionImportName="MoveFunctie" FunctionName="HRModel.Store.MoveFunctie" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

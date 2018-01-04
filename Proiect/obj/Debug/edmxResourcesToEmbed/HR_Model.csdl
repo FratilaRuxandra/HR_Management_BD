@@ -309,6 +309,22 @@
       <End Role="Angajati" EntitySet="Angajati" />
       <End Role="Rude" EntitySet="Rude" />
     </AssociationSet>
+    <FunctionImport Name="MoveAngajat">
+      <Parameter Name="NumeAngajat" Mode="In" Type="String" />
+      <Parameter Name="PrenumeAngajat" Mode="In" Type="String" />
+      <Parameter Name="NoulDepartament" Mode="In" Type="String" />
+      <Parameter Name="NouaFunctie" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="MoveDepartament">
+      <Parameter Name="NumeAngajat" Mode="In" Type="String" />
+      <Parameter Name="PrenumeAngajat" Mode="In" Type="String" />
+      <Parameter Name="NoulDepartament" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="MoveFunctie">
+      <Parameter Name="NumeAngajat" Mode="In" Type="String" />
+      <Parameter Name="PrenumeAngajat" Mode="In" Type="String" />
+      <Parameter Name="NouaFunctie" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="Rude">
     <Key>

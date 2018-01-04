@@ -29,5 +29,13 @@ namespace Proiect
         {
 
         }
+
+        private void buttonTransfer_Click(object sender, EventArgs e)
+        {
+            FormTransfer formTransfer = new FormTransfer();
+            //this.Hide();
+            formTransfer.ShowDialog();
+            this.Show();
+        }
     }
 }
