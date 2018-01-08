@@ -316,6 +316,11 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="ModifyDepartamente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NumeDepartament" Type="nvarchar" Mode="In" />
+          <Parameter Name="NumeNou" Type="nvarchar" Mode="In" />
+          <Parameter Name="NumeSef" Type="nvarchar" Mode="In" />
+        </Function>
         <Function Name="MoveAngajat" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="NumeAngajat" Type="nvarchar" Mode="In" />
           <Parameter Name="PrenumeAngajat" Type="nvarchar" Mode="In" />
@@ -749,6 +754,11 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
             <Parameter Name="PrenumeAngajat" Mode="In" Type="String" />
             <Parameter Name="NouaFunctie" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="ModifyDepartamente">
+            <Parameter Name="NumeDepartament" Mode="In" Type="String" />
+            <Parameter Name="NumeNou" Mode="In" Type="String" />
+            <Parameter Name="NumeSef" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="Rude">
           <Key>
@@ -929,6 +939,7 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
           <FunctionImportMapping FunctionImportName="MoveAngajat" FunctionName="HRModel.Store.MoveAngajat" />
           <FunctionImportMapping FunctionImportName="MoveDepartament" FunctionName="HRModel.Store.MoveDepartament" />
           <FunctionImportMapping FunctionImportName="MoveFunctie" FunctionName="HRModel.Store.MoveFunctie" />
+          <FunctionImportMapping FunctionImportName="ModifyDepartamente" FunctionName="HRModel.Store.ModifyDepartamente" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

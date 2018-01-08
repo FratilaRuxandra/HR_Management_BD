@@ -64,6 +64,13 @@ namespace Proiect
                 f2.ShowDialog();
                 this.Close();
             }
+            if(username =="admin" && password == "admin")
+            {
+                FormMenuAdmin f3 = new FormMenuAdmin();
+                this.Hide();
+                f3.ShowDialog();
+                this.Close();
+            }
 
         }
        

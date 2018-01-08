@@ -96,6 +96,12 @@
     <Compile Include="FormAngajatNou.Designer.cs">
       <DependentUpon>FormAngajatNou.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMenuAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenuAdmin.Designer.cs">
+      <DependentUpon>FormMenuAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTabelRude.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAngajatNou.resx">
       <DependentUpon>FormAngajatNou.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenuAdmin.resx">
+      <DependentUpon>FormMenuAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTabelRude.resx">
       <DependentUpon>FormTabelRude.cs</DependentUpon>

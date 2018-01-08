@@ -93,5 +93,22 @@ namespace Proiect
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("MoveFunctie", numeAngajatParameter, prenumeAngajatParameter, nouaFunctieParameter);
         }
+    
+        public virtual int ModifyDepartamente(string numeDepartament, string numeNou, string numeSef)
+        {
+            var numeDepartamentParameter = numeDepartament != null ?
+                new ObjectParameter("NumeDepartament", numeDepartament) :
+                new ObjectParameter("NumeDepartament", typeof(string));
+    
+            var numeNouParameter = numeNou != null ?
+                new ObjectParameter("NumeNou", numeNou) :
+                new ObjectParameter("NumeNou", typeof(string));
+    
+            var numeSefParameter = numeSef != null ?
+                new ObjectParameter("NumeSef", numeSef) :
+                new ObjectParameter("NumeSef", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ModifyDepartamente", numeDepartamentParameter, numeNouParameter, numeSefParameter);
+        }
     }
 }

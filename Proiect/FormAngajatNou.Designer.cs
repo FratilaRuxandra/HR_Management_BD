@@ -375,7 +375,7 @@
             // 
             // buttonTabelRude
             // 
-            this.buttonTabelRude.Location = new System.Drawing.Point(22, 358);
+            this.buttonTabelRude.Location = new System.Drawing.Point(22, 285);
             this.buttonTabelRude.Name = "buttonTabelRude";
             this.buttonTabelRude.Size = new System.Drawing.Size(93, 24);
             this.buttonTabelRude.TabIndex = 33;
@@ -385,7 +385,7 @@
             // 
             // buttonFisaMedicala
             // 
-            this.buttonFisaMedicala.Location = new System.Drawing.Point(153, 358);
+            this.buttonFisaMedicala.Location = new System.Drawing.Point(153, 285);
             this.buttonFisaMedicala.Name = "buttonFisaMedicala";
             this.buttonFisaMedicala.Size = new System.Drawing.Size(93, 24);
             this.buttonFisaMedicala.TabIndex = 34;
@@ -395,7 +395,7 @@
             // 
             // buttonCV
             // 
-            this.buttonCV.Location = new System.Drawing.Point(288, 358);
+            this.buttonCV.Location = new System.Drawing.Point(303, 285);
             this.buttonCV.Name = "buttonCV";
             this.buttonCV.Size = new System.Drawing.Size(93, 23);
             this.buttonCV.TabIndex = 35;
@@ -408,9 +408,8 @@
             this.labelOptional.AutoSize = true;
             this.labelOptional.Location = new System.Drawing.Point(19, 322);
             this.labelOptional.Name = "labelOptional";
-            this.labelOptional.Size = new System.Drawing.Size(49, 13);
+            this.labelOptional.Size = new System.Drawing.Size(0, 13);
             this.labelOptional.TabIndex = 36;
-            this.labelOptional.Text = "Optional:";
             this.labelOptional.Click += new System.EventHandler(this.labelOptional_Click);
             // 
             // FormAngajatNou

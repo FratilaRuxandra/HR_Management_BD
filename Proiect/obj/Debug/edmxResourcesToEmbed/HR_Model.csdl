@@ -325,6 +325,11 @@
       <Parameter Name="PrenumeAngajat" Mode="In" Type="String" />
       <Parameter Name="NouaFunctie" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="ModifyDepartamente">
+      <Parameter Name="NumeDepartament" Mode="In" Type="String" />
+      <Parameter Name="NumeNou" Mode="In" Type="String" />
+      <Parameter Name="NumeSef" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="Rude">
     <Key>

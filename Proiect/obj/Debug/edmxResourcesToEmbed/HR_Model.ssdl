@@ -311,6 +311,11 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="ModifyDepartamente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NumeDepartament" Type="nvarchar" Mode="In" />
+    <Parameter Name="NumeNou" Type="nvarchar" Mode="In" />
+    <Parameter Name="NumeSef" Type="nvarchar" Mode="In" />
+  </Function>
   <Function Name="MoveAngajat" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="NumeAngajat" Type="nvarchar" Mode="In" />
     <Parameter Name="PrenumeAngajat" Type="nvarchar" Mode="In" />

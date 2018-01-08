@@ -17,6 +17,13 @@ namespace Proiect
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormLogin());
+
+            //terminat admin-ul
+            //criptat parole 
+            //erori
+            //export 
+            //merge cu restul 
+            //upload cv
         }
     }
 }

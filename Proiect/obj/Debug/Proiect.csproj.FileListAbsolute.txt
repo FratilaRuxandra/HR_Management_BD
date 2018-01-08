@@ -16,3 +16,4 @@ D:\ATM\BazeDate\Proiect\Proiect\bin\Debug\EntityFramework.SqlServer.xml
 D:\ATM\BazeDate\Proiect\Proiect\obj\Debug\Proiect.FormTabelRude.resources
 D:\ATM\BazeDate\Proiect\Proiect\obj\Debug\Proiect.FormFisaMed.resources
 D:\ATM\BazeDate\Proiect\Proiect\obj\Debug\Proiect.FormTransfer.resources
+D:\ATM\BazeDate\Proiect\Proiect\obj\Debug\Proiect.FormMenuAdmin.resources
