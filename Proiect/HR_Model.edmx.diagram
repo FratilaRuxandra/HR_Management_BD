@@ -28,6 +28,7 @@
         <AssociationConnector Association="HRModel.Grade_Salarii" ManuallyRouted="false" />
         <EntityTypeShape EntityType="HRModel.Rude" Width="1.5" PointX="5.625" PointY="0.5" />
         <AssociationConnector Association="HRModel.FK__Rude__Id_Angajat__49C3F6B7" />
+        <EntityTypeShape EntityType="HRModel.Logins" Width="1.5" PointX="8.875" PointY="1.875" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

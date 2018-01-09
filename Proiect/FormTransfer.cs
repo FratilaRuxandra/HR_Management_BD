@@ -132,13 +132,21 @@ namespace Proiect
 
         private void buttonFinish_Click(object sender, EventArgs e)
         {
-            var context = new HREntities1();
-            search(nume);
-            if (func == true)
-                context.MoveFunctie(nume, prenume, functie);
-            if (dep == true)
-                context.MoveDepartament(nume, prenume, departament);
-            this.Close();
+            try
+            {
+                var context = new HREntities1();
+                search(nume);
+                if (func == true)
+                    context.MoveFunctie(nume, prenume, functie);
+                if (dep == true)
+                    context.MoveDepartament(nume, prenume, departament);
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
         }
     }
 }

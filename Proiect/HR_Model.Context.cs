@@ -38,6 +38,7 @@ namespace Proiect
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Angajati_Departament> Angajati_Departament { get; set; }
         public virtual DbSet<Rude> Rude { get; set; }
+        public virtual DbSet<Logins> Logins { get; set; }
     
         public virtual int MoveAngajat(string numeAngajat, string prenumeAngajat, string noulDepartament, string nouaFunctie)
         {

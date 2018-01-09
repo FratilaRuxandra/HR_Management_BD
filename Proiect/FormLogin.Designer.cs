@@ -47,8 +47,10 @@
             // 
             this.textBoxPasswd.Location = new System.Drawing.Point(58, 231);
             this.textBoxPasswd.Name = "textBoxPasswd";
+            this.textBoxPasswd.PasswordChar = '*';
             this.textBoxPasswd.Size = new System.Drawing.Size(147, 20);
             this.textBoxPasswd.TabIndex = 1;
+            this.textBoxPasswd.UseSystemPasswordChar = true;
             this.textBoxPasswd.TextChanged += new System.EventHandler(this.textBoxPasswd_TextChanged);
             // 
             // labelUsername
@@ -85,13 +87,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(310, 405);
+            this.ClientSize = new System.Drawing.Size(279, 402);
             this.Controls.Add(this.buttonConectare);
             this.Controls.Add(this.labelPasswd);
             this.Controls.Add(this.labelUsername);
             this.Controls.Add(this.textBoxPasswd);
             this.Controls.Add(this.textBoxUsername);
             this.Name = "FormLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
             this.PerformLayout();
 

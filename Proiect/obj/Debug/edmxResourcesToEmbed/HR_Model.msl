@@ -151,5 +151,14 @@
     <FunctionImportMapping FunctionImportName="MoveDepartament" FunctionName="HRModel.Store.MoveDepartament" />
     <FunctionImportMapping FunctionImportName="MoveFunctie" FunctionName="HRModel.Store.MoveFunctie" />
     <FunctionImportMapping FunctionImportName="ModifyDepartamente" FunctionName="HRModel.Store.ModifyDepartamente" />
+    <EntitySetMapping Name="Logins">
+      <EntityTypeMapping TypeName="HRModel.Logins">
+        <MappingFragment StoreEntitySet="Logins">
+          <ScalarProperty Name="Parola" ColumnName="Parola" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

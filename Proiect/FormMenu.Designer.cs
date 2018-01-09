@@ -105,6 +105,7 @@
             this.Controls.Add(this.buttonModificariAngajati);
             this.Controls.Add(this.buttonAngajatNou);
             this.Name = "FormMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Management Angajati";
             this.ResumeLayout(false);
 

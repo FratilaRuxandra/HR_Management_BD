@@ -107,6 +107,14 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
           <Property Name="Id_Grad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Id_Salariu" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="Logins">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Parola" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="Proiecte">
           <Key>
             <PropertyRef Name="Id_Proiect" />
@@ -344,6 +352,7 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
           <EntitySet Name="Fise Medicale" EntityType="Self.Fise Medicale" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Functii" EntityType="Self.Functii" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Grade" EntityType="Self.Grade" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Logins" EntityType="Self.Logins" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Proiecte" EntityType="Self.Proiecte" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Rude" EntityType="Self.Rude" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Salarii" EntityType="Self.Salarii" Schema="dbo" store:Type="Tables" />
@@ -759,6 +768,7 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
             <Parameter Name="NumeNou" Mode="In" Type="String" />
             <Parameter Name="NumeSef" Mode="In" Type="String" />
           </FunctionImport>
+          <EntitySet Name="Logins" EntityType="HRModel.Logins" />
         </EntityContainer>
         <EntityType Name="Rude">
           <Key>
@@ -784,6 +794,14 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Logins">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Parola" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -940,6 +958,15 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
           <FunctionImportMapping FunctionImportName="MoveDepartament" FunctionName="HRModel.Store.MoveDepartament" />
           <FunctionImportMapping FunctionImportName="MoveFunctie" FunctionName="HRModel.Store.MoveFunctie" />
           <FunctionImportMapping FunctionImportName="ModifyDepartamente" FunctionName="HRModel.Store.ModifyDepartamente" />
+          <EntitySetMapping Name="Logins">
+            <EntityTypeMapping TypeName="HRModel.Logins">
+              <MappingFragment StoreEntitySet="Logins">
+                <ScalarProperty Name="Parola" ColumnName="Parola" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

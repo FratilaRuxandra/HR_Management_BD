@@ -330,6 +330,7 @@
       <Parameter Name="NumeNou" Mode="In" Type="String" />
       <Parameter Name="NumeSef" Mode="In" Type="String" />
     </FunctionImport>
+    <EntitySet Name="Logins" EntityType="HRModel.Logins" />
   </EntityContainer>
   <EntityType Name="Rude">
     <Key>
@@ -355,4 +356,12 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="Logins">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Parola" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

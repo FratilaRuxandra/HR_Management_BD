@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,11 +17,12 @@ namespace Proiect
         {
             InitializeComponent();
         }
+       
 
         private void buttonAngajatNou_Click(object sender, EventArgs e)
         {
             FormAngajatNou formAngajatNou = new FormAngajatNou();
-            this.Hide();
+            //this.Hide();
             formAngajatNou.ShowDialog();
             this.Show();
         }

@@ -12,18 +12,19 @@ namespace Proiect
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
+
+      
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormLogin());
 
-            //terminat admin-ul
-            //criptat parole 
-            //erori
-            //export 
-            //merge cu restul 
-            //upload cv
-        }
+              
+
+   
+        //export 
+        //upload cv
+    }
     }
 }

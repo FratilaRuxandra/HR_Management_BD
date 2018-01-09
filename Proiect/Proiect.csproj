@@ -135,6 +135,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HR_Model.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Logins.cs">
+      <DependentUpon>HR_Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Proiecte.cs">
       <DependentUpon>HR_Model.tt</DependentUpon>

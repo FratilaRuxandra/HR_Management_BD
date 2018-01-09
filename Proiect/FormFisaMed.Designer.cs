@@ -162,6 +162,7 @@
             this.Controls.Add(this.labelInaltime);
             this.Controls.Add(this.labelGrupa);
             this.Name = "FormFisaMed";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormFisaMed";
             this.Load += new System.EventHandler(this.FormFisaMed_Load);
             this.ResumeLayout(false);

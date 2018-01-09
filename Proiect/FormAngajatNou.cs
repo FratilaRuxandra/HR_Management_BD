@@ -286,105 +286,112 @@ namespace Proiect
 
         private void buttonAddAngajat_Click(object sender, EventArgs e)
         {
+            try { 
             IFormatProvider culture = new System.Globalization.CultureInfo("fr-FR", true);
             data_nastere = DateTime.Parse(data_nasterestring, culture, System.Globalization.DateTimeStyles.AssumeLocal);
-            using (var context = new HREntities1())
-            {
-                var results_grad =( from c in context.Grade
-                              where c.Denumire == grad
-                              select new
-                              {
-                                  c.Id_Grad
-                              }).First();
-                var results_functie = (from c in context.Functii
-                                       where c.Denumire == functie
-                                       select new
-                                       {
-                                           c.Id_Functie
-                                       }).First();
-                var solda_functie = (from c in context.Functii
-                                     where c.Denumire == functie
-                                     select new
-                                     {
-                                         c.Solda_functie
-                                     }).First();
-                var solda_grad = (from c in context.Grade
-                                  where c.Denumire == grad
-                                  select new
-                                  {
-                                      c.Solda_grad
-                                  }).First();
-                var results_departament = (from c in context.Departamente
-                                           where c.Nume_Departament == departament
+                using (var context = new HREntities1())
+                {
+                    var results_grad = (from c in context.Grade
+                                        where c.Denumire == grad
+                                        select new
+                                        {
+                                            c.Id_Grad
+                                        }).First();
+                    var results_functie = (from c in context.Functii
+                                           where c.Denumire == functie
                                            select new
                                            {
-                                               c.Id_Departament
+                                               c.Id_Functie
                                            }).First();
-                var results_proiect = (from c in context.Proiecte
-                                       where c.Nume_Proiect== proiect
-                                       select new
-                                       {
-                                           c.Id_Proiect
-                                       }).First();
+                    var solda_functie = (from c in context.Functii
+                                         where c.Denumire == functie
+                                         select new
+                                         {
+                                             c.Solda_functie
+                                         }).First();
+                    var solda_grad = (from c in context.Grade
+                                      where c.Denumire == grad
+                                      select new
+                                      {
+                                          c.Solda_grad
+                                      }).First();
+                    var results_departament = (from c in context.Departamente
+                                               where c.Nume_Departament == departament
+                                               select new
+                                               {
+                                                   c.Id_Departament
+                                               }).First();
+                    var results_proiect = (from c in context.Proiecte
+                                           where c.Nume_Proiect == proiect
+                                           select new
+                                           {
+                                               c.Id_Proiect
+                                           }).First();
 
-                var newAdresa = new Adrese()
-                {
-                    Strada = strada,
-                    Nr_Strada = Convert.ToInt32(nr_strada),
-                    Bloc=bloc,
-                    Apartament=Convert.ToInt32(apartament),
-                    Oras=localitate,
-                    Judet_Sector=jud_sector,
-                   
-                };
-                context.Adrese.Add(newAdresa);
-                context.SaveChanges();
-                var newSalariu = new Salarii()
-                {
-                    Solda_functie = solda_functie.Solda_functie,
-                    Solda_grad = solda_grad.Solda_grad,
-                    Spor_conditii_de_munca = 500,
-                    Total = solda_functie.Solda_functie + solda_grad.Solda_grad + 100
+                    var newAdresa = new Adrese()
+                    {
+                        Strada = strada,
+                        Nr_Strada = Convert.ToInt32(nr_strada),
+                        Bloc = bloc,
+                        Apartament = Convert.ToInt32(apartament),
+                        Oras = localitate,
+                        Judet_Sector = jud_sector,
 
-                };
-                context.Salarii.Add(newSalariu);
-                context.SaveChanges();
-                var newAngajat = new Angajati()
-                {
-                    Nume_Angajat = nume,
-                    Prenume_Angajat = prenume,
-                    Numar_Telefon = telefon,
-                    Email = email,
-                    Id_Grad = results_grad.Id_Grad,
-                    CNP = cnp,
-                    Data_Nastere = data_nastere,
-                    Id_Salariu=newSalariu.Id_Salariu,
-                    Id_Fisa_Med=id_fisamed,
-                    Id_Adresa = newAdresa.Id_Adresa,
-                    Id_Functie = results_functie.Id_Functie,
-                    Id_Departament = results_departament.Id_Departament,
-                    Id_Proiect_Curent = results_proiect.Id_Proiect,
-                    Data_Angajare = DateTime.Now
-                    
-                  };
-            context.Angajati.Add(newAngajat);
-            context.SaveChanges();
-                var update_rude = from c in context.Rude
-                                  where c.Id_Angajat == null
-                                  select c;
-                                  
-                foreach(var item in update_rude)
-                {
-                    item.Id_Angajat= newAngajat.Id_Angajat;
+                    };
+                    context.Adrese.Add(newAdresa);
+                    context.SaveChanges();
+                    var newSalariu = new Salarii()
+                    {
+                        Solda_functie = solda_functie.Solda_functie,
+                        Solda_grad = solda_grad.Solda_grad,
+                        Spor_conditii_de_munca = 500,
+                        Total = solda_functie.Solda_functie + solda_grad.Solda_grad + 100
+
+                    };
+                    context.Salarii.Add(newSalariu);
+                    context.SaveChanges();
+                    var newAngajat = new Angajati()
+                    {
+                        Nume_Angajat = nume,
+                        Prenume_Angajat = prenume,
+                        Numar_Telefon = telefon,
+                        Email = email,
+                        Id_Grad = results_grad.Id_Grad,
+                        CNP = cnp,
+                        Data_Nastere = data_nastere,
+                        Id_Salariu = newSalariu.Id_Salariu,
+                        Id_Fisa_Med = id_fisamed,
+                        Id_Adresa = newAdresa.Id_Adresa,
+                        Id_Functie = results_functie.Id_Functie,
+                        Id_Departament = results_departament.Id_Departament,
+                        Id_Proiect_Curent = results_proiect.Id_Proiect,
+                        Data_Angajare = DateTime.Now
+
+                    };
+                    context.Angajati.Add(newAngajat);
+                    context.SaveChanges();
+                    var update_rude = from c in context.Rude
+                                      where c.Id_Angajat == null
+                                      select c;
+
+                    foreach (var item in update_rude)
+                    {
+                        item.Id_Angajat = newAngajat.Id_Angajat;
+                    }
+                    context.SaveChanges();
+
+
+
+
+                    this.Close();
                 }
-                context.SaveChanges();
-
-
-
-
-                this.Close();
+                catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
 
             }
+
+        }
             
         }
     }
