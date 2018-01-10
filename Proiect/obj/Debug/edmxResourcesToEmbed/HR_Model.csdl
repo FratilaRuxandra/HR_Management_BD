@@ -43,6 +43,7 @@
     <NavigationProperty Name="Proiecte" Relationship="Self.FK__Angajati__Id_Pro__2E1BDC42" FromRole="Angajati" ToRole="Proiecte" />
     <NavigationProperty Name="Salarii" Relationship="Self.FK__Angajati__Id_Sal__2B3F6F97" FromRole="Angajati" ToRole="Salarii" />
     <NavigationProperty Name="Rude" Relationship="HRModel.FK__Rude__Id_Angajat__49C3F6B7" FromRole="Angajati" ToRole="Rude" />
+    <NavigationProperty Name="CVuri" Relationship="HRModel.FK__CVuri__Id_Angaja__619B8048" FromRole="Angajati" ToRole="CVuri" />
   </EntityType>
   <EntityType Name="Departamente">
     <Key>
@@ -325,6 +326,17 @@
       <Parameter Name="PrenumeAngajat" Mode="In" Type="String" />
       <Parameter Name="NouaFunctie" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="ModifyDepartamente">
+      <Parameter Name="NumeDepartament" Mode="In" Type="String" />
+      <Parameter Name="NumeNou" Mode="In" Type="String" />
+      <Parameter Name="NumeSef" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="Logins" EntityType="HRModel.Logins" />
+    <EntitySet Name="CVuri" EntityType="HRModel.CVuri" />
+    <AssociationSet Name="FK__CVuri__Id_Angaja__619B8048" Association="HRModel.FK__CVuri__Id_Angaja__619B8048">
+      <End Role="Angajati" EntitySet="Angajati" />
+      <End Role="CVuri" EntitySet="CVuri" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Rude">
     <Key>
@@ -346,6 +358,35 @@
         <PropertyRef Name="Id_Angajat" />
       </Principal>
       <Dependent Role="Rude">
+        <PropertyRef Name="Id_Angajat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Logins">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Parola" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CVuri">
+    <Key>
+      <PropertyRef Name="Id_CV" />
+    </Key>
+    <Property Name="Id_CV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Angajat" Type="Int32" Nullable="false" />
+    <Property Name="Cale_fisier" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Angajati" Relationship="HRModel.FK__CVuri__Id_Angaja__619B8048" FromRole="CVuri" ToRole="Angajati" />
+  </EntityType>
+  <Association Name="FK__CVuri__Id_Angaja__619B8048">
+    <End Type="HRModel.Angajati" Role="Angajati" Multiplicity="1" />
+    <End Type="HRModel.CVuri" Role="CVuri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Angajati">
+        <PropertyRef Name="Id_Angajat" />
+      </Principal>
+      <Dependent Role="CVuri">
         <PropertyRef Name="Id_Angajat" />
       </Dependent>
     </ReferentialConstraint>

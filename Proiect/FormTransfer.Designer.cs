@@ -164,6 +164,7 @@
             this.Controls.Add(this.labelPrenume);
             this.Controls.Add(this.labelNume);
             this.Name = "FormTransfer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormTransfer";
             this.Load += new System.EventHandler(this.FormTransfer_Load);
             this.ResumeLayout(false);

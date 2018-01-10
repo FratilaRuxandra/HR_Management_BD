@@ -35,24 +35,24 @@ namespace Proiect
                 }
             }
         }
-        //private void search(string nume)
-        //{
-        //    using (var context = new HREntities1())
-        //    {
-        //        var results = (from c in context.Angajati
-        //                       where c.Nume_Angajat==nume
-        //                       select new
-        //                       {
-        //                           c.Nume_Angajat
-        //                       }).First();
-        //        if(results.ToString().Length==0)
-        //        {
-        //            MessageBox.Show("Numele introdus nu se afla in baza de date");
-        //            //this.Close();
-        //        }
-               
-        //    }
-        //}
+        private void search(string nume)
+        {
+            using (var context = new HREntities1())
+            {
+                var results = (from c in context.Angajati
+                               where c.Nume_Angajat == nume
+                               select new
+                               {
+                                   c.Nume_Angajat
+                               }).FirstOrDefault();
+                if (results==null)
+                {
+                    MessageBox.Show("Numele introdus nu se afla in baza de date");
+                    
+                }
+
+            }
+        }
         private void populate_Departamente()
         {
             using (var context = new HREntities1())
@@ -132,13 +132,21 @@ namespace Proiect
 
         private void buttonFinish_Click(object sender, EventArgs e)
         {
-            var context = new HREntities1();
-            //search(nume);
-            if (func == true)
-                context.MoveFunctie(nume, prenume, functie);
-            if (dep == true)
-                context.MoveDepartament(nume, prenume, departament);
-            this.Close();
+            try
+            {
+                var context = new HREntities1();
+                search(nume);
+                if (func == true)
+                    context.MoveFunctie(nume, prenume, functie);
+                if (dep == true)
+                    context.MoveDepartament(nume, prenume, departament);
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
         }
     }
 }

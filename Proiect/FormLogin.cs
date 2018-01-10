@@ -8,8 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Security.Cryptography;
 
-namespace Proiect
+namespace Proiect 
 {
     public partial class FormLogin : Form
     {
@@ -19,7 +20,8 @@ namespace Proiect
         {
             InitializeComponent();
         }
-
+        
+            
         private void labelUsername_Click(object sender, EventArgs e)
         {
 
@@ -28,7 +30,7 @@ namespace Proiect
         private void textBoxUsername_TextChanged(object sender, EventArgs e)
         {
             username = textBoxUsername.Text;
-            
+
         }
 
         private void textBoxPasswd_TextChanged(object sender, EventArgs e)
@@ -39,32 +41,56 @@ namespace Proiect
 
         private void buttonConectare_Click(object sender, EventArgs e)
         {
-            //SqlConnectionStringBuilder bu = new SqlConnectionStringBuilder();
-
-            //bu.DataSource = ".";
-            //bu.InitialCatalog = "HR";
-            //bu.IntegratedSecurity = false;
-            //bu.UserID = username;
-            //bu.Password = password;
-
-            //SqlConnection con = new SqlConnection(bu.ConnectionString);
-            //try
-            //{
-            //    con.Open();
-            //}catch(SqlException exp)
-            //{
-            //    ///////////de facut o exceptie ptr conexiune esuata si una ptr username/parola incorecta
-            //    MessageBox.Show("Username sau parola incorecta");
-            //    this.Close();
-            //}
-            if (username == "DepHR" && password == "parolahr")
+            try
             {
-                FormMenu f2 = new FormMenu();
-                this.Hide();
-                f2.ShowDialog();
-                this.Close();
-            }
+                var context = new HREntities1();
+                var result = (from c in context.Logins
+                              where c.Username == username
+                              select c.Username).FirstOrDefault();
+                if (result == null)
+                {
+                    MessageBox.Show("Username incorect");
+                    this.Close();
+                }
+                else
+                {
+                    var result1 = (from c in context.Logins
+                                   where c.Username == username
+                                   select c.Parola).FirstOrDefault();
+                    if (password != Encoding.Unicode.GetString(Convert.FromBase64String(result1)))
+                    {
+                        MessageBox.Show("Parola incorecta");
+                        this.Close();
+                    }
+                    else
+                    {
+                        if (username == "hr")
+                        {
+                            FormMenu f2 = new FormMenu();
+                            this.Hide();
+                            f2.ShowDialog();
+                            this.Close();
+                        }
+                        if (username == "admin")
+                        {
+                            FormMenuAdmin f3 = new FormMenuAdmin();
+                            this.Hide();
+                            f3.ShowDialog();
+                            this.Close();
+                        }
+                        if (username == "guest")
+                        {
+                            MessageBox.Show("in constructie");
+                        }
+                    }
 
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
         }
        
     }

@@ -52,6 +52,14 @@ warning 6002: The table/view 'HR.dbo.Angajati_Departament' does not have a prima
           <Property Name="Data_Inceput" Type="date" Nullable="false" />
           <Property Name="Data_Sfarsit" Type="date" />
         </EntityType>
+        <EntityType Name="CVuri">
+          <Key>
+            <PropertyRef Name="Id_CV" />
+          </Key>
+          <Property Name="Id_CV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_Angajat" Type="int" Nullable="false" />
+          <Property Name="Cale_fisier" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="Departamente">
           <Key>
             <PropertyRef Name="Id_Departament" />
@@ -106,6 +114,14 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
           </Key>
           <Property Name="Id_Grad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Id_Salariu" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Logins">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Parola" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Proiecte">
           <Key>
@@ -256,6 +272,18 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__CVuri__Id_Angaja__619B8048">
+          <End Role="Angajati" Type="Self.Angajati" Multiplicity="1" />
+          <End Role="CVuri" Type="Self.CVuri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Angajati">
+              <PropertyRef Name="Id_Angajat" />
+            </Principal>
+            <Dependent Role="CVuri">
+              <PropertyRef Name="Id_Angajat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Functii_S__Id_Fu__1A14E395">
           <End Role="Functii" Type="Self.Functii" Multiplicity="1" />
           <End Role="Functii_Salarii" Type="Self.Functii_Salarii" Multiplicity="*" />
@@ -316,6 +344,11 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="ModifyDepartamente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NumeDepartament" Type="nvarchar" Mode="In" />
+          <Parameter Name="NumeNou" Type="nvarchar" Mode="In" />
+          <Parameter Name="NumeSef" Type="nvarchar" Mode="In" />
+        </Function>
         <Function Name="MoveAngajat" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="NumeAngajat" Type="nvarchar" Mode="In" />
           <Parameter Name="PrenumeAngajat" Type="nvarchar" Mode="In" />
@@ -335,10 +368,12 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
         <EntityContainer Name="HRModelStoreContainer">
           <EntitySet Name="Adrese" EntityType="Self.Adrese" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Angajati" EntityType="Self.Angajati" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CVuri" EntityType="Self.CVuri" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Departamente" EntityType="Self.Departamente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Fise Medicale" EntityType="Self.Fise Medicale" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Functii" EntityType="Self.Functii" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Grade" EntityType="Self.Grade" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Logins" EntityType="Self.Logins" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Proiecte" EntityType="Self.Proiecte" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Rude" EntityType="Self.Rude" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Salarii" EntityType="Self.Salarii" Schema="dbo" store:Type="Tables" />
@@ -398,6 +433,10 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
           <AssociationSet Name="FK__Angajati__Id_Sal__2B3F6F97" Association="Self.FK__Angajati__Id_Sal__2B3F6F97">
             <End Role="Salarii" EntitySet="Salarii" />
             <End Role="Angajati" EntitySet="Angajati" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CVuri__Id_Angaja__619B8048" Association="Self.FK__CVuri__Id_Angaja__619B8048">
+            <End Role="Angajati" EntitySet="Angajati" />
+            <End Role="CVuri" EntitySet="CVuri" />
           </AssociationSet>
           <AssociationSet Name="FK__Functii_S__Id_Fu__1A14E395" Association="Self.FK__Functii_S__Id_Fu__1A14E395">
             <End Role="Functii" EntitySet="Functii" />
@@ -467,6 +506,7 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
           <NavigationProperty Name="Proiecte" Relationship="Self.FK__Angajati__Id_Pro__2E1BDC42" FromRole="Angajati" ToRole="Proiecte" />
           <NavigationProperty Name="Salarii" Relationship="Self.FK__Angajati__Id_Sal__2B3F6F97" FromRole="Angajati" ToRole="Salarii" />
           <NavigationProperty Name="Rude" Relationship="HRModel.FK__Rude__Id_Angajat__49C3F6B7" FromRole="Angajati" ToRole="Rude" />
+          <NavigationProperty Name="CVuri" Relationship="HRModel.FK__CVuri__Id_Angaja__619B8048" FromRole="Angajati" ToRole="CVuri" />
         </EntityType>
         <EntityType Name="Departamente">
           <Key>
@@ -749,6 +789,17 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
             <Parameter Name="PrenumeAngajat" Mode="In" Type="String" />
             <Parameter Name="NouaFunctie" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="ModifyDepartamente">
+            <Parameter Name="NumeDepartament" Mode="In" Type="String" />
+            <Parameter Name="NumeNou" Mode="In" Type="String" />
+            <Parameter Name="NumeSef" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="Logins" EntityType="HRModel.Logins" />
+          <EntitySet Name="CVuri" EntityType="HRModel.CVuri" />
+          <AssociationSet Name="FK__CVuri__Id_Angaja__619B8048" Association="HRModel.FK__CVuri__Id_Angaja__619B8048">
+            <End Role="Angajati" EntitySet="Angajati" />
+            <End Role="CVuri" EntitySet="CVuri" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Rude">
           <Key>
@@ -770,6 +821,35 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
               <PropertyRef Name="Id_Angajat" />
             </Principal>
             <Dependent Role="Rude">
+              <PropertyRef Name="Id_Angajat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Logins">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Parola" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CVuri">
+          <Key>
+            <PropertyRef Name="Id_CV" />
+          </Key>
+          <Property Name="Id_CV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_Angajat" Type="Int32" Nullable="false" />
+          <Property Name="Cale_fisier" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Angajati" Relationship="HRModel.FK__CVuri__Id_Angaja__619B8048" FromRole="CVuri" ToRole="Angajati" />
+        </EntityType>
+        <Association Name="FK__CVuri__Id_Angaja__619B8048">
+          <End Type="HRModel.Angajati" Role="Angajati" Multiplicity="1" />
+          <End Type="HRModel.CVuri" Role="CVuri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Angajati">
+              <PropertyRef Name="Id_Angajat" />
+            </Principal>
+            <Dependent Role="CVuri">
               <PropertyRef Name="Id_Angajat" />
             </Dependent>
           </ReferentialConstraint>
@@ -929,6 +1009,25 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
           <FunctionImportMapping FunctionImportName="MoveAngajat" FunctionName="HRModel.Store.MoveAngajat" />
           <FunctionImportMapping FunctionImportName="MoveDepartament" FunctionName="HRModel.Store.MoveDepartament" />
           <FunctionImportMapping FunctionImportName="MoveFunctie" FunctionName="HRModel.Store.MoveFunctie" />
+          <FunctionImportMapping FunctionImportName="ModifyDepartamente" FunctionName="HRModel.Store.ModifyDepartamente" />
+          <EntitySetMapping Name="Logins">
+            <EntityTypeMapping TypeName="HRModel.Logins">
+              <MappingFragment StoreEntitySet="Logins">
+                <ScalarProperty Name="Parola" ColumnName="Parola" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CVuri">
+            <EntityTypeMapping TypeName="HRModel.CVuri">
+              <MappingFragment StoreEntitySet="CVuri">
+                <ScalarProperty Name="Cale_fisier" ColumnName="Cale_fisier" />
+                <ScalarProperty Name="Id_Angajat" ColumnName="Id_Angajat" />
+                <ScalarProperty Name="Id_CV" ColumnName="Id_CV" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

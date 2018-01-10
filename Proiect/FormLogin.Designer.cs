@@ -47,16 +47,19 @@
             // 
             this.textBoxPasswd.Location = new System.Drawing.Point(58, 231);
             this.textBoxPasswd.Name = "textBoxPasswd";
+            this.textBoxPasswd.PasswordChar = '*';
             this.textBoxPasswd.Size = new System.Drawing.Size(147, 20);
             this.textBoxPasswd.TabIndex = 1;
+            this.textBoxPasswd.UseSystemPasswordChar = true;
             this.textBoxPasswd.TextChanged += new System.EventHandler(this.textBoxPasswd_TextChanged);
             // 
             // labelUsername
             // 
             this.labelUsername.AutoSize = true;
+            this.labelUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUsername.Location = new System.Drawing.Point(55, 127);
             this.labelUsername.Name = "labelUsername";
-            this.labelUsername.Size = new System.Drawing.Size(58, 13);
+            this.labelUsername.Size = new System.Drawing.Size(77, 15);
             this.labelUsername.TabIndex = 2;
             this.labelUsername.Text = "Username:";
             this.labelUsername.Click += new System.EventHandler(this.labelUsername_Click);
@@ -64,17 +67,19 @@
             // labelPasswd
             // 
             this.labelPasswd.AutoSize = true;
+            this.labelPasswd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPasswd.Location = new System.Drawing.Point(55, 205);
             this.labelPasswd.Name = "labelPasswd";
-            this.labelPasswd.Size = new System.Drawing.Size(40, 13);
+            this.labelPasswd.Size = new System.Drawing.Size(53, 15);
             this.labelPasswd.TabIndex = 3;
             this.labelPasswd.Text = "Parola:";
             // 
             // buttonConectare
             // 
+            this.buttonConectare.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonConectare.Location = new System.Drawing.Point(88, 284);
             this.buttonConectare.Name = "buttonConectare";
-            this.buttonConectare.Size = new System.Drawing.Size(75, 23);
+            this.buttonConectare.Size = new System.Drawing.Size(90, 24);
             this.buttonConectare.TabIndex = 4;
             this.buttonConectare.Text = "Conectare\r\n";
             this.buttonConectare.UseVisualStyleBackColor = true;
@@ -85,13 +90,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(310, 405);
+            this.ClientSize = new System.Drawing.Size(279, 402);
             this.Controls.Add(this.buttonConectare);
             this.Controls.Add(this.labelPasswd);
             this.Controls.Add(this.labelUsername);
             this.Controls.Add(this.textBoxPasswd);
             this.Controls.Add(this.textBoxUsername);
             this.Name = "FormLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
             this.PerformLayout();
 

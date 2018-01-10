@@ -19,6 +19,7 @@ namespace Proiect
         {
             this.Angajati_Departament = new HashSet<Angajati_Departament>();
             this.Rude = new HashSet<Rude>();
+            this.CVuri = new HashSet<CVuri>();
         }
     
         public int Id_Angajat { get; set; }
@@ -50,5 +51,7 @@ namespace Proiect
         public virtual Salarii Salarii { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Rude> Rude { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CVuri> CVuri { get; set; }
     }
 }

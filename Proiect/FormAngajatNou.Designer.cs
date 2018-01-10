@@ -180,7 +180,7 @@
             // labelFunctie
             // 
             this.labelFunctie.AutoSize = true;
-            this.labelFunctie.Location = new System.Drawing.Point(19, 181);
+            this.labelFunctie.Location = new System.Drawing.Point(264, 125);
             this.labelFunctie.Name = "labelFunctie";
             this.labelFunctie.Size = new System.Drawing.Size(42, 13);
             this.labelFunctie.TabIndex = 27;
@@ -191,7 +191,7 @@
             // 
             this.comboBoxFunctii.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxFunctii.FormattingEnabled = true;
-            this.comboBoxFunctii.Location = new System.Drawing.Point(69, 176);
+            this.comboBoxFunctii.Location = new System.Drawing.Point(314, 120);
             this.comboBoxFunctii.Name = "comboBoxFunctii";
             this.comboBoxFunctii.Size = new System.Drawing.Size(153, 21);
             this.comboBoxFunctii.TabIndex = 28;
@@ -200,7 +200,7 @@
             // labelDepartament
             // 
             this.labelDepartament.AutoSize = true;
-            this.labelDepartament.Location = new System.Drawing.Point(238, 179);
+            this.labelDepartament.Location = new System.Drawing.Point(19, 149);
             this.labelDepartament.Name = "labelDepartament";
             this.labelDepartament.Size = new System.Drawing.Size(68, 13);
             this.labelDepartament.TabIndex = 29;
@@ -211,7 +211,7 @@
             // 
             this.comboBoxDepartamente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDepartamente.FormattingEnabled = true;
-            this.comboBoxDepartamente.Location = new System.Drawing.Point(312, 178);
+            this.comboBoxDepartamente.Location = new System.Drawing.Point(93, 148);
             this.comboBoxDepartamente.Name = "comboBoxDepartamente";
             this.comboBoxDepartamente.Size = new System.Drawing.Size(155, 21);
             this.comboBoxDepartamente.TabIndex = 30;
@@ -338,7 +338,7 @@
             // labelProiect
             // 
             this.labelProiect.AutoSize = true;
-            this.labelProiect.Location = new System.Drawing.Point(473, 181);
+            this.labelProiect.Location = new System.Drawing.Point(481, 125);
             this.labelProiect.Name = "labelProiect";
             this.labelProiect.Size = new System.Drawing.Size(40, 13);
             this.labelProiect.TabIndex = 31;
@@ -349,7 +349,7 @@
             // 
             this.comboBoxProiect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxProiect.FormattingEnabled = true;
-            this.comboBoxProiect.Location = new System.Drawing.Point(519, 178);
+            this.comboBoxProiect.Location = new System.Drawing.Point(527, 125);
             this.comboBoxProiect.Name = "comboBoxProiect";
             this.comboBoxProiect.Size = new System.Drawing.Size(155, 21);
             this.comboBoxProiect.TabIndex = 32;
@@ -357,9 +357,9 @@
             // 
             // buttonAddAngajat
             // 
-            this.buttonAddAngajat.Location = new System.Drawing.Point(497, 332);
+            this.buttonAddAngajat.Location = new System.Drawing.Point(297, 246);
             this.buttonAddAngajat.Name = "buttonAddAngajat";
-            this.buttonAddAngajat.Size = new System.Drawing.Size(154, 50);
+            this.buttonAddAngajat.Size = new System.Drawing.Size(120, 38);
             this.buttonAddAngajat.TabIndex = 0;
             this.buttonAddAngajat.Text = "Finalizare";
             this.buttonAddAngajat.UseVisualStyleBackColor = true;
@@ -375,9 +375,9 @@
             // 
             // buttonTabelRude
             // 
-            this.buttonTabelRude.Location = new System.Drawing.Point(22, 358);
+            this.buttonTabelRude.Location = new System.Drawing.Point(69, 189);
             this.buttonTabelRude.Name = "buttonTabelRude";
-            this.buttonTabelRude.Size = new System.Drawing.Size(93, 24);
+            this.buttonTabelRude.Size = new System.Drawing.Size(177, 28);
             this.buttonTabelRude.TabIndex = 33;
             this.buttonTabelRude.Text = "Tabel Rude";
             this.buttonTabelRude.UseVisualStyleBackColor = true;
@@ -385,9 +385,9 @@
             // 
             // buttonFisaMedicala
             // 
-            this.buttonFisaMedicala.Location = new System.Drawing.Point(153, 358);
+            this.buttonFisaMedicala.Location = new System.Drawing.Point(279, 189);
             this.buttonFisaMedicala.Name = "buttonFisaMedicala";
-            this.buttonFisaMedicala.Size = new System.Drawing.Size(93, 24);
+            this.buttonFisaMedicala.Size = new System.Drawing.Size(177, 28);
             this.buttonFisaMedicala.TabIndex = 34;
             this.buttonFisaMedicala.Text = "Fisa Medicala";
             this.buttonFisaMedicala.UseVisualStyleBackColor = true;
@@ -395,9 +395,9 @@
             // 
             // buttonCV
             // 
-            this.buttonCV.Location = new System.Drawing.Point(288, 358);
+            this.buttonCV.Location = new System.Drawing.Point(496, 189);
             this.buttonCV.Name = "buttonCV";
-            this.buttonCV.Size = new System.Drawing.Size(93, 23);
+            this.buttonCV.Size = new System.Drawing.Size(177, 28);
             this.buttonCV.TabIndex = 35;
             this.buttonCV.Text = "Upload CV";
             this.buttonCV.UseVisualStyleBackColor = true;
@@ -408,16 +408,15 @@
             this.labelOptional.AutoSize = true;
             this.labelOptional.Location = new System.Drawing.Point(19, 322);
             this.labelOptional.Name = "labelOptional";
-            this.labelOptional.Size = new System.Drawing.Size(49, 13);
+            this.labelOptional.Size = new System.Drawing.Size(0, 13);
             this.labelOptional.TabIndex = 36;
-            this.labelOptional.Text = "Optional:";
             this.labelOptional.Click += new System.EventHandler(this.labelOptional_Click);
             // 
             // FormAngajatNou
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(701, 405);
+            this.ClientSize = new System.Drawing.Size(701, 299);
             this.Controls.Add(this.labelOptional);
             this.Controls.Add(this.buttonCV);
             this.Controls.Add(this.buttonFisaMedicala);
@@ -456,7 +455,8 @@
             this.Controls.Add(this.labelPrenume);
             this.Controls.Add(this.labelNume);
             this.Name = "FormAngajatNou";
-            this.Text = "FormAngajatNou";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Formular de angajare-toate campurile obligatorii";
             this.Load += new System.EventHandler(this.FormAngajatNou_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

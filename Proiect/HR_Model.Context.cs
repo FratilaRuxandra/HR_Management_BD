@@ -38,6 +38,8 @@ namespace Proiect
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Angajati_Departament> Angajati_Departament { get; set; }
         public virtual DbSet<Rude> Rude { get; set; }
+        public virtual DbSet<Logins> Logins { get; set; }
+        public virtual DbSet<CVuri> CVuri { get; set; }
     
         public virtual int MoveAngajat(string numeAngajat, string prenumeAngajat, string noulDepartament, string nouaFunctie)
         {
@@ -92,6 +94,23 @@ namespace Proiect
                 new ObjectParameter("NouaFunctie", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("MoveFunctie", numeAngajatParameter, prenumeAngajatParameter, nouaFunctieParameter);
+        }
+    
+        public virtual int ModifyDepartamente(string numeDepartament, string numeNou, string numeSef)
+        {
+            var numeDepartamentParameter = numeDepartament != null ?
+                new ObjectParameter("NumeDepartament", numeDepartament) :
+                new ObjectParameter("NumeDepartament", typeof(string));
+    
+            var numeNouParameter = numeNou != null ?
+                new ObjectParameter("NumeNou", numeNou) :
+                new ObjectParameter("NumeNou", typeof(string));
+    
+            var numeSefParameter = numeSef != null ?
+                new ObjectParameter("NumeSef", numeSef) :
+                new ObjectParameter("NumeSef", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ModifyDepartamente", numeDepartamentParameter, numeNouParameter, numeSefParameter);
         }
     }
 }

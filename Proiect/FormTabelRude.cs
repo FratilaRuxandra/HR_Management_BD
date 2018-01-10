@@ -77,25 +77,33 @@ namespace Proiect
 
         private void buttonAdauga_Click(object sender, EventArgs e)
         {
-            using (var context = new HREntities1())
+            try
             {
-                var newRuda = new Rude()
+                using (var context = new HREntities1())
                 {
-                    Grad_rudenie=grad_rudenie,
-                    Nume = nume,
-                    Prenume=prenume,
-                    CNP=cnp
-                    
-                    
-                };
-                context.Rude.Add(newRuda);
-                context.SaveChanges();
-                ClearTextBoxes();
-                
+                    var newRuda = new Rude()
+                    {
+                        Grad_rudenie = grad_rudenie,
+                        Nume = nume,
+                        Prenume = prenume,
+                        CNP = cnp
+
+
+                    };
+                    context.Rude.Add(newRuda);
+                    context.SaveChanges();
+                    ClearTextBoxes();
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
 
             }
 
-            
+
 
         }
     }

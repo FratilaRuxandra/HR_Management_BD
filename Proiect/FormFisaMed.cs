@@ -76,22 +76,30 @@ namespace Proiect
 
         private void buttonAdauga_Click(object sender, EventArgs e)
         {
-            using (var context = new HREntities1())
+            try
             {
-                var newFisa = new Fise_Medicale()
+                using (var context = new HREntities1())
                 {
-                    Inaltime = Convert.ToDouble(inaltime),
-                    Greutate = Convert.ToInt32(greutate),
-                    Stare_Sanatate = stare,
-                    Observatii = observatii,
-                    Grupa_Sange = grupa
+                    var newFisa = new Fise_Medicale()
+                    {
+                        Inaltime = Convert.ToDouble(inaltime),
+                        Greutate = Convert.ToInt32(greutate),
+                        Stare_Sanatate = stare,
+                        Observatii = observatii,
+                        Grupa_Sange = grupa
 
 
-                };
-                context.Fise_Medicale.Add(newFisa);
-                context.SaveChanges();
-                id_fisamed = newFisa.Id_FisaMed;
-                this.Close();
+                    };
+                    context.Fise_Medicale.Add(newFisa);
+                    context.SaveChanges();
+                    id_fisamed = newFisa.Id_FisaMed;
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
             }
         }
 

@@ -66,6 +66,9 @@
     <Compile Include="Angajati_Departament.cs">
       <DependentUpon>HR_Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="CVuri.cs">
+      <DependentUpon>HR_Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Departamente.cs">
       <DependentUpon>HR_Model.tt</DependentUpon>
     </Compile>
@@ -95,6 +98,12 @@
     </Compile>
     <Compile Include="FormAngajatNou.Designer.cs">
       <DependentUpon>FormAngajatNou.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMenuAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenuAdmin.Designer.cs">
+      <DependentUpon>FormMenuAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTabelRude.cs">
       <SubType>Form</SubType>
@@ -129,6 +138,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HR_Model.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Logins.cs">
+      <DependentUpon>HR_Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Proiecte.cs">
       <DependentUpon>HR_Model.tt</DependentUpon>
@@ -154,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAngajatNou.resx">
       <DependentUpon>FormAngajatNou.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenuAdmin.resx">
+      <DependentUpon>FormMenuAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTabelRude.resx">
       <DependentUpon>FormTabelRude.cs</DependentUpon>
