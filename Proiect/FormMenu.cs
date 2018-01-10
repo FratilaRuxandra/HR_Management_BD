@@ -29,7 +29,10 @@ namespace Proiect
 
         private void buttonModificariAngajati_Click(object sender, EventArgs e)
         {
-
+            FormTEST formTransfer = new FormTEST();
+            //this.Hide();
+            formTransfer.ShowDialog();
+            this.Show();
         }
 
         private void buttonTransfer_Click(object sender, EventArgs e)

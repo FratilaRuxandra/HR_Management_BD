@@ -111,6 +111,12 @@
     <Compile Include="FormTabelRude.Designer.cs">
       <DependentUpon>FormTabelRude.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTEST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTEST.Designer.cs">
+      <DependentUpon>FormTEST.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTransfer.cs">
       <SubType>Form</SubType>
     </Compile>
