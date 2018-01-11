@@ -42,5 +42,11 @@ namespace Proiect
             formTransfer.ShowDialog();
             this.Show();
         }
+
+        private void buttonRezerva_Click(object sender, EventArgs e)
+        {
+            trecereRezerva trecere_rezerva = new trecereRezerva();
+            trecere_rezerva.Show();
+        }
     }
 }

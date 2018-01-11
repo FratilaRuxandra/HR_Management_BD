@@ -38,9 +38,10 @@
             // 
             // buttonAngajatNou
             // 
-            this.buttonAngajatNou.Location = new System.Drawing.Point(38, 23);
+            this.buttonAngajatNou.Location = new System.Drawing.Point(51, 28);
+            this.buttonAngajatNou.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonAngajatNou.Name = "buttonAngajatNou";
-            this.buttonAngajatNou.Size = new System.Drawing.Size(127, 36);
+            this.buttonAngajatNou.Size = new System.Drawing.Size(169, 44);
             this.buttonAngajatNou.TabIndex = 0;
             this.buttonAngajatNou.Text = "Angajat Nou";
             this.buttonAngajatNou.UseVisualStyleBackColor = true;
@@ -48,9 +49,10 @@
             // 
             // buttonModificariAngajati
             // 
-            this.buttonModificariAngajati.Location = new System.Drawing.Point(38, 83);
+            this.buttonModificariAngajati.Location = new System.Drawing.Point(51, 102);
+            this.buttonModificariAngajati.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonModificariAngajati.Name = "buttonModificariAngajati";
-            this.buttonModificariAngajati.Size = new System.Drawing.Size(127, 38);
+            this.buttonModificariAngajati.Size = new System.Drawing.Size(169, 47);
             this.buttonModificariAngajati.TabIndex = 1;
             this.buttonModificariAngajati.Text = "Modificari Angajati";
             this.buttonModificariAngajati.UseVisualStyleBackColor = true;
@@ -58,18 +60,20 @@
             // 
             // buttonVeziInfo
             // 
-            this.buttonVeziInfo.Location = new System.Drawing.Point(38, 149);
+            this.buttonVeziInfo.Location = new System.Drawing.Point(51, 183);
+            this.buttonVeziInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonVeziInfo.Name = "buttonVeziInfo";
-            this.buttonVeziInfo.Size = new System.Drawing.Size(127, 42);
+            this.buttonVeziInfo.Size = new System.Drawing.Size(169, 52);
             this.buttonVeziInfo.TabIndex = 2;
             this.buttonVeziInfo.Text = "Vezi Informatii Angajati";
             this.buttonVeziInfo.UseVisualStyleBackColor = true;
             // 
             // buttonTransfer
             // 
-            this.buttonTransfer.Location = new System.Drawing.Point(38, 218);
+            this.buttonTransfer.Location = new System.Drawing.Point(51, 268);
+            this.buttonTransfer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonTransfer.Name = "buttonTransfer";
-            this.buttonTransfer.Size = new System.Drawing.Size(127, 40);
+            this.buttonTransfer.Size = new System.Drawing.Size(169, 49);
             this.buttonTransfer.TabIndex = 3;
             this.buttonTransfer.Text = "Transfera Angajat";
             this.buttonTransfer.UseVisualStyleBackColor = true;
@@ -77,33 +81,37 @@
             // 
             // buttonRezerva
             // 
-            this.buttonRezerva.Location = new System.Drawing.Point(38, 284);
+            this.buttonRezerva.Location = new System.Drawing.Point(51, 350);
+            this.buttonRezerva.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonRezerva.Name = "buttonRezerva";
-            this.buttonRezerva.Size = new System.Drawing.Size(127, 40);
+            this.buttonRezerva.Size = new System.Drawing.Size(169, 49);
             this.buttonRezerva.TabIndex = 4;
             this.buttonRezerva.Text = "Trecere in Rezerva";
             this.buttonRezerva.UseVisualStyleBackColor = true;
+            this.buttonRezerva.Click += new System.EventHandler(this.buttonRezerva_Click);
             // 
             // buttonSalariu
             // 
-            this.buttonSalariu.Location = new System.Drawing.Point(38, 356);
+            this.buttonSalariu.Location = new System.Drawing.Point(51, 438);
+            this.buttonSalariu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonSalariu.Name = "buttonSalariu";
-            this.buttonSalariu.Size = new System.Drawing.Size(127, 37);
+            this.buttonSalariu.Size = new System.Drawing.Size(169, 46);
             this.buttonSalariu.TabIndex = 5;
             this.buttonSalariu.Text = "Modificare Salarii";
             this.buttonSalariu.UseVisualStyleBackColor = true;
             // 
             // FormMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(238, 405);
+            this.ClientSize = new System.Drawing.Size(317, 498);
             this.Controls.Add(this.buttonSalariu);
             this.Controls.Add(this.buttonRezerva);
             this.Controls.Add(this.buttonTransfer);
             this.Controls.Add(this.buttonVeziInfo);
             this.Controls.Add(this.buttonModificariAngajati);
             this.Controls.Add(this.buttonAngajatNou);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Management Angajati";

@@ -36,3 +36,4 @@ C:\Users\EGD\Source\Repos\HR_Management_BD\Proiect\obj\Debug\Proiect.FormTabelRu
 C:\Users\EGD\Source\Repos\HR_Management_BD\Proiect\obj\Debug\Proiect.FormTransfer.resources
 C:\Users\EGD\Source\Repos\HR_Management_BD\Proiect\obj\Debug\Proiect.Properties.Resources.resources
 C:\Users\EGD\Source\Repos\HR_Management_BD\Proiect\obj\Debug\Proiect.csproj.GenerateResource.Cache
+C:\Users\EGD\Source\Repos\HR_Management_BD\Proiect\obj\Debug\Proiect.trecereRezerva.resources
