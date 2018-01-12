@@ -42,5 +42,11 @@ namespace Proiect
             formTransfer.ShowDialog();
             this.Show();
         }
+
+        private void buttonVeziInfo_Click(object sender, EventArgs e)
+        {
+            FormInfoAngajati formInfoAngajati = new FormInfoAngajati();
+            formInfoAngajati.ShowDialog();
+        }
     }
 }
