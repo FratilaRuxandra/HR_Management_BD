@@ -81,6 +81,12 @@
     <Compile Include="FormFisaMed.Designer.cs">
       <DependentUpon>FormFisaMed.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormInfoAngajati.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInfoAngajati.Designer.cs">
+      <DependentUpon>FormInfoAngajati.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,12 @@
     </Compile>
     <Compile Include="FormTEST.Designer.cs">
       <DependentUpon>FormTEST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTotiAngajatii.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTotiAngajatii.Designer.cs">
+      <DependentUpon>FormTotiAngajatii.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTransfer.cs">
       <SubType>Form</SubType>
@@ -170,6 +182,9 @@
     <EmbeddedResource Include="FormFisaMed.resx">
       <DependentUpon>FormFisaMed.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormInfoAngajati.resx">
+      <DependentUpon>FormInfoAngajati.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -184,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormTabelRude.resx">
       <DependentUpon>FormTabelRude.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTotiAngajatii.resx">
+      <DependentUpon>FormTotiAngajatii.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTransfer.resx">
       <DependentUpon>FormTransfer.cs</DependentUpon>

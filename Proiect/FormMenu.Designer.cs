@@ -67,6 +67,7 @@
             this.buttonVeziInfo.TabIndex = 2;
             this.buttonVeziInfo.Text = "Vezi Informatii Angajati";
             this.buttonVeziInfo.UseVisualStyleBackColor = true;
+            this.buttonVeziInfo.Click += new System.EventHandler(this.buttonVeziInfo_Click);
             // 
             // buttonTransfer
             // 
