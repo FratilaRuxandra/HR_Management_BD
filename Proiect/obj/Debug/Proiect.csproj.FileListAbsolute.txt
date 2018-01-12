@@ -26,7 +26,6 @@ C:\Users\EGD\Source\Repos\HR_Management_BD\Proiect\bin\Debug\EntityFramework.dll
 C:\Users\EGD\Source\Repos\HR_Management_BD\Proiect\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\EGD\Source\Repos\HR_Management_BD\Proiect\bin\Debug\EntityFramework.xml
 C:\Users\EGD\Source\Repos\HR_Management_BD\Proiect\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\EGD\Source\Repos\HR_Management_BD\Proiect\obj\Debug\Proiect.csprojResolveAssemblyReference.cache
 C:\Users\EGD\Source\Repos\HR_Management_BD\Proiect\obj\Debug\Proiect.FormFisaMed.resources
 C:\Users\EGD\Source\Repos\HR_Management_BD\Proiect\obj\Debug\Proiect.FormLogin.resources
 C:\Users\EGD\Source\Repos\HR_Management_BD\Proiect\obj\Debug\Proiect.FormMenu.resources

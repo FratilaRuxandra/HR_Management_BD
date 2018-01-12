@@ -48,5 +48,10 @@ namespace Proiect
             trecereRezerva trecere_rezerva = new trecereRezerva();
             trecere_rezerva.Show();
         }
+
+        private void buttonSalariu_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

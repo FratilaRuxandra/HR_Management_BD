@@ -236,6 +236,7 @@
       <DependentUpon>HR_Model.edmx</DependentUpon>
       <LastGenOutput>HR_Model.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\316016.jpg" />
     <None Include="Resources\index1.jpg" />
     <None Include="Resources\images3.jpg" />
     <None Include="Resources\images2.jpg" />
