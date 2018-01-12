@@ -37,3 +37,7 @@ C:\Users\EGD\Source\Repos\HR_Management_BD\Proiect\obj\Debug\Proiect.Properties.
 C:\Users\EGD\Source\Repos\HR_Management_BD\Proiect\obj\Debug\Proiect.csproj.GenerateResource.Cache
 C:\Users\EGD\Source\Repos\HR_Management_BD\Proiect\obj\Debug\Proiect.trecereRezerva.resources
 C:\Users\EGD\Source\Repos\HR_Management_BD\Proiect\obj\Debug\Proiect.csprojResolveAssemblyReference.cache
+C:\Users\EGD\Source\Repos\HR_Management_BD\Proiect\obj\Debug\Proiect.FormInfoAngajati.resources
+C:\Users\EGD\Source\Repos\HR_Management_BD\Proiect\obj\Debug\Proiect.FormTotiAngajatii.resources
+C:\Users\EGD\Source\Repos\HR_Management_BD\Proiect\obj\Debug\Proiect.ModificaSalarii.resources
+C:\Users\EGD\Source\Repos\HR_Management_BD\Proiect\obj\Debug\Proiect.modfAngajatForm.resources

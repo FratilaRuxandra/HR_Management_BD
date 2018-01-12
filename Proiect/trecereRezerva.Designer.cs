@@ -104,7 +104,9 @@
             // 
             // btnRezerva
             // 
-            this.btnRezerva.BackColor = System.Drawing.SystemColors.Info;
+            this.btnRezerva.BackColor = System.Drawing.Color.Transparent;
+            this.btnRezerva.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRezerva.ForeColor = System.Drawing.SystemColors.Info;
             this.btnRezerva.Location = new System.Drawing.Point(627, 19);
             this.btnRezerva.Name = "btnRezerva";
             this.btnRezerva.Size = new System.Drawing.Size(190, 41);
@@ -115,7 +117,9 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.SystemColors.Info;
+            this.btnCancel.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancel.ForeColor = System.Drawing.SystemColors.Info;
             this.btnCancel.Location = new System.Drawing.Point(691, 517);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(209, 41);
@@ -159,7 +163,9 @@
             // 
             // btnAfisare
             // 
-            this.btnAfisare.BackColor = System.Drawing.SystemColors.Info;
+            this.btnAfisare.BackColor = System.Drawing.Color.Transparent;
+            this.btnAfisare.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAfisare.ForeColor = System.Drawing.SystemColors.Info;
             this.btnAfisare.Location = new System.Drawing.Point(24, 19);
             this.btnAfisare.Name = "btnAfisare";
             this.btnAfisare.Size = new System.Drawing.Size(220, 41);
