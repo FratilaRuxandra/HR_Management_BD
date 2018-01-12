@@ -43,10 +43,10 @@ namespace Proiect
             this.Show();
         }
 
-        private void buttonVeziInfo_Click(object sender, EventArgs e)
+        private void buttonRezerva_Click(object sender, EventArgs e)
         {
-            FormInfoAngajati formInfoAngajati = new FormInfoAngajati();
-            formInfoAngajati.ShowDialog();
+            trecereRezerva trecere_rezerva = new trecereRezerva();
+            trecere_rezerva.Show();
         }
     }
 }

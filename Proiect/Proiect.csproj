@@ -173,6 +173,12 @@
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>HR_Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="trecereRezerva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="trecereRezerva.Designer.cs">
+      <DependentUpon>trecereRezerva.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormFisaMed.resx">
       <DependentUpon>FormFisaMed.cs</DependentUpon>
     </EmbeddedResource>
@@ -208,7 +214,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="trecereRezerva.resx">
+      <DependentUpon>trecereRezerva.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="HR_Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>HR_Model.Designer.cs</LastGenOutput>
@@ -244,6 +254,18 @@
       <DependentUpon>HR_Model.edmx</DependentUpon>
       <LastGenOutput>HR_Model.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\index1.jpg" />
+    <None Include="Resources\images3.jpg" />
+    <None Include="Resources\images2.jpg" />
+    <None Include="Resources\bright-green-monocolor-background.jpg" />
+    <None Include="Resources\images1.jpg" />
+    <None Include="Resources\Green+yellow gradient-design-pattern-background-images-photoshop-PSD.jpg" />
+    <None Include="Resources\index.jpg" />
+    <None Include="Resources\light-blue-halftone-pattern-psdgraphics.jpg" />
+    <None Include="Resources\images.jpg" />
+    <None Include="Resources\Computer-Wallpaper-Desktop-Widescreen.jpg" />
+    <None Include="Resources\20891.png" />
+    <None Include="Resources\2089.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

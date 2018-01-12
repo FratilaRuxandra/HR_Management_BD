@@ -89,6 +89,7 @@
             this.buttonRezerva.TabIndex = 4;
             this.buttonRezerva.Text = "Trecere in Rezerva";
             this.buttonRezerva.UseVisualStyleBackColor = true;
+            this.buttonRezerva.Click += new System.EventHandler(this.buttonRezerva_Click);
             // 
             // buttonSalariu
             // 
