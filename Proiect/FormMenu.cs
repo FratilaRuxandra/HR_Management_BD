@@ -21,7 +21,7 @@ namespace Proiect
 
         private void buttonAngajatNou_Click(object sender, EventArgs e)
         {
-            FormAngajatNou formAngajatNou = new FormAngajatNou()
+            FormAngajatNou formAngajatNou = new FormAngajatNou();
             //this.Hide();
             formAngajatNou.ShowDialog();
             this.Show();
