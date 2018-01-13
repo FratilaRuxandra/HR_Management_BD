@@ -130,12 +130,6 @@
     <Compile Include="FormTEST.Designer.cs">
       <DependentUpon>FormTEST.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTotiAngajatii.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormTotiAngajatii.Designer.cs">
-      <DependentUpon>FormTotiAngajatii.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormTransfer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -221,9 +215,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormTabelRude.resx">
       <DependentUpon>FormTabelRude.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormTotiAngajatii.resx">
-      <DependentUpon>FormTotiAngajatii.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTransfer.resx">
       <DependentUpon>FormTransfer.cs</DependentUpon>

@@ -21,8 +21,41 @@ namespace Proiect
 
         private void buttonTotiAngajatii_Click(object sender, EventArgs e)
         {
-            FormTotiAngajatii formTotiAngajatii = new FormTotiAngajatii();
-            formTotiAngajatii.ShowDialog();
+            try
+            {
+                using (var context = new HREntities1())
+                {
+                    var result = from c in context.Angajati
+                                 select new
+                                 {
+                                     ID = c.Id_Angajat,
+                                     Nume = c.Nume_Angajat,
+                                     Prenume = c.Prenume_Angajat,
+                                     Grad = c.Grade.Denumire,
+                                     Functie = c.Functii.Denumire,
+                                     Departament = c.Departamente.Nume_Departament,
+                                     CNP = c.CNP,
+                                     Tel = c.Numar_Telefon,
+                                     Email = c.Email,
+                                     Data_Nasterii = c.Data_Nastere,
+                                     Data_Angajarii = c.Data_Angajare,
+                                     Salariu = c.Salarii.Total,
+                                     Proiect = c.Proiecte.Nume_Proiect,
+                                     Data_Plecarii = c.Data_Plecare,
+                                     Observatii = c.Observatii
+
+
+
+
+                                 };
+
+                    dataGridView1.DataSource = result.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 
@@ -259,7 +292,7 @@ namespace Proiect
                                      Functie = c.Functii.Denumire,
                                      Departament = c.Departamente.Nume_Departament,
                                      CNP = c.CNP,
-                                     Tel = c.Numar_Telefon,
+                                     Telefon = c.Numar_Telefon,
                                      Email = c.Email,
                                      Data_Nasterii = c.Data_Nastere,
                                      Data_Angajarii = c.Data_Angajare,
@@ -273,6 +306,12 @@ namespace Proiect
 
                                  };
                     dataGridView1.DataSource = result.ToList();
+                    dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                    dataGridView1.Columns[9].HeaderText = "Data nasterii";
+                    dataGridView1.Columns[10].HeaderText = "Data angajarii";
+                    dataGridView1.Columns[13].HeaderText = "Data plecarii";
+              
+                    
                 }
             }
             catch (Exception ex)
@@ -326,6 +365,11 @@ namespace Proiect
                        
                                      
                         dataGridView1.DataSource = result.ToList();
+                        dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                        dataGridView1.Columns[6].HeaderText = "Solda de grad";
+                        dataGridView1.Columns[7].HeaderText = "Solda de functie";
+                        dataGridView1.Columns[8].HeaderText = "Spor conditii de munca";
+                        dataGridView1.Columns[9].HeaderText = "Total Salariu";
                     }
 
                     if (categorie == "Nume")
@@ -346,6 +390,11 @@ namespace Proiect
                                          Salariu_Total = c.Salarii.Total
                                      };
                         dataGridView1.DataSource = result.ToList();
+                        dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                        dataGridView1.Columns[6].HeaderText = "Solda de grad";
+                        dataGridView1.Columns[7].HeaderText = "Solda de functie";
+                        dataGridView1.Columns[8].HeaderText = "Spor conditii de munca";
+                        dataGridView1.Columns[9].HeaderText = "Total Salariu";
                     }
 
                     if (categorie == "Prenume")
@@ -366,6 +415,11 @@ namespace Proiect
                                          Salariu_Total = c.Salarii.Total
                                      };
                         dataGridView1.DataSource = result.ToList();
+                        dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                        dataGridView1.Columns[6].HeaderText = "Solda de grad";
+                        dataGridView1.Columns[7].HeaderText = "Solda de functie";
+                        dataGridView1.Columns[8].HeaderText = "Spor conditii de munca";
+                        dataGridView1.Columns[9].HeaderText = "Total Salariu";
                     }
 
                     if (categorie == "Grad")
@@ -386,6 +440,11 @@ namespace Proiect
                                          Salariu_Total = c.Salarii.Total
                                      };
                         dataGridView1.DataSource = result.ToList();
+                        dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                        dataGridView1.Columns[6].HeaderText = "Solda de grad";
+                        dataGridView1.Columns[7].HeaderText = "Solda de functie";
+                        dataGridView1.Columns[8].HeaderText = "Spor conditii de munca";
+                        dataGridView1.Columns[9].HeaderText = "Total Salariu";
                     }
 
                     if (categorie == "Functie")
@@ -406,6 +465,11 @@ namespace Proiect
                                          Salariu_Total = c.Salarii.Total
                                      };
                         dataGridView1.DataSource = result.ToList();
+                        dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                        dataGridView1.Columns[6].HeaderText = "Solda de grad";
+                        dataGridView1.Columns[7].HeaderText = "Solda de functie";
+                        dataGridView1.Columns[8].HeaderText = "Spor conditii de munca";
+                        dataGridView1.Columns[9].HeaderText = "Total Salariu";
                     }
 
                     if (categorie == "Departament")
@@ -426,6 +490,11 @@ namespace Proiect
                                          Salariu_Total = c.Salarii.Total
                                      };
                         dataGridView1.DataSource = result.ToList();
+                        dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                        dataGridView1.Columns[6].HeaderText = "Solda de grad";
+                        dataGridView1.Columns[7].HeaderText = "Solda de functie";
+                        dataGridView1.Columns[8].HeaderText = "Spor conditii de munca";
+                        dataGridView1.Columns[9].HeaderText = "Total Salariu";
                     }
 
 
@@ -447,6 +516,11 @@ namespace Proiect
                                          Salariu_Total = c.Salarii.Total
                                      };
                         dataGridView1.DataSource = result.ToList();
+                        dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                        dataGridView1.Columns[6].HeaderText = "Solda de grad";
+                        dataGridView1.Columns[7].HeaderText = "Solda de functie";
+                        dataGridView1.Columns[8].HeaderText = "Spor conditii de munca";
+                        dataGridView1.Columns[9].HeaderText = "Total Salariu";
                     }
 
                     if (categorie == "Anul angajarii")
@@ -467,6 +541,11 @@ namespace Proiect
                                          Salariu_Total = c.Salarii.Total
                                      };
                         dataGridView1.DataSource = result.ToList();
+                        dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                        dataGridView1.Columns[6].HeaderText = "Solda de grad";
+                        dataGridView1.Columns[7].HeaderText = "Solda de functie";
+                        dataGridView1.Columns[8].HeaderText = "Spor conditii de munca";
+                        dataGridView1.Columns[9].HeaderText = "Total Salariu";
                     }
 
                 }
@@ -492,15 +571,19 @@ namespace Proiect
                                      where c.Id_Angajat.ToString() == nume
                                      select new
                                      {
-
+                                        ID_Angajat=c.Id_Angajat,
                                         o.Grad_rudenie,
                                         o.Nume,
                                         o.Prenume,
                                         o.CNP
+
                                      };
 
 
                         dataGridView1.DataSource = result.ToList();
+                        dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                        dataGridView1.Columns[1].HeaderText = "Grad de rudenie";
+                      
                     }
 
                     if (categorie == "Nume")
@@ -510,6 +593,7 @@ namespace Proiect
                                      where c.Nume_Angajat.ToString() == nume
                                      select new
                                      {
+                                         ID_Angajat = c.Id_Angajat,
                                          o.Grad_rudenie,
                                          o.Nume,
                                          o.Prenume,
@@ -517,6 +601,8 @@ namespace Proiect
                                      };
 
                         dataGridView1.DataSource = result.ToList();
+                        dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                        dataGridView1.Columns[1].HeaderText = "Grad de rudenie";
                     }
 
                     if (categorie == "Prenume")
@@ -526,6 +612,7 @@ namespace Proiect
                                      where c.Prenume_Angajat.ToString() == nume
                                      select new
                                      {
+                                         ID_Angajat = c.Id_Angajat,
                                          o.Grad_rudenie,
                                          o.Nume,
                                          o.Prenume,
@@ -533,6 +620,8 @@ namespace Proiect
                                      };
 
                         dataGridView1.DataSource = result.ToList();
+                        dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                        dataGridView1.Columns[1].HeaderText = "Grad de rudenie";
                     }
 
                     if (categorie == "Grad")
@@ -542,6 +631,7 @@ namespace Proiect
                                      where c.Grade.Denumire.ToString() == nume
                                      select new
                                      {
+                                         ID_Angajat = c.Id_Angajat,
                                          o.Grad_rudenie,
                                          o.Nume,
                                          o.Prenume,
@@ -549,6 +639,8 @@ namespace Proiect
                                      };
 
                         dataGridView1.DataSource = result.ToList();
+                        dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                        dataGridView1.Columns[1].HeaderText = "Grad de rudenie";
                     }
 
                     if (categorie == "Functie")
@@ -558,6 +650,7 @@ namespace Proiect
                                      where c.Functii.Denumire.ToString() == nume
                                      select new
                                      {
+                                         ID_Angajat = c.Id_Angajat,
                                          o.Grad_rudenie,
                                          o.Nume,
                                          o.Prenume,
@@ -565,6 +658,8 @@ namespace Proiect
                                      };
 
                         dataGridView1.DataSource = result.ToList();
+                        dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                        dataGridView1.Columns[1].HeaderText = "Grad de rudenie";
                     }
 
                     if (categorie == "Departament")
@@ -574,6 +669,7 @@ namespace Proiect
                                      where c.Departamente.Nume_Departament.ToString() == nume
                                      select new
                                      {
+                                         ID_Angajat = c.Id_Angajat,
                                          o.Grad_rudenie,
                                          o.Nume,
                                          o.Prenume,
@@ -581,6 +677,8 @@ namespace Proiect
                                      };
 
                         dataGridView1.DataSource = result.ToList();
+                        dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                        dataGridView1.Columns[1].HeaderText = "Grad de rudenie";
                     }
 
 
@@ -591,6 +689,7 @@ namespace Proiect
                                      where c.Proiecte.Nume_Proiect.ToString() == nume
                                      select new
                                      {
+                                         ID_Angajat = c.Id_Angajat,
                                          o.Grad_rudenie,
                                          o.Nume,
                                          o.Prenume,
@@ -598,6 +697,8 @@ namespace Proiect
                                      };
 
                         dataGridView1.DataSource = result.ToList();
+                        dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                        dataGridView1.Columns[1].HeaderText = "Grad de rudenie";
                     }
 
                     if (categorie == "Anul angajarii")
@@ -607,6 +708,7 @@ namespace Proiect
                                      where c.Data_Angajare.Year.ToString() == nume
                                      select new
                                      {
+                                         ID_Angajat = c.Id_Angajat,
                                          o.Grad_rudenie,
                                          o.Nume,
                                          o.Prenume,
@@ -614,6 +716,8 @@ namespace Proiect
                                      };
 
                         dataGridView1.DataSource = result.ToList();
+                        dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                        dataGridView1.Columns[1].HeaderText = "Grad de rudenie";
                     }
 
                 }
@@ -654,6 +758,10 @@ namespace Proiect
 
 
                         dataGridView1.DataSource = result.ToList();
+                        dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                        dataGridView1.Columns[6].HeaderText = "Stare de sanatate";
+                        dataGridView1.Columns[7].HeaderText = "Grupa de sange";
+                        
                     }
 
                     if (categorie == "Nume")
@@ -674,6 +782,9 @@ namespace Proiect
                                          c.Fise_Medicale.Greutate,
                                      };
                         dataGridView1.DataSource = result.ToList();
+                        dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                        dataGridView1.Columns[6].HeaderText = "Stare de sanatate";
+                        dataGridView1.Columns[7].HeaderText = "Grupa de sange";
                     }
 
                     if (categorie == "Prenume")
@@ -694,6 +805,9 @@ namespace Proiect
                                          c.Fise_Medicale.Greutate,
                                      };
                         dataGridView1.DataSource = result.ToList();
+                        dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                        dataGridView1.Columns[6].HeaderText = "Stare de sanatate";
+                        dataGridView1.Columns[7].HeaderText = "Grupa de sange";
                     }
 
                     if (categorie == "Grad")
@@ -714,6 +828,9 @@ namespace Proiect
                                          c.Fise_Medicale.Greutate,
                                      };
                         dataGridView1.DataSource = result.ToList();
+                        dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                        dataGridView1.Columns[6].HeaderText = "Stare de sanatate";
+                        dataGridView1.Columns[7].HeaderText = "Grupa de sange";
                     }
 
                     if (categorie == "Functie")
@@ -734,6 +851,9 @@ namespace Proiect
                                          c.Fise_Medicale.Greutate,
                                      };
                         dataGridView1.DataSource = result.ToList();
+                        dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                        dataGridView1.Columns[6].HeaderText = "Stare de sanatate";
+                        dataGridView1.Columns[7].HeaderText = "Grupa de sange";
                     }
 
                     if (categorie == "Departament")
@@ -754,6 +874,9 @@ namespace Proiect
                                          c.Fise_Medicale.Greutate,
                                      };
                         dataGridView1.DataSource = result.ToList();
+                        dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                        dataGridView1.Columns[6].HeaderText = "Stare de sanatate";
+                        dataGridView1.Columns[7].HeaderText = "Grupa de sange";
                     }
 
 
@@ -775,6 +898,9 @@ namespace Proiect
                                          c.Fise_Medicale.Greutate,
                                      };
                         dataGridView1.DataSource = result.ToList();
+                        dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                        dataGridView1.Columns[6].HeaderText = "Stare de sanatate";
+                        dataGridView1.Columns[7].HeaderText = "Grupa de sange";
                     }
 
                     if (categorie == "Anul angajarii")
@@ -795,6 +921,9 @@ namespace Proiect
                                          c.Fise_Medicale.Greutate,
                                      };
                         dataGridView1.DataSource = result.ToList();
+                        dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                        dataGridView1.Columns[6].HeaderText = "Stare de sanatate";
+                        dataGridView1.Columns[7].HeaderText = "Grupa de sange";
                     }
 
                 }
@@ -829,16 +958,16 @@ namespace Proiect
                                          c.Proiecte.Nume_Proiect,
                                          c.Proiecte.Data_Inceput,
                                          c.Proiecte.Data_Sfarsit,
-                                         
-
-
-
-
-
+                                   
                                      };
 
 
                         dataGridView1.DataSource = result.ToList();
+                        dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                        dataGridView1.Columns[6].HeaderText = "Proiect";
+                        dataGridView1.Columns[7].HeaderText = "Inceput";
+                        dataGridView1.Columns[8].HeaderText = "Terminat";
+
                     }
 
                     if (categorie == "Nume")
@@ -853,12 +982,15 @@ namespace Proiect
                                          Prenume = c.Prenume_Angajat,
                                          Functie = c.Functii.Denumire,
                                          Departament = c.Departamente.Nume_Departament,
-                                         Solda_Grad = c.Salarii.Solda_grad,
-                                         Solda_Functie = c.Salarii.Solda_functie,
-                                         Spor_conditii = c.Salarii.Spor_conditii_de_munca,
-                                         Salariu_Total = c.Salarii.Total
+                                         c.Proiecte.Nume_Proiect,
+                                         c.Proiecte.Data_Inceput,
+                                         c.Proiecte.Data_Sfarsit,
                                      };
                         dataGridView1.DataSource = result.ToList();
+                        dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                        dataGridView1.Columns[6].HeaderText = "Proiect";
+                        dataGridView1.Columns[7].HeaderText = "Inceput";
+                        dataGridView1.Columns[8].HeaderText = "Terminat";
                     }
 
                     if (categorie == "Prenume")
@@ -873,12 +1005,15 @@ namespace Proiect
                                          Prenume = c.Prenume_Angajat,
                                          Functie = c.Functii.Denumire,
                                          Departament = c.Departamente.Nume_Departament,
-                                         Solda_Grad = c.Salarii.Solda_grad,
-                                         Solda_Functie = c.Salarii.Solda_functie,
-                                         Spor_conditii = c.Salarii.Spor_conditii_de_munca,
-                                         Salariu_Total = c.Salarii.Total
+                                         c.Proiecte.Nume_Proiect,
+                                         c.Proiecte.Data_Inceput,
+                                         c.Proiecte.Data_Sfarsit,
                                      };
                         dataGridView1.DataSource = result.ToList();
+                        dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                        dataGridView1.Columns[6].HeaderText = "Proiect";
+                        dataGridView1.Columns[7].HeaderText = "Inceput";
+                        dataGridView1.Columns[8].HeaderText = "Terminat";
                     }
 
                     if (categorie == "Grad")
@@ -893,12 +1028,15 @@ namespace Proiect
                                          Prenume = c.Prenume_Angajat,
                                          Functie = c.Functii.Denumire,
                                          Departament = c.Departamente.Nume_Departament,
-                                         Solda_Grad = c.Salarii.Solda_grad,
-                                         Solda_Functie = c.Salarii.Solda_functie,
-                                         Spor_conditii = c.Salarii.Spor_conditii_de_munca,
-                                         Salariu_Total = c.Salarii.Total
+                                         c.Proiecte.Nume_Proiect,
+                                         c.Proiecte.Data_Inceput,
+                                         c.Proiecte.Data_Sfarsit,
                                      };
                         dataGridView1.DataSource = result.ToList();
+                        dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                        dataGridView1.Columns[6].HeaderText = "Proiect";
+                        dataGridView1.Columns[7].HeaderText = "Inceput";
+                        dataGridView1.Columns[8].HeaderText = "Terminat";
                     }
 
                     if (categorie == "Functie")
@@ -913,12 +1051,15 @@ namespace Proiect
                                          Prenume = c.Prenume_Angajat,
                                          Functie = c.Functii.Denumire,
                                          Departament = c.Departamente.Nume_Departament,
-                                         Solda_Grad = c.Salarii.Solda_grad,
-                                         Solda_Functie = c.Salarii.Solda_functie,
-                                         Spor_conditii = c.Salarii.Spor_conditii_de_munca,
-                                         Salariu_Total = c.Salarii.Total
+                                         c.Proiecte.Nume_Proiect,
+                                         c.Proiecte.Data_Inceput,
+                                         c.Proiecte.Data_Sfarsit,
                                      };
                         dataGridView1.DataSource = result.ToList();
+                        dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                        dataGridView1.Columns[6].HeaderText = "Proiect";
+                        dataGridView1.Columns[7].HeaderText = "Inceput";
+                        dataGridView1.Columns[8].HeaderText = "Terminat";
                     }
 
                     if (categorie == "Departament")
@@ -933,12 +1074,15 @@ namespace Proiect
                                          Prenume = c.Prenume_Angajat,
                                          Functie = c.Functii.Denumire,
                                          Departament = c.Departamente.Nume_Departament,
-                                         Solda_Grad = c.Salarii.Solda_grad,
-                                         Solda_Functie = c.Salarii.Solda_functie,
-                                         Spor_conditii = c.Salarii.Spor_conditii_de_munca,
-                                         Salariu_Total = c.Salarii.Total
+                                         c.Proiecte.Nume_Proiect,
+                                         c.Proiecte.Data_Inceput,
+                                         c.Proiecte.Data_Sfarsit,
                                      };
                         dataGridView1.DataSource = result.ToList();
+                        dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                        dataGridView1.Columns[6].HeaderText = "Proiect";
+                        dataGridView1.Columns[7].HeaderText = "Inceput";
+                        dataGridView1.Columns[8].HeaderText = "Terminat";
                     }
 
 
@@ -954,12 +1098,15 @@ namespace Proiect
                                          Prenume = c.Prenume_Angajat,
                                          Functie = c.Functii.Denumire,
                                          Departament = c.Departamente.Nume_Departament,
-                                         Solda_Grad = c.Salarii.Solda_grad,
-                                         Solda_Functie = c.Salarii.Solda_functie,
-                                         Spor_conditii = c.Salarii.Spor_conditii_de_munca,
-                                         Salariu_Total = c.Salarii.Total
+                                         c.Proiecte.Nume_Proiect,
+                                         c.Proiecte.Data_Inceput,
+                                         c.Proiecte.Data_Sfarsit,
                                      };
                         dataGridView1.DataSource = result.ToList();
+                        dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                        dataGridView1.Columns[6].HeaderText = "Proiect";
+                        dataGridView1.Columns[7].HeaderText = "Inceput";
+                        dataGridView1.Columns[8].HeaderText = "Terminat";
                     }
 
                     if (categorie == "Anul angajarii")
@@ -974,12 +1121,15 @@ namespace Proiect
                                          Prenume = c.Prenume_Angajat,
                                          Functie = c.Functii.Denumire,
                                          Departament = c.Departamente.Nume_Departament,
-                                         Solda_Grad = c.Salarii.Solda_grad,
-                                         Solda_Functie = c.Salarii.Solda_functie,
-                                         Spor_conditii = c.Salarii.Spor_conditii_de_munca,
-                                         Salariu_Total = c.Salarii.Total
+                                         c.Proiecte.Nume_Proiect,
+                                         c.Proiecte.Data_Inceput,
+                                         c.Proiecte.Data_Sfarsit,
                                      };
                         dataGridView1.DataSource = result.ToList();
+                        dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                        dataGridView1.Columns[6].HeaderText = "Proiect";
+                        dataGridView1.Columns[7].HeaderText = "Inceput";
+                        dataGridView1.Columns[8].HeaderText = "Terminat";
                     }
 
                 }
@@ -1024,6 +1174,8 @@ namespace Proiect
 
                 
                              dataGridView1.DataSource = result.ToList();
+                             dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                             dataGridView1.Columns[11].HeaderText = "Judet/Sector";
                     }
 
                     if (categorie == "Nume")
@@ -1050,6 +1202,8 @@ namespace Proiect
 
                                      };
                         dataGridView1.DataSource = result.ToList();
+                        dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                        dataGridView1.Columns[11].HeaderText = "Judet/Sector";
                     }
 
                     if (categorie == "Prenume")
@@ -1076,6 +1230,8 @@ namespace Proiect
 
                                      };
                         dataGridView1.DataSource = result.ToList();
+                        dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                        dataGridView1.Columns[11].HeaderText = "Judet/Sector";
                     }
 
                     if (categorie == "Grad")
@@ -1102,6 +1258,8 @@ namespace Proiect
 
                                      };
                         dataGridView1.DataSource = result.ToList();
+                        dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                        dataGridView1.Columns[11].HeaderText = "Judet/Sector";
                     }
 
                     if (categorie == "Functie")
@@ -1128,6 +1286,8 @@ namespace Proiect
 
                                      };
                         dataGridView1.DataSource = result.ToList();
+                        dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                        dataGridView1.Columns[11].HeaderText = "Judet/Sector";
                     }
 
                     if (categorie == "Departament")
@@ -1154,6 +1314,8 @@ namespace Proiect
 
                                      };
                         dataGridView1.DataSource = result.ToList();
+                        dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                        dataGridView1.Columns[11].HeaderText = "Judet/Sector";
                     }
 
 
@@ -1181,6 +1343,8 @@ namespace Proiect
 
                                      };
                         dataGridView1.DataSource = result.ToList();
+                        dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                        dataGridView1.Columns[11].HeaderText = "Judet/Sector";
                     }
 
                     if (categorie == "Anul angajarii")
@@ -1207,6 +1371,8 @@ namespace Proiect
 
                                      };
                         dataGridView1.DataSource = result.ToList();
+                        dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                        dataGridView1.Columns[11].HeaderText = "Judet/Sector";
                     }
 
                 }
@@ -1216,6 +1382,56 @@ namespace Proiect
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void buttonDepartamente_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var context = new HREntities1();
+                var result = from dept in context.Departamente
+                             join ang in context.Angajati on dept.Id_Sef_Departament equals ang.Id_Angajat
+                             select new
+                             {
+                                   dept.Nume_Departament,
+                                   Sef_Departament=ang.Nume_Angajat,
+
+
+                             };
+                dataGridView1.DataSource = result.ToList();
+                dataGridView1.Columns[0].HeaderText = "Departament";
+                dataGridView1.Columns[1].HeaderText = "Sef Departament";
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void buttonProiecte_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                var context = new HREntities1();
+                var result = from proj in context.Proiecte
+                             join ang in context.Angajati on proj.Id_Responsabil equals ang.Id_Angajat
+                             select new
+                             {
+                                 Nume = proj.Nume_Proiect,
+                                 Responsabil = ang.Nume_Angajat,
+                                 Inceput = proj.Data_Inceput,
+                                 Terminat = proj.Data_Sfarsit
+                             };
+                dataGridView1.DataSource = result.ToList();
+                dataGridView1.Columns[0].HeaderText = "Proiect";
+            
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
     }
