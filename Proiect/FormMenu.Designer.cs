@@ -33,12 +33,11 @@
             this.buttonVeziInfo = new System.Windows.Forms.Button();
             this.buttonTransfer = new System.Windows.Forms.Button();
             this.buttonRezerva = new System.Windows.Forms.Button();
-            this.buttonSalariu = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonAngajatNou
             // 
-            this.buttonAngajatNou.Location = new System.Drawing.Point(51, 28);
+            this.buttonAngajatNou.Location = new System.Drawing.Point(71, 56);
             this.buttonAngajatNou.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAngajatNou.Name = "buttonAngajatNou";
             this.buttonAngajatNou.Size = new System.Drawing.Size(169, 44);
@@ -49,7 +48,7 @@
             // 
             // buttonModificariAngajati
             // 
-            this.buttonModificariAngajati.Location = new System.Drawing.Point(51, 102);
+            this.buttonModificariAngajati.Location = new System.Drawing.Point(71, 130);
             this.buttonModificariAngajati.Margin = new System.Windows.Forms.Padding(4);
             this.buttonModificariAngajati.Name = "buttonModificariAngajati";
             this.buttonModificariAngajati.Size = new System.Drawing.Size(169, 47);
@@ -60,7 +59,7 @@
             // 
             // buttonVeziInfo
             // 
-            this.buttonVeziInfo.Location = new System.Drawing.Point(51, 183);
+            this.buttonVeziInfo.Location = new System.Drawing.Point(71, 211);
             this.buttonVeziInfo.Margin = new System.Windows.Forms.Padding(4);
             this.buttonVeziInfo.Name = "buttonVeziInfo";
             this.buttonVeziInfo.Size = new System.Drawing.Size(169, 52);
@@ -71,7 +70,7 @@
             // 
             // buttonTransfer
             // 
-            this.buttonTransfer.Location = new System.Drawing.Point(51, 268);
+            this.buttonTransfer.Location = new System.Drawing.Point(71, 296);
             this.buttonTransfer.Margin = new System.Windows.Forms.Padding(4);
             this.buttonTransfer.Name = "buttonTransfer";
             this.buttonTransfer.Size = new System.Drawing.Size(169, 49);
@@ -82,7 +81,7 @@
             // 
             // buttonRezerva
             // 
-            this.buttonRezerva.Location = new System.Drawing.Point(51, 350);
+            this.buttonRezerva.Location = new System.Drawing.Point(71, 378);
             this.buttonRezerva.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRezerva.Name = "buttonRezerva";
             this.buttonRezerva.Size = new System.Drawing.Size(169, 49);
@@ -91,23 +90,11 @@
             this.buttonRezerva.UseVisualStyleBackColor = true;
             this.buttonRezerva.Click += new System.EventHandler(this.buttonRezerva_Click);
             // 
-            // buttonSalariu
-            // 
-            this.buttonSalariu.Location = new System.Drawing.Point(51, 438);
-            this.buttonSalariu.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonSalariu.Name = "buttonSalariu";
-            this.buttonSalariu.Size = new System.Drawing.Size(169, 46);
-            this.buttonSalariu.TabIndex = 5;
-            this.buttonSalariu.Text = "Modificare Salarii";
-            this.buttonSalariu.UseVisualStyleBackColor = true;
-            this.buttonSalariu.Click += new System.EventHandler(this.buttonSalariu_Click);
-            // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(317, 498);
-            this.Controls.Add(this.buttonSalariu);
             this.Controls.Add(this.buttonRezerva);
             this.Controls.Add(this.buttonTransfer);
             this.Controls.Add(this.buttonVeziInfo);
@@ -128,6 +115,5 @@
         private System.Windows.Forms.Button buttonVeziInfo;
         private System.Windows.Forms.Button buttonTransfer;
         private System.Windows.Forms.Button buttonRezerva;
-        private System.Windows.Forms.Button buttonSalariu;
     }
 }

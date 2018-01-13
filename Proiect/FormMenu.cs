@@ -49,15 +49,12 @@ namespace Proiect
             trecere_rezerva.Show();
         }
 
-        private void buttonSalariu_Click(object sender, EventArgs e)
-        {
-            ModificaSalarii modf_salarii = new ModificaSalarii();
-            modf_salarii.Show();
-        }
+        
 
         private void buttonVeziInfo_Click(object sender, EventArgs e)
         {
-
+            FormInfoAngajati formInfoAngajati = new FormInfoAngajati();
+            formInfoAngajati.ShowDialog();
         }
     }
 }
