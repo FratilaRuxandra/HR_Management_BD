@@ -1,120 +1,140 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="HRModelStoreContainer" CdmEntityContainer="HREntities1">
-    <FunctionImportMapping FunctionImportName="ModifyDepartamente1" FunctionName="HRModel.Store.ModifyDepartamente" />
-    <FunctionImportMapping FunctionImportName="MoveDepartament1" FunctionName="HRModel.Store.MoveDepartament" />
-    <FunctionImportMapping FunctionImportName="MoveFunctie1" FunctionName="HRModel.Store.MoveFunctie" />
-    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="HRModel.Store.sp_alterdiagram" />
-    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="HRModel.Store.sp_creatediagram" />
-    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="HRModel.Store.sp_dropdiagram" />
-    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="HRModel.Store.sp_helpdiagramdefinition" />
-    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="HRModel.Store.sp_helpdiagrams" />
-    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="HRModel.Store.sp_renamediagram" />
-    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="HRModel.Store.sp_upgraddiagrams" />
     <EntitySetMapping Name="Adrese">
       <EntityTypeMapping TypeName="HRModel.Adrese">
         <MappingFragment StoreEntitySet="Adrese">
-          <ScalarProperty Name="Judet_Sector" ColumnName="Judet_Sector" />
-          <ScalarProperty Name="Oras" ColumnName="Oras" />
-          <ScalarProperty Name="Apartament" ColumnName="Apartament" />
-          <ScalarProperty Name="Bloc" ColumnName="Bloc" />
-          <ScalarProperty Name="Nr_Strada" ColumnName="Nr_Strada" />
-          <ScalarProperty Name="Strada" ColumnName="Strada" />
           <ScalarProperty Name="Id_Adresa" ColumnName="Id_Adresa" />
+          <ScalarProperty Name="Strada" ColumnName="Strada" />
+          <ScalarProperty Name="Nr_Strada" ColumnName="Nr_Strada" />
+          <ScalarProperty Name="Bloc" ColumnName="Bloc" />
+          <ScalarProperty Name="Apartament" ColumnName="Apartament" />
+          <ScalarProperty Name="Oras" ColumnName="Oras" />
+          <ScalarProperty Name="Judet_Sector" ColumnName="Judet_Sector" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Angajati">
       <EntityTypeMapping TypeName="HRModel.Angajati">
         <MappingFragment StoreEntitySet="Angajati">
-          <ScalarProperty Name="Id_Fisa_Med" ColumnName="Id_Fisa_Med" />
-          <ScalarProperty Name="Id_Proiect_Curent" ColumnName="Id_Proiect_Curent" />
-          <ScalarProperty Name="Id_Departament" ColumnName="Id_Departament" />
-          <ScalarProperty Name="Id_Functie" ColumnName="Id_Functie" />
-          <ScalarProperty Name="Id_Salariu" ColumnName="Id_Salariu" />
-          <ScalarProperty Name="Id_Adresa" ColumnName="Id_Adresa" />
-          <ScalarProperty Name="Observatii" ColumnName="Observatii" />
-          <ScalarProperty Name="Data_Plecare" ColumnName="Data_Plecare" />
-          <ScalarProperty Name="Data_Angajare" ColumnName="Data_Angajare" />
-          <ScalarProperty Name="Data_Nastere" ColumnName="Data_Nastere" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Numar_Telefon" ColumnName="Numar_Telefon" />
-          <ScalarProperty Name="CNP" ColumnName="CNP" />
-          <ScalarProperty Name="Prenume_Angajat" ColumnName="Prenume_Angajat" />
-          <ScalarProperty Name="Nume_Angajat" ColumnName="Nume_Angajat" />
+          <ScalarProperty Name="Id_Angajat" ColumnName="Id_Angajat" />
           <ScalarProperty Name="Id_Grad" ColumnName="Id_Grad" />
-          <ScalarProperty Name="Id_Angajat" ColumnName="Id_Angajat" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="CVuri">
-      <EntityTypeMapping TypeName="HRModel.CVuri">
-        <MappingFragment StoreEntitySet="CVuri">
-          <ScalarProperty Name="Cale_fisier" ColumnName="Cale_fisier" />
-          <ScalarProperty Name="Id_Angajat" ColumnName="Id_Angajat" />
-          <ScalarProperty Name="Id_CV" ColumnName="Id_CV" />
+          <ScalarProperty Name="Nume_Angajat" ColumnName="Nume_Angajat" />
+          <ScalarProperty Name="Prenume_Angajat" ColumnName="Prenume_Angajat" />
+          <ScalarProperty Name="CNP" ColumnName="CNP" />
+          <ScalarProperty Name="Numar_Telefon" ColumnName="Numar_Telefon" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Data_Nastere" ColumnName="Data_Nastere" />
+          <ScalarProperty Name="Data_Angajare" ColumnName="Data_Angajare" />
+          <ScalarProperty Name="Data_Plecare" ColumnName="Data_Plecare" />
+          <ScalarProperty Name="Observatii" ColumnName="Observatii" />
+          <ScalarProperty Name="Id_Adresa" ColumnName="Id_Adresa" />
+          <ScalarProperty Name="Id_Salariu" ColumnName="Id_Salariu" />
+          <ScalarProperty Name="Id_Functie" ColumnName="Id_Functie" />
+          <ScalarProperty Name="Id_Departament" ColumnName="Id_Departament" />
+          <ScalarProperty Name="Id_Proiect_Curent" ColumnName="Id_Proiect_Curent" />
+          <ScalarProperty Name="Id_Fisa_Med" ColumnName="Id_Fisa_Med" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Departamente">
       <EntityTypeMapping TypeName="HRModel.Departamente">
         <MappingFragment StoreEntitySet="Departamente">
-          <ScalarProperty Name="Id_Sef_Departament" ColumnName="Id_Sef_Departament" />
-          <ScalarProperty Name="Nume_Departament" ColumnName="Nume_Departament" />
           <ScalarProperty Name="Id_Departament" ColumnName="Id_Departament" />
+          <ScalarProperty Name="Nume_Departament" ColumnName="Nume_Departament" />
+          <ScalarProperty Name="Id_Sef_Departament" ColumnName="Id_Sef_Departament" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Fise_Medicale">
       <EntityTypeMapping TypeName="HRModel.Fise_Medicale">
         <MappingFragment StoreEntitySet="Fise Medicale">
-          <ScalarProperty Name="Observatii" ColumnName="Observatii" />
-          <ScalarProperty Name="Stare_Sanatate" ColumnName="Stare Sanatate" />
-          <ScalarProperty Name="Greutate" ColumnName="Greutate" />
-          <ScalarProperty Name="Inaltime" ColumnName="Inaltime" />
-          <ScalarProperty Name="Grupa_Sange" ColumnName="Grupa Sange" />
           <ScalarProperty Name="Id_FisaMed" ColumnName="Id_FisaMed" />
+          <ScalarProperty Name="Grupa_Sange" ColumnName="Grupa Sange" />
+          <ScalarProperty Name="Inaltime" ColumnName="Inaltime" />
+          <ScalarProperty Name="Greutate" ColumnName="Greutate" />
+          <ScalarProperty Name="Stare_Sanatate" ColumnName="Stare Sanatate" />
+          <ScalarProperty Name="Observatii" ColumnName="Observatii" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Functii">
       <EntityTypeMapping TypeName="HRModel.Functii">
         <MappingFragment StoreEntitySet="Functii">
-          <ScalarProperty Name="Solda_functie" ColumnName="Solda functie" />
-          <ScalarProperty Name="Denumire" ColumnName="Denumire" />
           <ScalarProperty Name="Id_Functie" ColumnName="Id_Functie" />
+          <ScalarProperty Name="Denumire" ColumnName="Denumire" />
+          <ScalarProperty Name="Solda_functie" ColumnName="Solda functie" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Grade">
       <EntityTypeMapping TypeName="HRModel.Grade">
         <MappingFragment StoreEntitySet="Grade">
-          <ScalarProperty Name="Solda_grad" ColumnName="Solda grad" />
-          <ScalarProperty Name="Denumire" ColumnName="Denumire" />
           <ScalarProperty Name="Id_Grad" ColumnName="Id_Grad" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Logins">
-      <EntityTypeMapping TypeName="HRModel.Logins">
-        <MappingFragment StoreEntitySet="Logins">
-          <ScalarProperty Name="Parola" ColumnName="Parola" />
-          <ScalarProperty Name="Username" ColumnName="Username" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Denumire" ColumnName="Denumire" />
+          <ScalarProperty Name="Solda_grad" ColumnName="Solda grad" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Proiecte">
       <EntityTypeMapping TypeName="HRModel.Proiecte">
         <MappingFragment StoreEntitySet="Proiecte">
-          <ScalarProperty Name="Data_Sfarsit" ColumnName="Data_Sfarsit" />
-          <ScalarProperty Name="Data_Inceput" ColumnName="Data_Inceput" />
-          <ScalarProperty Name="Id_Responsabil" ColumnName="Id_Responsabil" />
-          <ScalarProperty Name="Nume_Proiect" ColumnName="Nume_Proiect" />
           <ScalarProperty Name="Id_Proiect" ColumnName="Id_Proiect" />
+          <ScalarProperty Name="Nume_Proiect" ColumnName="Nume_Proiect" />
+          <ScalarProperty Name="Id_Responsabil" ColumnName="Id_Responsabil" />
+          <ScalarProperty Name="Data_Inceput" ColumnName="Data_Inceput" />
+          <ScalarProperty Name="Data_Sfarsit" ColumnName="Data_Sfarsit" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Salarii">
+      <EntityTypeMapping TypeName="HRModel.Salarii">
+        <MappingFragment StoreEntitySet="Salarii">
+          <ScalarProperty Name="Id_Salariu" ColumnName="Id_Salariu" />
+          <ScalarProperty Name="Solda_functie" ColumnName="Solda functie" />
+          <ScalarProperty Name="Solda_grad" ColumnName="Solda grad" />
+          <ScalarProperty Name="Spor_conditii_de_munca" ColumnName="Spor conditii de munca" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="HRModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Angajati_Departament">
+      <EntityTypeMapping TypeName="HRModel.Angajati_Departament">
+        <MappingFragment StoreEntitySet="Angajati_Departament">
+          <ScalarProperty Name="Id_Angajat" ColumnName="Id_Angajat" />
+          <ScalarProperty Name="Id_Departament" ColumnName="Id_Departament" />
+          <ScalarProperty Name="Data_Inceput" ColumnName="Data_Inceput" />
+          <ScalarProperty Name="Data_Sfarsit" ColumnName="Data_Sfarsit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Functii_Salarii" TypeName="HRModel.Functii_Salarii" StoreEntitySet="Functii_Salarii">
+      <EndProperty Name="Functii">
+        <ScalarProperty Name="Id_Functie" ColumnName="Id_Functie" />
+      </EndProperty>
+      <EndProperty Name="Salarii">
+        <ScalarProperty Name="Id_Salariu" ColumnName="Id_Salariu" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Grade_Salarii" TypeName="HRModel.Grade_Salarii" StoreEntitySet="Grade_Salarii">
+      <EndProperty Name="Grade">
+        <ScalarProperty Name="Id_Grad" ColumnName="Id_Grad" />
+      </EndProperty>
+      <EndProperty Name="Salarii">
+        <ScalarProperty Name="Id_Salariu" ColumnName="Id_Salariu" />
+      </EndProperty>
+    </AssociationSetMapping>
     <EntitySetMapping Name="Rude">
       <EntityTypeMapping TypeName="HRModel.Rude">
         <MappingFragment StoreEntitySet="Rude">
@@ -127,53 +147,33 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Salarii">
-      <EntityTypeMapping TypeName="HRModel.Salarii">
-        <MappingFragment StoreEntitySet="Salarii">
-          <ScalarProperty Name="Total" ColumnName="Total" />
-          <ScalarProperty Name="Spor_conditii_de_munca" ColumnName="Spor conditii de munca" />
-          <ScalarProperty Name="Solda_grad" ColumnName="Solda grad" />
-          <ScalarProperty Name="Solda_functie" ColumnName="Solda functie" />
-          <ScalarProperty Name="Id_Salariu" ColumnName="Id_Salariu" />
+    <EntitySetMapping Name="Logins">
+      <EntityTypeMapping TypeName="HRModel.Logins">
+        <MappingFragment StoreEntitySet="Logins">
+          <ScalarProperty Name="Parola" ColumnName="Parola" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="HRModel.sysdiagrams">
-        <MappingFragment StoreEntitySet="sysdiagrams">
-          <ScalarProperty Name="definition" ColumnName="definition" />
-          <ScalarProperty Name="version" ColumnName="version" />
-          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-          <ScalarProperty Name="name" ColumnName="name" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Angajati_Departament">
-      <EntityTypeMapping TypeName="HRModel.Angajati_Departament">
-        <MappingFragment StoreEntitySet="Angajati_Departament">
-          <ScalarProperty Name="Data_Sfarsit" ColumnName="Data_Sfarsit" />
-          <ScalarProperty Name="Data_Inceput" ColumnName="Data_Inceput" />
-          <ScalarProperty Name="Id_Departament" ColumnName="Id_Departament" />
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="HRModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="HRModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="HRModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="HRModel.Store.sp_helpdiagramdefinition" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="HRModel.Store.sp_helpdiagrams" />
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="HRModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="HRModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="ModifyDepartamente1" FunctionName="HRModel.Store.ModifyDepartamente" />
+    <FunctionImportMapping FunctionImportName="MoveDepartament1" FunctionName="HRModel.Store.MoveDepartament" />
+    <FunctionImportMapping FunctionImportName="MoveFunctie1" FunctionName="HRModel.Store.MoveFunctie" />
+    <EntitySetMapping Name="CVuri">
+      <EntityTypeMapping TypeName="IsTypeOf(HRModel.CVuri)">
+        <MappingFragment StoreEntitySet="CVuri">
+          <ScalarProperty Name="Cale_fisier" ColumnName="Cale_fisier" />
           <ScalarProperty Name="Id_Angajat" ColumnName="Id_Angajat" />
+          <ScalarProperty Name="Id_CV" ColumnName="Id_CV" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="Functii_Salarii" TypeName="HRModel.Functii_Salarii" StoreEntitySet="Functii_Salarii">
-      <EndProperty Name="Salarii">
-        <ScalarProperty Name="Id_Salariu" ColumnName="Id_Salariu" />
-      </EndProperty>
-      <EndProperty Name="Functii">
-        <ScalarProperty Name="Id_Functie" ColumnName="Id_Functie" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="Grade_Salarii" TypeName="HRModel.Grade_Salarii" StoreEntitySet="Grade_Salarii">
-      <EndProperty Name="Salarii">
-        <ScalarProperty Name="Id_Salariu" ColumnName="Id_Salariu" />
-      </EndProperty>
-      <EndProperty Name="Grade">
-        <ScalarProperty Name="Id_Grad" ColumnName="Id_Grad" />
-      </EndProperty>
-    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>

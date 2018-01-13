@@ -26,7 +26,7 @@
     <Property Name="Data_Nastere" Type="date" />
     <Property Name="Data_Angajare" Type="date" Nullable="false" />
     <Property Name="Data_Plecare" Type="date" />
-    <Property Name="Observatii" Type="text" />
+    <Property Name="Observatii" Type="varchar" MaxLength="100" />
     <Property Name="Id_Adresa" Type="int" />
     <Property Name="Id_Salariu" Type="int" />
     <Property Name="Id_Functie" Type="int" />
@@ -98,7 +98,7 @@ warning 6002: The table/view 'HR.dbo.Functii_Salarii' does not have a primary ke
     </Key>
     <Property Name="Id_Grad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Denumire" Type="nvarchar" MaxLength="50" />
-    <Property Name="Solda grad" Type="int" Nullable="false" />
+    <Property Name="Solda grad" Type="int" />
   </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -267,7 +267,7 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__CVuri__Id_Angaja__19DFD96B">
+  <Association Name="FK__CVuri__Id_Angaja__71D1E811">
     <End Role="Angajati" Type="Self.Angajati" Multiplicity="1" />
     <End Role="CVuri" Type="Self.CVuri" Multiplicity="*" />
     <ReferentialConstraint>
@@ -454,7 +454,7 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
       <End Role="Salarii" EntitySet="Salarii" />
       <End Role="Angajati" EntitySet="Angajati" />
     </AssociationSet>
-    <AssociationSet Name="FK__CVuri__Id_Angaja__19DFD96B" Association="Self.FK__CVuri__Id_Angaja__19DFD96B">
+    <AssociationSet Name="FK__CVuri__Id_Angaja__71D1E811" Association="Self.FK__CVuri__Id_Angaja__71D1E811">
       <End Role="Angajati" EntitySet="Angajati" />
       <End Role="CVuri" EntitySet="CVuri" />
     </AssociationSet>
