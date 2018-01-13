@@ -267,7 +267,7 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__CVuri__Id_Angaja__619B8048">
+  <Association Name="FK__CVuri__Id_Angaja__71D1E811">
     <End Role="Angajati" Type="Self.Angajati" Multiplicity="1" />
     <End Role="CVuri" Type="Self.CVuri" Multiplicity="*" />
     <ReferentialConstraint>
@@ -339,16 +339,11 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
   <Function Name="ModifyDepartamente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="NumeDepartament" Type="nvarchar" Mode="In" />
     <Parameter Name="NumeNou" Type="nvarchar" Mode="In" />
     <Parameter Name="NumeSef" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="MoveAngajat" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="NumeAngajat" Type="nvarchar" Mode="In" />
-    <Parameter Name="PrenumeAngajat" Type="nvarchar" Mode="In" />
-    <Parameter Name="NoulDepartament" Type="nvarchar" Mode="In" />
-    <Parameter Name="NouaFunctie" Type="nvarchar" Mode="In" />
   </Function>
   <Function Name="MoveDepartament" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="NumeAngajat" Type="nvarchar" Mode="In" />
@@ -360,6 +355,36 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
     <Parameter Name="PrenumeAngajat" Type="nvarchar" Mode="In" />
     <Parameter Name="NouaFunctie" Type="nvarchar" Mode="In" />
   </Function>
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="HRModelStoreContainer">
     <EntitySet Name="Adrese" EntityType="Self.Adrese" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Angajati" EntityType="Self.Angajati" Schema="dbo" store:Type="Tables" />
@@ -429,7 +454,7 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
       <End Role="Salarii" EntitySet="Salarii" />
       <End Role="Angajati" EntitySet="Angajati" />
     </AssociationSet>
-    <AssociationSet Name="FK__CVuri__Id_Angaja__619B8048" Association="Self.FK__CVuri__Id_Angaja__619B8048">
+    <AssociationSet Name="FK__CVuri__Id_Angaja__71D1E811" Association="Self.FK__CVuri__Id_Angaja__71D1E811">
       <End Role="Angajati" EntitySet="Angajati" />
       <End Role="CVuri" EntitySet="CVuri" />
     </AssociationSet>

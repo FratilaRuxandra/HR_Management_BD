@@ -272,7 +272,7 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CVuri__Id_Angaja__619B8048">
+        <Association Name="FK__CVuri__Id_Angaja__71D1E811">
           <End Role="Angajati" Type="Self.Angajati" Multiplicity="1" />
           <End Role="CVuri" Type="Self.CVuri" Multiplicity="*" />
           <ReferentialConstraint>
@@ -344,16 +344,11 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
         <Function Name="ModifyDepartamente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="NumeDepartament" Type="nvarchar" Mode="In" />
           <Parameter Name="NumeNou" Type="nvarchar" Mode="In" />
           <Parameter Name="NumeSef" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="MoveAngajat" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="NumeAngajat" Type="nvarchar" Mode="In" />
-          <Parameter Name="PrenumeAngajat" Type="nvarchar" Mode="In" />
-          <Parameter Name="NoulDepartament" Type="nvarchar" Mode="In" />
-          <Parameter Name="NouaFunctie" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="MoveDepartament" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="NumeAngajat" Type="nvarchar" Mode="In" />
@@ -365,6 +360,36 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
           <Parameter Name="PrenumeAngajat" Type="nvarchar" Mode="In" />
           <Parameter Name="NouaFunctie" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="HRModelStoreContainer">
           <EntitySet Name="Adrese" EntityType="Self.Adrese" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Angajati" EntityType="Self.Angajati" Schema="dbo" store:Type="Tables" />
@@ -434,7 +459,7 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
             <End Role="Salarii" EntitySet="Salarii" />
             <End Role="Angajati" EntitySet="Angajati" />
           </AssociationSet>
-          <AssociationSet Name="FK__CVuri__Id_Angaja__619B8048" Association="Self.FK__CVuri__Id_Angaja__619B8048">
+          <AssociationSet Name="FK__CVuri__Id_Angaja__71D1E811" Association="Self.FK__CVuri__Id_Angaja__71D1E811">
             <End Role="Angajati" EntitySet="Angajati" />
             <End Role="CVuri" EntitySet="CVuri" />
           </AssociationSet>
@@ -800,6 +825,55 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
             <End Role="Angajati" EntitySet="Angajati" />
             <End Role="CVuri" EntitySet="CVuri" />
           </AssociationSet>
+          <FunctionImport Name="NUMEdupaID" ReturnType="Collection(String)">
+            <Parameter Name="IDResponsabil" Type="String" Mode="In" />
+          </FunctionImport>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+          <FunctionImport Name="PRoceduraTEst" />
+          <FunctionImport Name="ModifyDepartamente1">
+            <Parameter Name="NumeDepartament" Mode="In" Type="String" />
+            <Parameter Name="NumeNou" Mode="In" Type="String" />
+            <Parameter Name="NumeSef" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="MoveDepartament1">
+            <Parameter Name="NumeAngajat" Mode="In" Type="String" />
+            <Parameter Name="PrenumeAngajat" Mode="In" Type="String" />
+            <Parameter Name="NoulDepartament" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="MoveFunctie1">
+            <Parameter Name="NumeAngajat" Mode="In" Type="String" />
+            <Parameter Name="PrenumeAngajat" Mode="In" Type="String" />
+            <Parameter Name="NouaFunctie" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="Rude">
           <Key>
@@ -1006,10 +1080,6 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="MoveAngajat" FunctionName="HRModel.Store.MoveAngajat" />
-          <FunctionImportMapping FunctionImportName="MoveDepartament" FunctionName="HRModel.Store.MoveDepartament" />
-          <FunctionImportMapping FunctionImportName="MoveFunctie" FunctionName="HRModel.Store.MoveFunctie" />
-          <FunctionImportMapping FunctionImportName="ModifyDepartamente" FunctionName="HRModel.Store.ModifyDepartamente" />
           <EntitySetMapping Name="Logins">
             <EntityTypeMapping TypeName="HRModel.Logins">
               <MappingFragment StoreEntitySet="Logins">
@@ -1019,8 +1089,18 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="HRModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="HRModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="HRModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="HRModel.Store.sp_helpdiagramdefinition" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="HRModel.Store.sp_helpdiagrams" />
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="HRModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="HRModel.Store.sp_upgraddiagrams" />
+          <FunctionImportMapping FunctionImportName="ModifyDepartamente1" FunctionName="HRModel.Store.ModifyDepartamente" />
+          <FunctionImportMapping FunctionImportName="MoveDepartament1" FunctionName="HRModel.Store.MoveDepartament" />
+          <FunctionImportMapping FunctionImportName="MoveFunctie1" FunctionName="HRModel.Store.MoveFunctie" />
           <EntitySetMapping Name="CVuri">
-            <EntityTypeMapping TypeName="HRModel.CVuri">
+            <EntityTypeMapping TypeName="IsTypeOf(HRModel.CVuri)">
               <MappingFragment StoreEntitySet="CVuri">
                 <ScalarProperty Name="Cale_fisier" ColumnName="Cale_fisier" />
                 <ScalarProperty Name="Id_Angajat" ColumnName="Id_Angajat" />

@@ -112,5 +112,173 @@ namespace Proiect
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ModifyDepartamente", numeDepartamentParameter, numeNouParameter, numeSefParameter);
         }
+    
+        public virtual ObjectResult<string> NUMEdupaID(string iDResponsabil)
+        {
+            var iDResponsabilParameter = iDResponsabil != null ?
+                new ObjectParameter("IDResponsabil", iDResponsabil) :
+                new ObjectParameter("IDResponsabil", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("NUMEdupaID", iDResponsabilParameter);
+        }
+    
+        public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            var versionParameter = version.HasValue ?
+                new ObjectParameter("version", version) :
+                new ObjectParameter("version", typeof(int));
+    
+            var definitionParameter = definition != null ?
+                new ObjectParameter("definition", definition) :
+                new ObjectParameter("definition", typeof(byte[]));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_alterdiagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
+        }
+    
+        public virtual int sp_creatediagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            var versionParameter = version.HasValue ?
+                new ObjectParameter("version", version) :
+                new ObjectParameter("version", typeof(int));
+    
+            var definitionParameter = definition != null ?
+                new ObjectParameter("definition", definition) :
+                new ObjectParameter("definition", typeof(byte[]));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_creatediagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
+        }
+    
+        public virtual int sp_dropdiagram(string diagramname, Nullable<int> owner_id)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_dropdiagram", diagramnameParameter, owner_idParameter);
+        }
+    
+        public virtual int sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_helpdiagramdefinition", diagramnameParameter, owner_idParameter);
+        }
+    
+        public virtual int sp_helpdiagrams(string diagramname, Nullable<int> owner_id)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_helpdiagrams", diagramnameParameter, owner_idParameter);
+        }
+    
+        public virtual int sp_renamediagram(string diagramname, Nullable<int> owner_id, string new_diagramname)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            var new_diagramnameParameter = new_diagramname != null ?
+                new ObjectParameter("new_diagramname", new_diagramname) :
+                new ObjectParameter("new_diagramname", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_renamediagram", diagramnameParameter, owner_idParameter, new_diagramnameParameter);
+        }
+    
+        public virtual int sp_upgraddiagrams()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
+        }
+    
+        public virtual int PRoceduraTEst()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PRoceduraTEst");
+        }
+    
+        public virtual int ModifyDepartamente1(string numeDepartament, string numeNou, string numeSef)
+        {
+            var numeDepartamentParameter = numeDepartament != null ?
+                new ObjectParameter("NumeDepartament", numeDepartament) :
+                new ObjectParameter("NumeDepartament", typeof(string));
+    
+            var numeNouParameter = numeNou != null ?
+                new ObjectParameter("NumeNou", numeNou) :
+                new ObjectParameter("NumeNou", typeof(string));
+    
+            var numeSefParameter = numeSef != null ?
+                new ObjectParameter("NumeSef", numeSef) :
+                new ObjectParameter("NumeSef", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ModifyDepartamente1", numeDepartamentParameter, numeNouParameter, numeSefParameter);
+        }
+    
+        public virtual int MoveDepartament1(string numeAngajat, string prenumeAngajat, string noulDepartament)
+        {
+            var numeAngajatParameter = numeAngajat != null ?
+                new ObjectParameter("NumeAngajat", numeAngajat) :
+                new ObjectParameter("NumeAngajat", typeof(string));
+    
+            var prenumeAngajatParameter = prenumeAngajat != null ?
+                new ObjectParameter("PrenumeAngajat", prenumeAngajat) :
+                new ObjectParameter("PrenumeAngajat", typeof(string));
+    
+            var noulDepartamentParameter = noulDepartament != null ?
+                new ObjectParameter("NoulDepartament", noulDepartament) :
+                new ObjectParameter("NoulDepartament", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("MoveDepartament1", numeAngajatParameter, prenumeAngajatParameter, noulDepartamentParameter);
+        }
+    
+        public virtual int MoveFunctie1(string numeAngajat, string prenumeAngajat, string nouaFunctie)
+        {
+            var numeAngajatParameter = numeAngajat != null ?
+                new ObjectParameter("NumeAngajat", numeAngajat) :
+                new ObjectParameter("NumeAngajat", typeof(string));
+    
+            var prenumeAngajatParameter = prenumeAngajat != null ?
+                new ObjectParameter("PrenumeAngajat", prenumeAngajat) :
+                new ObjectParameter("PrenumeAngajat", typeof(string));
+    
+            var nouaFunctieParameter = nouaFunctie != null ?
+                new ObjectParameter("NouaFunctie", nouaFunctie) :
+                new ObjectParameter("NouaFunctie", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("MoveFunctie1", numeAngajatParameter, prenumeAngajatParameter, nouaFunctieParameter);
+        }
     }
 }

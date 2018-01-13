@@ -147,10 +147,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="MoveAngajat" FunctionName="HRModel.Store.MoveAngajat" />
-    <FunctionImportMapping FunctionImportName="MoveDepartament" FunctionName="HRModel.Store.MoveDepartament" />
-    <FunctionImportMapping FunctionImportName="MoveFunctie" FunctionName="HRModel.Store.MoveFunctie" />
-    <FunctionImportMapping FunctionImportName="ModifyDepartamente" FunctionName="HRModel.Store.ModifyDepartamente" />
     <EntitySetMapping Name="Logins">
       <EntityTypeMapping TypeName="HRModel.Logins">
         <MappingFragment StoreEntitySet="Logins">
@@ -160,8 +156,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="HRModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="HRModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="HRModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="HRModel.Store.sp_helpdiagramdefinition" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="HRModel.Store.sp_helpdiagrams" />
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="HRModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="HRModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="ModifyDepartamente1" FunctionName="HRModel.Store.ModifyDepartamente" />
+    <FunctionImportMapping FunctionImportName="MoveDepartament1" FunctionName="HRModel.Store.MoveDepartament" />
+    <FunctionImportMapping FunctionImportName="MoveFunctie1" FunctionName="HRModel.Store.MoveFunctie" />
     <EntitySetMapping Name="CVuri">
-      <EntityTypeMapping TypeName="HRModel.CVuri">
+      <EntityTypeMapping TypeName="IsTypeOf(HRModel.CVuri)">
         <MappingFragment StoreEntitySet="CVuri">
           <ScalarProperty Name="Cale_fisier" ColumnName="Cale_fisier" />
           <ScalarProperty Name="Id_Angajat" ColumnName="Id_Angajat" />

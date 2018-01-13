@@ -292,6 +292,644 @@ namespace Proiect
             categorie = comboBox1.Text;
         }
 
-       
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void buttonSalarii_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (var context = new HREntities1())
+                {
+
+                    if (categorie == "ID")
+                    {
+                        var result = from c in context.Angajati
+                                     where c.Id_Angajat.ToString().Contains(nume)
+                                     select new
+                                     {
+                                       ID=c.Id_Angajat,
+                                       Grad = c.Grade.Denumire,
+                                       Nume =c.Nume_Angajat,
+                                       Prenume=c.Prenume_Angajat,
+                                       Functie=c.Functii.Denumire,
+                                       Departament=c.Departamente.Nume_Departament,
+                                       Solda_Grad=c.Salarii.Solda_grad,
+                                       Solda_Functie=c.Salarii.Solda_functie,
+                                       Spor_conditii=c.Salarii.Spor_conditii_de_munca,
+                                       Salariu_Total = c.Salarii.Total
+
+
+                                     };
+                       
+                                     
+                        dataGridView1.DataSource = result.ToList();
+                    }
+
+                    if (categorie == "Nume")
+                    {
+                        var result = from c in context.Angajati
+                                     where c.Nume_Angajat.ToString().Contains(nume)
+                                     select new
+                                     {
+                                         ID = c.Id_Angajat,
+                                         Grad = c.Grade.Denumire,
+                                         Nume = c.Nume_Angajat,
+                                         Prenume = c.Prenume_Angajat,
+                                         Functie = c.Functii.Denumire,
+                                         Departament = c.Departamente.Nume_Departament,
+                                         Solda_Grad = c.Salarii.Solda_grad,
+                                         Solda_Functie = c.Salarii.Solda_functie,
+                                         Spor_conditii = c.Salarii.Spor_conditii_de_munca,
+                                         Salariu_Total = c.Salarii.Total
+                                     };
+                        dataGridView1.DataSource = result.ToList();
+                    }
+
+                    if (categorie == "Prenume")
+                    {
+                        var result = from c in context.Angajati
+                                     where c.Prenume_Angajat.ToString().Contains(nume)
+                                     select new
+                                     {
+                                         ID = c.Id_Angajat,
+                                         Grad = c.Grade.Denumire,
+                                         Nume = c.Nume_Angajat,
+                                         Prenume = c.Prenume_Angajat,
+                                         Functie = c.Functii.Denumire,
+                                         Departament = c.Departamente.Nume_Departament,
+                                         Solda_Grad = c.Salarii.Solda_grad,
+                                         Solda_Functie = c.Salarii.Solda_functie,
+                                         Spor_conditii = c.Salarii.Spor_conditii_de_munca,
+                                         Salariu_Total = c.Salarii.Total
+                                     };
+                        dataGridView1.DataSource = result.ToList();
+                    }
+
+                    if (categorie == "Grad")
+                    {
+                        var result = from c in context.Angajati
+                                     where c.Grade.Denumire.ToString().Contains(nume)
+                                     select new
+                                     {
+                                         ID = c.Id_Angajat,
+                                         Grad = c.Grade.Denumire,
+                                         Nume = c.Nume_Angajat,
+                                         Prenume = c.Prenume_Angajat,
+                                         Functie = c.Functii.Denumire,
+                                         Departament = c.Departamente.Nume_Departament,
+                                         Solda_Grad = c.Salarii.Solda_grad,
+                                         Solda_Functie = c.Salarii.Solda_functie,
+                                         Spor_conditii = c.Salarii.Spor_conditii_de_munca,
+                                         Salariu_Total = c.Salarii.Total
+                                     };
+                        dataGridView1.DataSource = result.ToList();
+                    }
+
+                    if (categorie == "Functie")
+                    {
+                        var result = from c in context.Angajati
+                                     where c.Functii.Denumire.ToString().Contains(nume)
+                                     select new
+                                     {
+                                         ID = c.Id_Angajat,
+                                         Grad = c.Grade.Denumire,
+                                         Nume = c.Nume_Angajat,
+                                         Prenume = c.Prenume_Angajat,
+                                         Functie = c.Functii.Denumire,
+                                         Departament = c.Departamente.Nume_Departament,
+                                         Solda_Grad = c.Salarii.Solda_grad,
+                                         Solda_Functie = c.Salarii.Solda_functie,
+                                         Spor_conditii = c.Salarii.Spor_conditii_de_munca,
+                                         Salariu_Total = c.Salarii.Total
+                                     };
+                        dataGridView1.DataSource = result.ToList();
+                    }
+
+                    if (categorie == "Departament")
+                    {
+                        var result = from c in context.Angajati
+                                     where c.Departamente.Nume_Departament.ToString().Contains(nume)
+                                     select new
+                                     {
+                                         ID = c.Id_Angajat,
+                                         Grad = c.Grade.Denumire,
+                                         Nume = c.Nume_Angajat,
+                                         Prenume = c.Prenume_Angajat,
+                                         Functie = c.Functii.Denumire,
+                                         Departament = c.Departamente.Nume_Departament,
+                                         Solda_Grad = c.Salarii.Solda_grad,
+                                         Solda_Functie = c.Salarii.Solda_functie,
+                                         Spor_conditii = c.Salarii.Spor_conditii_de_munca,
+                                         Salariu_Total = c.Salarii.Total
+                                     };
+                        dataGridView1.DataSource = result.ToList();
+                    }
+
+
+                    if (categorie == "Proiect")
+                    {
+                        var result = from c in context.Angajati
+                                     where c.Proiecte.Nume_Proiect.ToString().Contains(nume)
+                                     select new
+                                     {
+                                         ID = c.Id_Angajat,
+                                         Grad = c.Grade.Denumire,
+                                         Nume = c.Nume_Angajat,
+                                         Prenume = c.Prenume_Angajat,
+                                         Functie = c.Functii.Denumire,
+                                         Departament = c.Departamente.Nume_Departament,
+                                         Solda_Grad = c.Salarii.Solda_grad,
+                                         Solda_Functie = c.Salarii.Solda_functie,
+                                         Spor_conditii = c.Salarii.Spor_conditii_de_munca,
+                                         Salariu_Total = c.Salarii.Total
+                                     };
+                        dataGridView1.DataSource = result.ToList();
+                    }
+
+                    if (categorie == "Anul angajarii")
+                    {
+                        var result = from c in context.Angajati
+                                     where c.Data_Angajare.Year.ToString() == nume
+                                     select new
+                                     {
+                                         ID = c.Id_Angajat,
+                                         Grad = c.Grade.Denumire,
+                                         Nume = c.Nume_Angajat,
+                                         Prenume = c.Prenume_Angajat,
+                                         Functie = c.Functii.Denumire,
+                                         Departament = c.Departamente.Nume_Departament,
+                                         Solda_Grad = c.Salarii.Solda_grad,
+                                         Solda_Functie = c.Salarii.Solda_functie,
+                                         Spor_conditii = c.Salarii.Spor_conditii_de_munca,
+                                         Salariu_Total = c.Salarii.Total
+                                     };
+                        dataGridView1.DataSource = result.ToList();
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void buttonRude_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (var context = new HREntities1())
+                {
+
+                    if (categorie == "ID")
+                    {
+                        var result = from c in context.Angajati
+                                     join o in context.Rude on c.Id_Angajat equals o.Id_Angajat
+                                     where c.Id_Angajat.ToString().Contains(nume)
+                                     select new
+                                     {
+                                        o.Grad_rudenie,
+                                        o.Nume,
+                                        o.Prenume,
+                                        o.CNP
+                                     };
+
+
+                        dataGridView1.DataSource = result.ToList();
+                    }
+
+                    if (categorie == "Nume")
+                    {
+                        var result = from c in context.Angajati
+                                     join o in context.Rude on c.Id_Angajat equals o.Id_Angajat
+                                     where c.Id_Angajat.ToString().Contains(nume)
+                                     select new
+                                     {
+                                         o.Grad_rudenie,
+                                         o.Nume,
+                                         o.Prenume,
+                                         o.CNP
+                                     };
+
+                        dataGridView1.DataSource = result.ToList();
+                    }
+
+                    if (categorie == "Prenume")
+                    {
+                        var result = from c in context.Angajati
+                                     join o in context.Rude on c.Id_Angajat equals o.Id_Angajat
+                                     where c.Id_Angajat.ToString().Contains(nume)
+                                     select new
+                                     {
+                                         o.Grad_rudenie,
+                                         o.Nume,
+                                         o.Prenume,
+                                         o.CNP
+                                     };
+
+                        dataGridView1.DataSource = result.ToList();
+                    }
+
+                    if (categorie == "Grad")
+                    {
+                        var result = from c in context.Angajati
+                                     join o in context.Rude on c.Id_Angajat equals o.Id_Angajat
+                                     where c.Id_Angajat.ToString().Contains(nume)
+                                     select new
+                                     {
+                                         o.Grad_rudenie,
+                                         o.Nume,
+                                         o.Prenume,
+                                         o.CNP
+                                     };
+
+                        dataGridView1.DataSource = result.ToList();
+                    }
+
+                    if (categorie == "Functie")
+                    {
+                        var result = from c in context.Angajati
+                                     join o in context.Rude on c.Id_Angajat equals o.Id_Angajat
+                                     where c.Id_Angajat.ToString().Contains(nume)
+                                     select new
+                                     {
+                                         o.Grad_rudenie,
+                                         o.Nume,
+                                         o.Prenume,
+                                         o.CNP
+                                     };
+
+                        dataGridView1.DataSource = result.ToList();
+                    }
+
+                    if (categorie == "Departament")
+                    {
+                        var result = from c in context.Angajati
+                                     join o in context.Rude on c.Id_Angajat equals o.Id_Angajat
+                                     where c.Id_Angajat.ToString().Contains(nume)
+                                     select new
+                                     {
+                                         o.Grad_rudenie,
+                                         o.Nume,
+                                         o.Prenume,
+                                         o.CNP
+                                     };
+
+                        dataGridView1.DataSource = result.ToList();
+                    }
+
+
+                    if (categorie == "Proiect")
+                    {
+                        var result = from c in context.Angajati
+                                     join o in context.Rude on c.Id_Angajat equals o.Id_Angajat
+                                     where c.Id_Angajat.ToString().Contains(nume)
+                                     select new
+                                     {
+                                         o.Grad_rudenie,
+                                         o.Nume,
+                                         o.Prenume,
+                                         o.CNP
+                                     };
+
+                        dataGridView1.DataSource = result.ToList();
+                    }
+
+                    if (categorie == "Anul angajarii")
+                    {
+                        var result = from c in context.Angajati
+                                     join o in context.Rude on c.Id_Angajat equals o.Id_Angajat
+                                     where c.Id_Angajat.ToString().Contains(nume)
+                                     select new
+                                     {
+                                         o.Grad_rudenie,
+                                         o.Nume,
+                                         o.Prenume,
+                                         o.CNP
+                                     };
+
+                        dataGridView1.DataSource = result.ToList();
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void buttonFisaMed_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (var context = new HREntities1())
+                {
+
+                    if (categorie == "ID")
+                    {
+                        var result = from c in context.Angajati
+                                     where c.Id_Angajat.ToString().Contains(nume)
+                                     select new
+                                     {
+                                        c.Fise_Medicale.Stare_Sanatate,
+                                        c.Fise_Medicale.Grupa_Sange,
+                                        c.Fise_Medicale.Inaltime,
+                                        c.Fise_Medicale.Greutate,
+
+
+                                     };
+
+
+                        dataGridView1.DataSource = result.ToList();
+                    }
+
+                    if (categorie == "Nume")
+                    {
+                        var result = from c in context.Angajati
+                                     where c.Nume_Angajat.ToString().Contains(nume)
+                                     select new
+                                     {
+                                         c.Fise_Medicale.Stare_Sanatate,
+                                         c.Fise_Medicale.Grupa_Sange,
+                                         c.Fise_Medicale.Inaltime,
+                                         c.Fise_Medicale.Greutate,
+                                     };
+                        dataGridView1.DataSource = result.ToList();
+                    }
+
+                    if (categorie == "Prenume")
+                    {
+                        var result = from c in context.Angajati
+                                     where c.Prenume_Angajat.ToString().Contains(nume)
+                                     select new
+                                     {
+                                         c.Fise_Medicale.Stare_Sanatate,
+                                         c.Fise_Medicale.Grupa_Sange,
+                                         c.Fise_Medicale.Inaltime,
+                                         c.Fise_Medicale.Greutate,
+                                     };
+                        dataGridView1.DataSource = result.ToList();
+                    }
+
+                    if (categorie == "Grad")
+                    {
+                        var result = from c in context.Angajati
+                                     where c.Grade.Denumire.ToString().Contains(nume)
+                                     select new
+                                     {
+                                         c.Fise_Medicale.Stare_Sanatate,
+                                         c.Fise_Medicale.Grupa_Sange,
+                                         c.Fise_Medicale.Inaltime,
+                                         c.Fise_Medicale.Greutate,
+                                     };
+                        dataGridView1.DataSource = result.ToList();
+                    }
+
+                    if (categorie == "Functie")
+                    {
+                        var result = from c in context.Angajati
+                                     where c.Functii.Denumire.ToString().Contains(nume)
+                                     select new
+                                     {
+                                         c.Fise_Medicale.Stare_Sanatate,
+                                         c.Fise_Medicale.Grupa_Sange,
+                                         c.Fise_Medicale.Inaltime,
+                                         c.Fise_Medicale.Greutate,
+                                     };
+                        dataGridView1.DataSource = result.ToList();
+                    }
+
+                    if (categorie == "Departament")
+                    {
+                        var result = from c in context.Angajati
+                                     where c.Departamente.Nume_Departament.ToString().Contains(nume)
+                                     select new
+                                     {
+                                         c.Fise_Medicale.Stare_Sanatate,
+                                         c.Fise_Medicale.Grupa_Sange,
+                                         c.Fise_Medicale.Inaltime,
+                                         c.Fise_Medicale.Greutate,
+                                     };
+                        dataGridView1.DataSource = result.ToList();
+                    }
+
+
+                    if (categorie == "Proiect")
+                    {
+                        var result = from c in context.Angajati
+                                     where c.Proiecte.Nume_Proiect.ToString().Contains(nume)
+                                     select new
+                                     {
+                                         c.Fise_Medicale.Stare_Sanatate,
+                                         c.Fise_Medicale.Grupa_Sange,
+                                         c.Fise_Medicale.Inaltime,
+                                         c.Fise_Medicale.Greutate,
+                                     };
+                        dataGridView1.DataSource = result.ToList();
+                    }
+
+                    if (categorie == "Anul angajarii")
+                    {
+                        var result = from c in context.Angajati
+                                     where c.Data_Angajare.Year.ToString() == nume
+                                     select new
+                                     {
+                                         c.Fise_Medicale.Stare_Sanatate,
+                                         c.Fise_Medicale.Grupa_Sange,
+                                         c.Fise_Medicale.Inaltime,
+                                         c.Fise_Medicale.Greutate,
+                                     };
+                        dataGridView1.DataSource = result.ToList();
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void buttonProiect_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (var context = new HREntities1())
+                {
+
+                    if (categorie == "ID")
+                    {
+                        var result = from c in context.Angajati
+                                     where c.Id_Angajat.ToString().Contains(nume)
+                                     select new
+                                     {
+                                         c.Proiecte.Nume_Proiect,
+                                         
+
+
+                                     };
+
+
+                        dataGridView1.DataSource = result.ToList();
+                    }
+
+                    if (categorie == "Nume")
+                    {
+                        var result = from c in context.Angajati
+                                     where c.Nume_Angajat.ToString().Contains(nume)
+                                     select new
+                                     {
+                                         ID = c.Id_Angajat,
+                                         Grad = c.Grade.Denumire,
+                                         Nume = c.Nume_Angajat,
+                                         Prenume = c.Prenume_Angajat,
+                                         Functie = c.Functii.Denumire,
+                                         Departament = c.Departamente.Nume_Departament,
+                                         Solda_Grad = c.Salarii.Solda_grad,
+                                         Solda_Functie = c.Salarii.Solda_functie,
+                                         Spor_conditii = c.Salarii.Spor_conditii_de_munca,
+                                         Salariu_Total = c.Salarii.Total
+                                     };
+                        dataGridView1.DataSource = result.ToList();
+                    }
+
+                    if (categorie == "Prenume")
+                    {
+                        var result = from c in context.Angajati
+                                     where c.Prenume_Angajat.ToString().Contains(nume)
+                                     select new
+                                     {
+                                         ID = c.Id_Angajat,
+                                         Grad = c.Grade.Denumire,
+                                         Nume = c.Nume_Angajat,
+                                         Prenume = c.Prenume_Angajat,
+                                         Functie = c.Functii.Denumire,
+                                         Departament = c.Departamente.Nume_Departament,
+                                         Solda_Grad = c.Salarii.Solda_grad,
+                                         Solda_Functie = c.Salarii.Solda_functie,
+                                         Spor_conditii = c.Salarii.Spor_conditii_de_munca,
+                                         Salariu_Total = c.Salarii.Total
+                                     };
+                        dataGridView1.DataSource = result.ToList();
+                    }
+
+                    if (categorie == "Grad")
+                    {
+                        var result = from c in context.Angajati
+                                     where c.Grade.Denumire.ToString().Contains(nume)
+                                     select new
+                                     {
+                                         ID = c.Id_Angajat,
+                                         Grad = c.Grade.Denumire,
+                                         Nume = c.Nume_Angajat,
+                                         Prenume = c.Prenume_Angajat,
+                                         Functie = c.Functii.Denumire,
+                                         Departament = c.Departamente.Nume_Departament,
+                                         Solda_Grad = c.Salarii.Solda_grad,
+                                         Solda_Functie = c.Salarii.Solda_functie,
+                                         Spor_conditii = c.Salarii.Spor_conditii_de_munca,
+                                         Salariu_Total = c.Salarii.Total
+                                     };
+                        dataGridView1.DataSource = result.ToList();
+                    }
+
+                    if (categorie == "Functie")
+                    {
+                        var result = from c in context.Angajati
+                                     where c.Functii.Denumire.ToString().Contains(nume)
+                                     select new
+                                     {
+                                         ID = c.Id_Angajat,
+                                         Grad = c.Grade.Denumire,
+                                         Nume = c.Nume_Angajat,
+                                         Prenume = c.Prenume_Angajat,
+                                         Functie = c.Functii.Denumire,
+                                         Departament = c.Departamente.Nume_Departament,
+                                         Solda_Grad = c.Salarii.Solda_grad,
+                                         Solda_Functie = c.Salarii.Solda_functie,
+                                         Spor_conditii = c.Salarii.Spor_conditii_de_munca,
+                                         Salariu_Total = c.Salarii.Total
+                                     };
+                        dataGridView1.DataSource = result.ToList();
+                    }
+
+                    if (categorie == "Departament")
+                    {
+                        var result = from c in context.Angajati
+                                     where c.Departamente.Nume_Departament.ToString().Contains(nume)
+                                     select new
+                                     {
+                                         ID = c.Id_Angajat,
+                                         Grad = c.Grade.Denumire,
+                                         Nume = c.Nume_Angajat,
+                                         Prenume = c.Prenume_Angajat,
+                                         Functie = c.Functii.Denumire,
+                                         Departament = c.Departamente.Nume_Departament,
+                                         Solda_Grad = c.Salarii.Solda_grad,
+                                         Solda_Functie = c.Salarii.Solda_functie,
+                                         Spor_conditii = c.Salarii.Spor_conditii_de_munca,
+                                         Salariu_Total = c.Salarii.Total
+                                     };
+                        dataGridView1.DataSource = result.ToList();
+                    }
+
+
+                    if (categorie == "Proiect")
+                    {
+                        var result = from c in context.Angajati
+                                     where c.Proiecte.Nume_Proiect.ToString().Contains(nume)
+                                     select new
+                                     {
+                                         ID = c.Id_Angajat,
+                                         Grad = c.Grade.Denumire,
+                                         Nume = c.Nume_Angajat,
+                                         Prenume = c.Prenume_Angajat,
+                                         Functie = c.Functii.Denumire,
+                                         Departament = c.Departamente.Nume_Departament,
+                                         Solda_Grad = c.Salarii.Solda_grad,
+                                         Solda_Functie = c.Salarii.Solda_functie,
+                                         Spor_conditii = c.Salarii.Spor_conditii_de_munca,
+                                         Salariu_Total = c.Salarii.Total
+                                     };
+                        dataGridView1.DataSource = result.ToList();
+                    }
+
+                    if (categorie == "Anul angajarii")
+                    {
+                        var result = from c in context.Angajati
+                                     where c.Data_Angajare.Year.ToString() == nume
+                                     select new
+                                     {
+                                         ID = c.Id_Angajat,
+                                         Grad = c.Grade.Denumire,
+                                         Nume = c.Nume_Angajat,
+                                         Prenume = c.Prenume_Angajat,
+                                         Functie = c.Functii.Denumire,
+                                         Departament = c.Departamente.Nume_Departament,
+                                         Solda_Grad = c.Salarii.Solda_grad,
+                                         Solda_Functie = c.Salarii.Solda_functie,
+                                         Spor_conditii = c.Salarii.Spor_conditii_de_munca,
+                                         Salariu_Total = c.Salarii.Total
+                                     };
+                        dataGridView1.DataSource = result.ToList();
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
-}
+    }
+    
+

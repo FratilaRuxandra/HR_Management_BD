@@ -39,7 +39,7 @@
             // buttonAngajatNou
             // 
             this.buttonAngajatNou.Location = new System.Drawing.Point(51, 28);
-            this.buttonAngajatNou.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAngajatNou.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAngajatNou.Name = "buttonAngajatNou";
             this.buttonAngajatNou.Size = new System.Drawing.Size(169, 44);
             this.buttonAngajatNou.TabIndex = 0;
@@ -50,7 +50,7 @@
             // buttonModificariAngajati
             // 
             this.buttonModificariAngajati.Location = new System.Drawing.Point(51, 102);
-            this.buttonModificariAngajati.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonModificariAngajati.Margin = new System.Windows.Forms.Padding(4);
             this.buttonModificariAngajati.Name = "buttonModificariAngajati";
             this.buttonModificariAngajati.Size = new System.Drawing.Size(169, 47);
             this.buttonModificariAngajati.TabIndex = 1;
@@ -61,7 +61,7 @@
             // buttonVeziInfo
             // 
             this.buttonVeziInfo.Location = new System.Drawing.Point(51, 183);
-            this.buttonVeziInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonVeziInfo.Margin = new System.Windows.Forms.Padding(4);
             this.buttonVeziInfo.Name = "buttonVeziInfo";
             this.buttonVeziInfo.Size = new System.Drawing.Size(169, 52);
             this.buttonVeziInfo.TabIndex = 2;
@@ -72,7 +72,7 @@
             // buttonTransfer
             // 
             this.buttonTransfer.Location = new System.Drawing.Point(51, 268);
-            this.buttonTransfer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonTransfer.Margin = new System.Windows.Forms.Padding(4);
             this.buttonTransfer.Name = "buttonTransfer";
             this.buttonTransfer.Size = new System.Drawing.Size(169, 49);
             this.buttonTransfer.TabIndex = 3;
@@ -83,7 +83,7 @@
             // buttonRezerva
             // 
             this.buttonRezerva.Location = new System.Drawing.Point(51, 350);
-            this.buttonRezerva.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonRezerva.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRezerva.Name = "buttonRezerva";
             this.buttonRezerva.Size = new System.Drawing.Size(169, 49);
             this.buttonRezerva.TabIndex = 4;
@@ -94,7 +94,7 @@
             // buttonSalariu
             // 
             this.buttonSalariu.Location = new System.Drawing.Point(51, 438);
-            this.buttonSalariu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSalariu.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSalariu.Name = "buttonSalariu";
             this.buttonSalariu.Size = new System.Drawing.Size(169, 46);
             this.buttonSalariu.TabIndex = 5;
@@ -112,7 +112,7 @@
             this.Controls.Add(this.buttonVeziInfo);
             this.Controls.Add(this.buttonModificariAngajati);
             this.Controls.Add(this.buttonAngajatNou);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Management Angajati";

@@ -337,6 +337,55 @@
       <End Role="Angajati" EntitySet="Angajati" />
       <End Role="CVuri" EntitySet="CVuri" />
     </AssociationSet>
+    <FunctionImport Name="NUMEdupaID" ReturnType="Collection(String)">
+      <Parameter Name="IDResponsabil" Type="String" Mode="In" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="PRoceduraTEst" />
+    <FunctionImport Name="ModifyDepartamente1">
+      <Parameter Name="NumeDepartament" Mode="In" Type="String" />
+      <Parameter Name="NumeNou" Mode="In" Type="String" />
+      <Parameter Name="NumeSef" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="MoveDepartament1">
+      <Parameter Name="NumeAngajat" Mode="In" Type="String" />
+      <Parameter Name="PrenumeAngajat" Mode="In" Type="String" />
+      <Parameter Name="NoulDepartament" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="MoveFunctie1">
+      <Parameter Name="NumeAngajat" Mode="In" Type="String" />
+      <Parameter Name="PrenumeAngajat" Mode="In" Type="String" />
+      <Parameter Name="NouaFunctie" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="Rude">
     <Key>

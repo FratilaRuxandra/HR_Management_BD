@@ -48,5 +48,11 @@ namespace Proiect
             trecereRezerva trecere_rezerva = new trecereRezerva();
             trecere_rezerva.Show();
         }
+
+        private void buttonVeziInfo_Click(object sender, EventArgs e)
+        {
+            FormInfoAngajati formInfoAngajati = new FormInfoAngajati();
+            formInfoAngajati.Show();
+        }
     }
 }
