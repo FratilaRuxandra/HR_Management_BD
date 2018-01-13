@@ -66,3 +66,4 @@ C:\Users\Rares\source\repos\HR_Management_BD\Proiect\obj\Debug\Proiect.csproj.Ge
 C:\Users\Rares\source\repos\HR_Management_BD\Proiect\obj\Debug\Proiect.csproj.CoreCompileInputs.cache
 C:\Users\Rares\source\repos\HR_Management_BD\Proiect\obj\Debug\Proiect.exe
 C:\Users\Rares\source\repos\HR_Management_BD\Proiect\obj\Debug\Proiect.pdb
+C:\Users\EGD\Source\Repos\HR_Management_BD\Proiect\obj\Debug\Proiect.Chooseform.resources

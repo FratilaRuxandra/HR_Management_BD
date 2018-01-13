@@ -56,5 +56,11 @@ namespace Proiect
             FormInfoAngajati formInfoAngajati = new FormInfoAngajati();
             formInfoAngajati.ShowDialog();
         }
+
+        private void btnSalarii_Click(object sender, EventArgs e)
+        {
+            ModificaSalarii modf = new ModificaSalarii();
+            modf.Show();
+        }
     }
 }

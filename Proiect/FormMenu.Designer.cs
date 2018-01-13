@@ -33,6 +33,7 @@
             this.buttonVeziInfo = new System.Windows.Forms.Button();
             this.buttonTransfer = new System.Windows.Forms.Button();
             this.buttonRezerva = new System.Windows.Forms.Button();
+            this.btnSalarii = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonAngajatNou
@@ -90,11 +91,22 @@
             this.buttonRezerva.UseVisualStyleBackColor = true;
             this.buttonRezerva.Click += new System.EventHandler(this.buttonRezerva_Click);
             // 
+            // btnSalarii
+            // 
+            this.btnSalarii.Location = new System.Drawing.Point(71, 435);
+            this.btnSalarii.Name = "btnSalarii";
+            this.btnSalarii.Size = new System.Drawing.Size(169, 51);
+            this.btnSalarii.TabIndex = 5;
+            this.btnSalarii.Text = "Modifica Salarii";
+            this.btnSalarii.UseVisualStyleBackColor = true;
+            this.btnSalarii.Click += new System.EventHandler(this.btnSalarii_Click);
+            // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(317, 498);
+            this.Controls.Add(this.btnSalarii);
             this.Controls.Add(this.buttonRezerva);
             this.Controls.Add(this.buttonTransfer);
             this.Controls.Add(this.buttonVeziInfo);
@@ -115,5 +127,6 @@
         private System.Windows.Forms.Button buttonVeziInfo;
         private System.Windows.Forms.Button buttonTransfer;
         private System.Windows.Forms.Button buttonRezerva;
+        private System.Windows.Forms.Button btnSalarii;
     }
 }
