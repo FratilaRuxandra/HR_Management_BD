@@ -34,6 +34,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonProiect = new System.Windows.Forms.Button();
             this.buttonFisaMed = new System.Windows.Forms.Button();
             this.buttonRude = new System.Windows.Forms.Button();
             this.buttonSalarii = new System.Windows.Forms.Button();
@@ -43,7 +44,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.buttonProiect = new System.Windows.Forms.Button();
+            this.buttonAdrese = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -107,6 +108,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.buttonAdrese);
             this.panel1.Controls.Add(this.buttonProiect);
             this.panel1.Controls.Add(this.buttonFisaMed);
             this.panel1.Controls.Add(this.buttonRude);
@@ -121,6 +123,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(583, 287);
             this.panel1.TabIndex = 5;
+            // 
+            // buttonProiect
+            // 
+            this.buttonProiect.Location = new System.Drawing.Point(217, 239);
+            this.buttonProiect.Name = "buttonProiect";
+            this.buttonProiect.Size = new System.Drawing.Size(96, 45);
+            this.buttonProiect.TabIndex = 11;
+            this.buttonProiect.Text = "Proiecte";
+            this.buttonProiect.UseVisualStyleBackColor = true;
+            this.buttonProiect.Click += new System.EventHandler(this.buttonProiect_Click);
             // 
             // buttonFisaMed
             // 
@@ -208,15 +220,16 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Salariu";
             // 
-            // buttonProiect
+            // buttonAdrese
             // 
-            this.buttonProiect.Location = new System.Drawing.Point(217, 239);
-            this.buttonProiect.Name = "buttonProiect";
-            this.buttonProiect.Size = new System.Drawing.Size(96, 45);
-            this.buttonProiect.TabIndex = 11;
-            this.buttonProiect.Text = "Proiecte";
-            this.buttonProiect.UseVisualStyleBackColor = true;
-            this.buttonProiect.Click += new System.EventHandler(this.buttonProiect_Click);
+            this.buttonAdrese.Cursor = System.Windows.Forms.Cursors.Default;
+            this.buttonAdrese.Location = new System.Drawing.Point(398, 239);
+            this.buttonAdrese.Name = "buttonAdrese";
+            this.buttonAdrese.Size = new System.Drawing.Size(96, 43);
+            this.buttonAdrese.TabIndex = 12;
+            this.buttonAdrese.Text = "Adrese";
+            this.buttonAdrese.UseVisualStyleBackColor = true;
+            this.buttonAdrese.Click += new System.EventHandler(this.buttonAdrese_Click);
             // 
             // FormInfoAngajati
             // 
@@ -259,5 +272,6 @@
         private System.Windows.Forms.Button buttonRude;
         private System.Windows.Forms.Button buttonFisaMed;
         private System.Windows.Forms.Button buttonProiect;
+        private System.Windows.Forms.Button buttonAdrese;
     }
 }

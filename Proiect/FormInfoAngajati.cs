@@ -489,9 +489,10 @@ namespace Proiect
                     {
                         var result = from c in context.Angajati
                                      join o in context.Rude on c.Id_Angajat equals o.Id_Angajat
-                                     where c.Id_Angajat.ToString().Contains(nume)
+                                     where c.Id_Angajat.ToString() == nume
                                      select new
                                      {
+
                                         o.Grad_rudenie,
                                         o.Nume,
                                         o.Prenume,
@@ -506,7 +507,7 @@ namespace Proiect
                     {
                         var result = from c in context.Angajati
                                      join o in context.Rude on c.Id_Angajat equals o.Id_Angajat
-                                     where c.Id_Angajat.ToString().Contains(nume)
+                                     where c.Nume_Angajat.ToString() == nume
                                      select new
                                      {
                                          o.Grad_rudenie,
@@ -522,7 +523,7 @@ namespace Proiect
                     {
                         var result = from c in context.Angajati
                                      join o in context.Rude on c.Id_Angajat equals o.Id_Angajat
-                                     where c.Id_Angajat.ToString().Contains(nume)
+                                     where c.Prenume_Angajat.ToString() == nume
                                      select new
                                      {
                                          o.Grad_rudenie,
@@ -538,7 +539,7 @@ namespace Proiect
                     {
                         var result = from c in context.Angajati
                                      join o in context.Rude on c.Id_Angajat equals o.Id_Angajat
-                                     where c.Id_Angajat.ToString().Contains(nume)
+                                     where c.Grade.Denumire.ToString() == nume
                                      select new
                                      {
                                          o.Grad_rudenie,
@@ -554,7 +555,7 @@ namespace Proiect
                     {
                         var result = from c in context.Angajati
                                      join o in context.Rude on c.Id_Angajat equals o.Id_Angajat
-                                     where c.Id_Angajat.ToString().Contains(nume)
+                                     where c.Functii.Denumire.ToString() == nume
                                      select new
                                      {
                                          o.Grad_rudenie,
@@ -570,7 +571,7 @@ namespace Proiect
                     {
                         var result = from c in context.Angajati
                                      join o in context.Rude on c.Id_Angajat equals o.Id_Angajat
-                                     where c.Id_Angajat.ToString().Contains(nume)
+                                     where c.Departamente.Nume_Departament.ToString() == nume
                                      select new
                                      {
                                          o.Grad_rudenie,
@@ -587,7 +588,7 @@ namespace Proiect
                     {
                         var result = from c in context.Angajati
                                      join o in context.Rude on c.Id_Angajat equals o.Id_Angajat
-                                     where c.Id_Angajat.ToString().Contains(nume)
+                                     where c.Proiecte.Nume_Proiect.ToString() == nume
                                      select new
                                      {
                                          o.Grad_rudenie,
@@ -603,7 +604,7 @@ namespace Proiect
                     {
                         var result = from c in context.Angajati
                                      join o in context.Rude on c.Id_Angajat equals o.Id_Angajat
-                                     where c.Id_Angajat.ToString().Contains(nume)
+                                     where c.Data_Angajare.Year.ToString() == nume
                                      select new
                                      {
                                          o.Grad_rudenie,
@@ -637,10 +638,16 @@ namespace Proiect
                                      where c.Id_Angajat.ToString().Contains(nume)
                                      select new
                                      {
-                                        c.Fise_Medicale.Stare_Sanatate,
-                                        c.Fise_Medicale.Grupa_Sange,
-                                        c.Fise_Medicale.Inaltime,
-                                        c.Fise_Medicale.Greutate,
+                                         ID = c.Id_Angajat,
+                                         Grad = c.Grade.Denumire,
+                                         Nume = c.Nume_Angajat,
+                                         Prenume = c.Prenume_Angajat,
+                                         Functie = c.Functii.Denumire,
+                                         Departament = c.Departamente.Nume_Departament,
+                                         c.Fise_Medicale.Stare_Sanatate,
+                                         c.Fise_Medicale.Grupa_Sange,
+                                         c.Fise_Medicale.Inaltime,
+                                         c.Fise_Medicale.Greutate,
 
 
                                      };
@@ -655,6 +662,12 @@ namespace Proiect
                                      where c.Nume_Angajat.ToString().Contains(nume)
                                      select new
                                      {
+                                         ID = c.Id_Angajat,
+                                         Grad = c.Grade.Denumire,
+                                         Nume = c.Nume_Angajat,
+                                         Prenume = c.Prenume_Angajat,
+                                         Functie = c.Functii.Denumire,
+                                         Departament = c.Departamente.Nume_Departament,
                                          c.Fise_Medicale.Stare_Sanatate,
                                          c.Fise_Medicale.Grupa_Sange,
                                          c.Fise_Medicale.Inaltime,
@@ -669,6 +682,12 @@ namespace Proiect
                                      where c.Prenume_Angajat.ToString().Contains(nume)
                                      select new
                                      {
+                                         ID = c.Id_Angajat,
+                                         Grad = c.Grade.Denumire,
+                                         Nume = c.Nume_Angajat,
+                                         Prenume = c.Prenume_Angajat,
+                                         Functie = c.Functii.Denumire,
+                                         Departament = c.Departamente.Nume_Departament,
                                          c.Fise_Medicale.Stare_Sanatate,
                                          c.Fise_Medicale.Grupa_Sange,
                                          c.Fise_Medicale.Inaltime,
@@ -683,6 +702,12 @@ namespace Proiect
                                      where c.Grade.Denumire.ToString().Contains(nume)
                                      select new
                                      {
+                                         ID = c.Id_Angajat,
+                                         Grad = c.Grade.Denumire,
+                                         Nume = c.Nume_Angajat,
+                                         Prenume = c.Prenume_Angajat,
+                                         Functie = c.Functii.Denumire,
+                                         Departament = c.Departamente.Nume_Departament,
                                          c.Fise_Medicale.Stare_Sanatate,
                                          c.Fise_Medicale.Grupa_Sange,
                                          c.Fise_Medicale.Inaltime,
@@ -697,6 +722,12 @@ namespace Proiect
                                      where c.Functii.Denumire.ToString().Contains(nume)
                                      select new
                                      {
+                                         ID = c.Id_Angajat,
+                                         Grad = c.Grade.Denumire,
+                                         Nume = c.Nume_Angajat,
+                                         Prenume = c.Prenume_Angajat,
+                                         Functie = c.Functii.Denumire,
+                                         Departament = c.Departamente.Nume_Departament,
                                          c.Fise_Medicale.Stare_Sanatate,
                                          c.Fise_Medicale.Grupa_Sange,
                                          c.Fise_Medicale.Inaltime,
@@ -711,6 +742,12 @@ namespace Proiect
                                      where c.Departamente.Nume_Departament.ToString().Contains(nume)
                                      select new
                                      {
+                                         ID = c.Id_Angajat,
+                                         Grad = c.Grade.Denumire,
+                                         Nume = c.Nume_Angajat,
+                                         Prenume = c.Prenume_Angajat,
+                                         Functie = c.Functii.Denumire,
+                                         Departament = c.Departamente.Nume_Departament,
                                          c.Fise_Medicale.Stare_Sanatate,
                                          c.Fise_Medicale.Grupa_Sange,
                                          c.Fise_Medicale.Inaltime,
@@ -726,6 +763,12 @@ namespace Proiect
                                      where c.Proiecte.Nume_Proiect.ToString().Contains(nume)
                                      select new
                                      {
+                                         ID = c.Id_Angajat,
+                                         Grad = c.Grade.Denumire,
+                                         Nume = c.Nume_Angajat,
+                                         Prenume = c.Prenume_Angajat,
+                                         Functie = c.Functii.Denumire,
+                                         Departament = c.Departamente.Nume_Departament,
                                          c.Fise_Medicale.Stare_Sanatate,
                                          c.Fise_Medicale.Grupa_Sange,
                                          c.Fise_Medicale.Inaltime,
@@ -740,6 +783,12 @@ namespace Proiect
                                      where c.Data_Angajare.Year.ToString() == nume
                                      select new
                                      {
+                                         ID = c.Id_Angajat,
+                                         Grad = c.Grade.Denumire,
+                                         Nume = c.Nume_Angajat,
+                                         Prenume = c.Prenume_Angajat,
+                                         Functie = c.Functii.Denumire,
+                                         Departament = c.Departamente.Nume_Departament,
                                          c.Fise_Medicale.Stare_Sanatate,
                                          c.Fise_Medicale.Grupa_Sange,
                                          c.Fise_Medicale.Inaltime,
@@ -770,8 +819,20 @@ namespace Proiect
                                      where c.Id_Angajat.ToString().Contains(nume)
                                      select new
                                      {
+                                        
+                                         ID = c.Id_Angajat,
+                                         Grad = c.Grade.Denumire,
+                                         Nume = c.Nume_Angajat,
+                                         Prenume = c.Prenume_Angajat,
+                                         Functie = c.Functii.Denumire,
+                                         Departament = c.Departamente.Nume_Departament,
                                          c.Proiecte.Nume_Proiect,
+                                         c.Proiecte.Data_Inceput,
+                                         c.Proiecte.Data_Sfarsit,
                                          
+
+
+
 
 
                                      };
@@ -929,7 +990,235 @@ namespace Proiect
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void buttonAdrese_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (var context = new HREntities1())
+                {
+
+                    if (categorie == "ID")
+                    {
+                        var result = from c in context.Angajati
+                                     join o in context.Adrese on c.Id_Adresa equals o.Id_Adresa
+                                     where c.Id_Angajat.ToString().Contains(nume)
+                                     select new
+                                     {
+                                         ID = c.Id_Angajat,
+                                         Grad = c.Grade.Denumire,
+                                         Nume = c.Nume_Angajat,
+                                         Prenume = c.Prenume_Angajat,
+                                         Functie = c.Functii.Denumire,
+                                         Departament = c.Departamente.Nume_Departament,
+                                         o.Strada,
+                                         Nr=o.Nr_Strada,
+                                         o.Bloc,
+                                         o.Apartament,
+                                         o.Oras,
+                                         o.Judet_Sector
+                                        
+                                         
+
+                                     };
+
+                
+                             dataGridView1.DataSource = result.ToList();
+                    }
+
+                    if (categorie == "Nume")
+                    {
+                        var result = from c in context.Angajati
+                                     join o in context.Adrese on c.Id_Adresa equals o.Id_Adresa
+                                     where c.Nume_Angajat.ToString().Contains(nume)
+                                     select new
+                                     {
+                                         ID = c.Id_Angajat,
+                                         Grad = c.Grade.Denumire,
+                                         Nume = c.Nume_Angajat,
+                                         Prenume = c.Prenume_Angajat,
+                                         Functie = c.Functii.Denumire,
+                                         Departament = c.Departamente.Nume_Departament,
+                                         o.Strada,
+                                         Nr = o.Nr_Strada,
+                                         o.Bloc,
+                                         o.Apartament,
+                                         o.Oras,
+                                         o.Judet_Sector
+
+
+
+                                     };
+                        dataGridView1.DataSource = result.ToList();
+                    }
+
+                    if (categorie == "Prenume")
+                    {
+                        var result = from c in context.Angajati
+                                     join o in context.Adrese on c.Id_Adresa equals o.Id_Adresa
+                                     where c.Prenume_Angajat.ToString().Contains(nume)
+                                     select new
+                                     {
+                                         ID = c.Id_Angajat,
+                                         Grad = c.Grade.Denumire,
+                                         Nume = c.Nume_Angajat,
+                                         Prenume = c.Prenume_Angajat,
+                                         Functie = c.Functii.Denumire,
+                                         Departament = c.Departamente.Nume_Departament,
+                                         o.Strada,
+                                         Nr = o.Nr_Strada,
+                                         o.Bloc,
+                                         o.Apartament,
+                                         o.Oras,
+                                         o.Judet_Sector
+
+
+
+                                     };
+                        dataGridView1.DataSource = result.ToList();
+                    }
+
+                    if (categorie == "Grad")
+                    {
+                        var result = from c in context.Angajati
+                                     join o in context.Adrese on c.Id_Adresa equals o.Id_Adresa
+                                     where c.Grade.Denumire.ToString().Contains(nume)
+                                     select new
+                                     {
+                                         ID = c.Id_Angajat,
+                                         Grad = c.Grade.Denumire,
+                                         Nume = c.Nume_Angajat,
+                                         Prenume = c.Prenume_Angajat,
+                                         Functie = c.Functii.Denumire,
+                                         Departament = c.Departamente.Nume_Departament,
+                                         o.Strada,
+                                         Nr = o.Nr_Strada,
+                                         o.Bloc,
+                                         o.Apartament,
+                                         o.Oras,
+                                         o.Judet_Sector
+
+
+
+                                     };
+                        dataGridView1.DataSource = result.ToList();
+                    }
+
+                    if (categorie == "Functie")
+                    {
+                        var result = from c in context.Angajati
+                                     join o in context.Adrese on c.Id_Adresa equals o.Id_Adresa
+                                     where c.Functii.Denumire.ToString().Contains(nume)
+                                     select new
+                                     {
+                                         ID = c.Id_Angajat,
+                                         Grad = c.Grade.Denumire,
+                                         Nume = c.Nume_Angajat,
+                                         Prenume = c.Prenume_Angajat,
+                                         Functie = c.Functii.Denumire,
+                                         Departament = c.Departamente.Nume_Departament,
+                                         o.Strada,
+                                         Nr = o.Nr_Strada,
+                                         o.Bloc,
+                                         o.Apartament,
+                                         o.Oras,
+                                         o.Judet_Sector
+
+
+
+                                     };
+                        dataGridView1.DataSource = result.ToList();
+                    }
+
+                    if (categorie == "Departament")
+                    {
+                        var result = from c in context.Angajati
+                                     join o in context.Adrese on c.Id_Adresa equals o.Id_Adresa
+                                     where c.Departamente.Nume_Departament.ToString().Contains(nume)
+                                     select new
+                                     {
+                                         ID = c.Id_Angajat,
+                                         Grad = c.Grade.Denumire,
+                                         Nume = c.Nume_Angajat,
+                                         Prenume = c.Prenume_Angajat,
+                                         Functie = c.Functii.Denumire,
+                                         Departament = c.Departamente.Nume_Departament,
+                                         o.Strada,
+                                         Nr = o.Nr_Strada,
+                                         o.Bloc,
+                                         o.Apartament,
+                                         o.Oras,
+                                         o.Judet_Sector
+
+
+
+                                     };
+                        dataGridView1.DataSource = result.ToList();
+                    }
+
+
+                    if (categorie == "Proiect")
+                    {
+                        var result = from c in context.Angajati
+                                     join o in context.Adrese on c.Id_Adresa equals o.Id_Adresa
+                                     where c.Proiecte.Nume_Proiect.ToString().Contains(nume)
+                                     select new
+                                     {
+                                         ID = c.Id_Angajat,
+                                         Grad = c.Grade.Denumire,
+                                         Nume = c.Nume_Angajat,
+                                         Prenume = c.Prenume_Angajat,
+                                         Functie = c.Functii.Denumire,
+                                         Departament = c.Departamente.Nume_Departament,
+                                         o.Strada,
+                                         Nr = o.Nr_Strada,
+                                         o.Bloc,
+                                         o.Apartament,
+                                         o.Oras,
+                                         o.Judet_Sector
+
+
+
+                                     };
+                        dataGridView1.DataSource = result.ToList();
+                    }
+
+                    if (categorie == "Anul angajarii")
+                    {
+                        var result = from c in context.Angajati
+                                     join o in context.Adrese on c.Id_Adresa equals o.Id_Adresa
+                                     where c.Data_Angajare.Year.ToString().Contains(nume)
+                                     select new
+                                     {
+                                         ID = c.Id_Angajat,
+                                         Grad = c.Grade.Denumire,
+                                         Nume = c.Nume_Angajat,
+                                         Prenume = c.Prenume_Angajat,
+                                         Functie = c.Functii.Denumire,
+                                         Departament = c.Departamente.Nume_Departament,
+                                         o.Strada,
+                                         Nr = o.Nr_Strada,
+                                         o.Bloc,
+                                         o.Apartament,
+                                         o.Oras,
+                                         o.Judet_Sector
+
+
+
+                                     };
+                        dataGridView1.DataSource = result.ToList();
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
     }
+    
     
 
