@@ -83,6 +83,16 @@ namespace Proiect.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _316016 {
+            get {
+                object obj = ResourceManager.GetObject("316016", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bright_green_monocolor_background {
             get {
                 object obj = ResourceManager.GetObject("bright-green-monocolor-background", resourceCulture);

@@ -13,7 +13,7 @@
         <EntityTypeShape EntityType="HRModel.Grade" Width="1.5" PointX="0.75" PointY="16.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HRModel.Proiecte" Width="1.5" PointX="0.75" PointY="19.375" IsExpanded="true" />
         <EntityTypeShape EntityType="HRModel.Salarii" Width="1.5" PointX="0.75" PointY="22.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="HRModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRModel.sysdiagrams" Width="1.5" PointX="6.375" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HRModel.Angajati_Departament" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" />
         <AssociationConnector Association="HRModel.FK__Angajati__Id_Adr__2A4B4B5E" ManuallyRouted="false" />
         <AssociationConnector Association="HRModel.FK__Angajati___Id_An__31EC6D26" ManuallyRouted="false" />

@@ -66,6 +66,7 @@
     <Compile Include="Angajati_Departament.cs">
       <DependentUpon>HR_Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="ComboBox.cs" />
     <Compile Include="CVuri.cs">
       <DependentUpon>HR_Model.tt</DependentUpon>
     </Compile>
@@ -159,6 +160,18 @@
     <Compile Include="Logins.cs">
       <DependentUpon>HR_Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="modfAngajatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modfAngajatForm.Designer.cs">
+      <DependentUpon>modfAngajatForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModificaSalarii.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificaSalarii.Designer.cs">
+      <DependentUpon>ModificaSalarii.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Proiecte.cs">
       <DependentUpon>HR_Model.tt</DependentUpon>
@@ -205,6 +218,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormTransfer.resx">
       <DependentUpon>FormTransfer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modfAngajatForm.resx">
+      <DependentUpon>modfAngajatForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificaSalarii.resx">
+      <DependentUpon>ModificaSalarii.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -254,6 +273,7 @@
       <DependentUpon>HR_Model.edmx</DependentUpon>
       <LastGenOutput>HR_Model.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\316016.jpg" />
     <None Include="Resources\index1.jpg" />
     <None Include="Resources\images3.jpg" />
     <None Include="Resources\images2.jpg" />

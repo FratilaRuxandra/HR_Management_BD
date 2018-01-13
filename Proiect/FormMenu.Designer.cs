@@ -100,6 +100,7 @@
             this.buttonSalariu.TabIndex = 5;
             this.buttonSalariu.Text = "Modificare Salarii";
             this.buttonSalariu.UseVisualStyleBackColor = true;
+            this.buttonSalariu.Click += new System.EventHandler(this.buttonSalariu_Click);
             // 
             // FormMenu
             // 
