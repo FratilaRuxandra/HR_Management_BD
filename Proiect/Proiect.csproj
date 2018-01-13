@@ -66,6 +66,12 @@
     <Compile Include="Angajati_Departament.cs">
       <DependentUpon>HR_Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Chooseform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chooseform.Designer.cs">
+      <DependentUpon>Chooseform.cs</DependentUpon>
+    </Compile>
     <Compile Include="ComboBox.cs" />
     <Compile Include="CVuri.cs">
       <DependentUpon>HR_Model.tt</DependentUpon>
@@ -192,6 +198,9 @@
     <Compile Include="trecereRezerva.Designer.cs">
       <DependentUpon>trecereRezerva.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Chooseform.resx">
+      <DependentUpon>Chooseform.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormFisaMed.resx">
       <DependentUpon>FormFisaMed.cs</DependentUpon>
     </EmbeddedResource>

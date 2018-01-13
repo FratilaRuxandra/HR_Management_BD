@@ -23,7 +23,7 @@ namespace Proiect
     
         public int Id_Grad { get; set; }
         public string Denumire { get; set; }
-        public Nullable<int> Solda_grad { get; set; }
+        public int Solda_grad { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Angajati> Angajati { get; set; }

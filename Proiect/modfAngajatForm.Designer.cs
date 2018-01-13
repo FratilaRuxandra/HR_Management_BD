@@ -40,6 +40,7 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.btnScade = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -87,9 +88,9 @@
             this.btnModifica.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModifica.Location = new System.Drawing.Point(49, 298);
             this.btnModifica.Name = "btnModifica";
-            this.btnModifica.Size = new System.Drawing.Size(141, 38);
+            this.btnModifica.Size = new System.Drawing.Size(99, 38);
             this.btnModifica.TabIndex = 6;
-            this.btnModifica.Text = "Modifica";
+            this.btnModifica.Text = "Creste ";
             this.btnModifica.UseVisualStyleBackColor = true;
             this.btnModifica.Click += new System.EventHandler(this.btnModifica_Click);
             // 
@@ -153,19 +154,30 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(310, 298);
+            this.btnCancel.Location = new System.Drawing.Point(379, 299);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(137, 38);
+            this.btnCancel.Size = new System.Drawing.Size(114, 38);
             this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnScade
+            // 
+            this.btnScade.Location = new System.Drawing.Point(209, 298);
+            this.btnScade.Name = "btnScade";
+            this.btnScade.Size = new System.Drawing.Size(100, 38);
+            this.btnScade.TabIndex = 8;
+            this.btnScade.Text = "Scade";
+            this.btnScade.UseVisualStyleBackColor = true;
+            this.btnScade.Click += new System.EventHandler(this.btnScade_Click);
             // 
             // modfAngajatForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(505, 363);
+            this.Controls.Add(this.btnScade);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
@@ -200,5 +212,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnScade;
     }
 }
