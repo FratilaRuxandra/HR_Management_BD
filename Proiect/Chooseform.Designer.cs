@@ -35,6 +35,8 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.comboFunctie = new System.Windows.Forms.ComboBox();
+            this.boxSpor = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnCreste
@@ -127,11 +129,31 @@
             this.comboFunctie.Size = new System.Drawing.Size(174, 24);
             this.comboFunctie.TabIndex = 6;
             // 
+            // boxSpor
+            // 
+            this.boxSpor.Location = new System.Drawing.Point(716, 68);
+            this.boxSpor.Name = "boxSpor";
+            this.boxSpor.Size = new System.Drawing.Size(191, 22);
+            this.boxSpor.TabIndex = 10;
+            this.boxSpor.TextChanged += new System.EventHandler(this.boxSpor_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(763, 32);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(119, 21);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Modifica Spor";
+            // 
             // Chooseform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(955, 253);
+            this.Controls.Add(this.boxSpor);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.comboFunctie);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnCancel);
@@ -156,5 +178,7 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboFunctie;
+        private System.Windows.Forms.TextBox boxSpor;
+        private System.Windows.Forms.Label label3;
     }
 }
