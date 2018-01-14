@@ -20,7 +20,7 @@ namespace Proiect
             InitializeComponent();
         }
 
-       
+
         private void btnCreste_Click(object sender, EventArgs e)
         {
             string selected = comboGrad.Text;
@@ -29,11 +29,11 @@ namespace Proiect
             if (selected != null)
             {
 
-               
+
 
                 if (grad != null)
                 {
-                    
+
                     double marire = 0;
 
                     double newsolda;
@@ -46,10 +46,7 @@ namespace Proiect
                                   select c).First();
 
 
-                    int aux;
-                    aux = (int)result.Solda_grad;
-                    newsolda = aux + aux * marire;
-                    
+                    newsolda =Convert.ToDouble( result.Solda_grad + result.Solda_grad * marire);
                     result.Solda_grad = (int)newsolda;
                     context.SaveChanges();
 
@@ -57,21 +54,22 @@ namespace Proiect
                                    join g in context.Grade on a.Id_Grad equals g.Id_Grad
                                    where g.Denumire.Equals(selected)
                                    select a.Id_Salariu);
-                    foreach(var item in result1)
+
+                    foreach (var item in result1)
                     {
                         var salary = (from s in context.Salarii
-                                     where s.Id_Salariu==(item)
-                                     select s.Solda_grad).First();
-                        salary = (int)newsolda;
+                                      where s.Id_Salariu == (item)
+                                      select s).First();
+                        salary.Solda_grad = (int)newsolda;
                         context.SaveChanges();
-                        
+
                     }
 
-                   
+
 
                 }
             }
-            if(selectfunctie!=null)
+            if (selectfunctie != null)
             {
 
                 if (functie != null)
@@ -88,9 +86,9 @@ namespace Proiect
                                   where c.Denumire.Equals(selectfunctie)
                                   select c).First();
 
-                    int aux=(int) result.Solda_functie;
+                    int aux = (int)result.Solda_functie;
                     newsoldaf = aux + aux * mariref;
-                    result.Solda_functie= (int)newsoldaf;
+                    result.Solda_functie = (int)newsoldaf;
                     context.SaveChanges();
 
                     var result1 = (from a in context.Angajati
@@ -101,8 +99,8 @@ namespace Proiect
                     {
                         var salary = (from s in context.Salarii
                                       where s.Id_Salariu == (item)
-                                      select s.Solda_functie).First();
-                        salary = (int)newsoldaf;
+                                      select s).First();
+                        salary.Solda_functie = (int)newsoldaf;
                         context.SaveChanges();
 
                     }
@@ -111,14 +109,64 @@ namespace Proiect
 
                 }
             }
+            if (spor != null)
+            {
+                double marires = 0;
 
+                double newsoldas;
+                double.TryParse(spor, out marires);
+                marires = marires / 100;
+                var results = from s in context.Salarii
+                              select s.Spor_conditii_de_munca;
+                foreach (var items in results)
+                {
+                    var newspor = (from ns in context.Salarii
+                                   where ns.Spor_conditii_de_munca == items
+                                   select ns).First();
+                    int changespor = (int)newspor.Spor_conditii_de_munca;
+                    newsoldas = changespor + changespor * marires;
+                    newspor.Spor_conditii_de_munca = (int)newsoldas;
+                    context.SaveChanges();
+
+                }
+
+            }
+            DialogResult res = MessageBox.Show("Marire Efectuata!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
         }
-        
+
         private void Chooseform_Load(object sender, EventArgs e)
         {
-            
+            if (grad != null && functie != null)
+            {
+                comboGrad.Enabled = true;
+                comboFunctie.Enabled = true;
+            }
+            else if (grad != null && functie == null)
+            {
+                comboGrad.Enabled = true;
+                comboFunctie.Enabled = false;
+            }
+            else if (grad == null && functie != null)
+            {
+                comboGrad.Enabled = false;
+                comboFunctie.Enabled = true;
+            }
+            else if (grad == null && functie == null)
+            {
+                comboGrad.Enabled = false;
+                comboFunctie.Enabled = false;
+            }
 
-
+            boxSpor.Text = ModificaSalarii.procentSpor;
+            if (spor != null)
+            {
+                boxSpor.Enabled = false;
+            }
+            else
+            {
+                boxSpor.Enabled = false;
+            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -155,10 +203,8 @@ namespace Proiect
                                   where c.Denumire.Equals(selected)
                                   select c).First();
 
-                    int aux;
-                    aux = (int)result.Solda_grad;
-                    newsolda = aux - aux * marire;
-                    
+
+                    newsolda =Convert.ToDouble( result.Solda_grad - result.Solda_grad * marire);
                     result.Solda_grad = (int)newsolda;
                     context.SaveChanges();
 
@@ -170,8 +216,8 @@ namespace Proiect
                     {
                         var salary = (from s in context.Salarii
                                       where s.Id_Salariu == (item)
-                                      select s.Solda_grad).First();
-                        salary = (int)newsolda;
+                                      select s).First();
+                        salary.Solda_grad = (int)newsolda;
                         context.SaveChanges();
 
                     }
@@ -179,6 +225,7 @@ namespace Proiect
 
 
                 }
+
             }
             if (selectfunctie != null)
             {
@@ -210,8 +257,8 @@ namespace Proiect
                     {
                         var salary = (from s in context.Salarii
                                       where s.Id_Salariu == (item)
-                                      select s.Solda_functie).First();
-                        salary = (int)newsoldaf;
+                                      select s).First();
+                        salary.Solda_functie = (int)newsoldaf;
                         context.SaveChanges();
 
                     }
@@ -220,6 +267,39 @@ namespace Proiect
 
                 }
             }
+            if (spor != null)
+            {
+
+                double marires = 0;
+
+                double newsoldas;
+                double.TryParse(spor, out marires);
+                marires = marires / 100;
+                var results = from s in context.Salarii
+                              select s.Spor_conditii_de_munca;
+                foreach (var items in results)
+                {
+                    var newspor = (from ns in context.Salarii
+                                   where ns.Spor_conditii_de_munca == items
+                                   select ns).First();
+                    int changespor = (int)newspor.Spor_conditii_de_munca;
+                    newsoldas = changespor - changespor * marires;
+                    newspor.Spor_conditii_de_munca = (int)newsoldas;
+                    context.SaveChanges();
+
+                }
+            }
+            DialogResult res = MessageBox.Show("Scadere Efectuata!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
+        }
+
+        private void boxSpor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
 
         }
     }

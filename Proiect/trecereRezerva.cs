@@ -19,13 +19,13 @@ namespace Proiect
         {
             InitializeComponent();
             pictureBox1.BackColor = Color.FromArgb(5, Color.Green);
-           // btnRezerva.BackColor= Color.FromArgb(5, Color.Green);
-           // btnAfisare.BackColor= System.Drawing.Color.FromArgb(5, btnCancel.BackColor);
-            label1.BackColor= Color.FromArgb(50, Color.White);
+            // btnRezerva.BackColor= Color.FromArgb(5, Color.Green);
+            // btnAfisare.BackColor= System.Drawing.Color.FromArgb(5, btnCancel.BackColor);
+            label1.BackColor = Color.FromArgb(50, Color.White);
             label2.BackColor = Color.FromArgb(50, Color.White);
             label3.BackColor = Color.FromArgb(50, Color.White);
-           // btnCancel.BackColor = System.Drawing.Color.FromArgb(50, btnCancel.BackColor);
-           
+            // btnCancel.BackColor = System.Drawing.Color.FromArgb(50, btnCancel.BackColor);
+
 
 
 
@@ -46,7 +46,7 @@ namespace Proiect
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            
+
             this.Close();
         }
 
@@ -67,7 +67,7 @@ namespace Proiect
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void trecereRezerva_Load_1(object sender, EventArgs e)
@@ -79,41 +79,41 @@ namespace Proiect
         {
             using (var context = new HREntities1())
             {
-                var res= from c in context.Angajati
-                              where c.Observatii.Contains("Trecut in Rezerva")
-                              select new
-                              {
-                                 Nume=c.Nume_Angajat,
-                                  Prenume=c.Prenume_Angajat,
-                                  CNP=c.CNP,
-                                  DataAngajare=c.Data_Angajare,
-                                  DataPlecare=c.Data_Plecare,
-                                  Email=c.Email,
-                                  Status=c.Observatii,
-                                  
-                              };
+                var res = from c in context.Angajati
+                          where c.Observatii.Contains("Trecut in Rezerva")
+                          select new
+                          {
+                              Nume = c.Nume_Angajat,
+                              Prenume = c.Prenume_Angajat,
+                              CNP = c.CNP,
+                              DataAngajare = c.Data_Angajare,
+                              DataPlecare = c.Data_Plecare,
+                              Email = c.Email,
+                              Status = c.Observatii,
+
+                          };
                 dataGrid.DataSource = res.ToList();
             }
 
         }
 
-        
+
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
             panel2.BackColor = Color.FromArgb(5, Color.Green);
-           
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            
+
             panel1.BackColor = Color.FromArgb(5, Color.Green);
         }
 
-        
+
         private void dataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -125,47 +125,73 @@ namespace Proiect
         {
 
         }
-
-        //TRANZACTIE
-        static void TrecereRezerva()
+        static bool search(string nume, string prenume)
         {
             using (var context = new HREntities1())
             {
-                using (var dbContextTransaction = context.Database.BeginTransaction())
+                var results = (from c in context.Angajati
+                               where c.Nume_Angajat == nume && c.Prenume_Angajat == prenume
+                               select new
+                               {
+                                   c.Nume_Angajat
+
+                               }).FirstOrDefault();
+                if (results == null)
                 {
+                    MessageBox.Show("Numele introdus nu se afla in baza de date");
+                    return false;
 
-                    try
+                }
+                else
+                {
+                    return true;
+                }
+
+            }
+        }
+        //TRANZACTIE
+        static void TrecereRezerva()
+        {
+            if (search(nume, prenume) == true)
+            {
+                using (var context = new HREntities1())
+                {
+                    using (var dbContextTransaction = context.Database.BeginTransaction())
                     {
 
-                        IFormatProvider culture = new System.Globalization.CultureInfo("fr-FR", true);
-                        date = DateTime.Parse(data, culture, System.Globalization.DateTimeStyles.AssumeLocal);
-                        DateTime data_plecare = date.Date;
+                        try
+                        {
 
-                        var angajat = (from c in context.Angajati
-                                       where c.Nume_Angajat.Equals(nume) && c.Prenume_Angajat.Equals(prenume)
-                                       select c).First();
-                        angajat.Observatii = " Trecut in Rezerva";
-                        angajat.Data_Plecare = data_plecare;
-                        context.SaveChanges();
-                        DialogResult res = MessageBox.Show(nume+" "+prenume+" "+"a fost trecut in rezerva!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        
-                        dbContextTransaction.Commit();
+                            IFormatProvider culture = new System.Globalization.CultureInfo("fr-FR", true);
+                            date = DateTime.Parse(data, culture, System.Globalization.DateTimeStyles.AssumeLocal);
+                            DateTime data_plecare = date.Date;
 
-                    }
+                            var angajat = (from c in context.Angajati
+                                           where c.Nume_Angajat.Equals(nume) && c.Prenume_Angajat.Equals(prenume)
+                                           select c).First();
+                            angajat.Observatii = " Trecut in Rezerva";
+                            angajat.Data_Plecare = data_plecare;
+                            context.SaveChanges();
+                            DialogResult res = MessageBox.Show(nume + " " + prenume + " " + "a fost trecut in rezerva!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    catch (Exception)
-                    {
-                        
-                        DialogResult res = MessageBox.Show("Nu exista numele cautat!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        
-                        dbContextTransaction.Rollback();
+                            dbContextTransaction.Commit();
+
+                        }
+
+                        catch (Exception)
+                        {
+
+                            DialogResult res = MessageBox.Show("Nu exista numele cautat!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            dbContextTransaction.Rollback();
+                        }
                     }
                 }
             }
         }
         private void btnRezerva_Click(object sender, EventArgs e)
         {
-            
+
             TrecereRezerva();
             nameBox.Clear();
             prenumeBox.Clear();

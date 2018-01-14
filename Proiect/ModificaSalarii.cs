@@ -121,120 +121,63 @@ namespace Proiect
         private void button1_Click(object sender, EventArgs e)
         {
 
-            modfAngajatForm modf_salarii = new modfAngajatForm();
-            modf_salarii.Show();
-            boxGrad.Clear();
-            boxFunctie.Clear();
-            textBox1.Clear();
+            if (procentGrad != null && procentFunctie != null && procentSpor != null)
+            {
+
+
+                modfAngajatForm modf_salarii = new modfAngajatForm();
+                modf_salarii.Show();
+                boxGrad.Clear();
+                boxFunctie.Clear();
+                textBox1.Clear();
+            }
+            else if (procentGrad != null || procentFunctie != null || procentSpor != null)
+            {
+                modfAngajatForm modf_salarii = new modfAngajatForm();
+                modf_salarii.Show();
+                boxGrad.Clear();
+                boxFunctie.Clear();
+                textBox1.Clear();
+            }
+            else
+            {
+                DialogResult res = MessageBox.Show("Completati cel putin un camp!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
 
 
         }
 
         private void btnAngajati_Click(object sender, EventArgs e)
         {
-            Chooseform chsalary = new Chooseform();
-            chsalary.Show();
+            if (procentGrad != null && procentFunctie != null && procentSpor != null)
+            {
+                Chooseform chsalary = new Chooseform();
+                chsalary.Show();
+
+            }
+            else if (procentGrad != null || procentFunctie != null || procentSpor != null)
+            {
+                Chooseform chsalary = new Chooseform();
+                chsalary.Show();
+            }
+            else
+            {
+                DialogResult res = MessageBox.Show("Completati cel putin un camp!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
 
 
-    
-    //        boxGrad.Clear();
-    //        boxFunctie.Clear();
-    //        textBox1.Clear();
-    //        var context = new HREntities1();
-
-    //        if (grad != null)
-    //        {
-    //            double marire = 0;
-
-    //            double newsolda;
-    //            double.TryParse(grad, out marire);
-    //            marire = marire / 100;
 
 
-    //            var result = (from c in context.Grade
-
-    //                          join t in context.Angajati on c.Id_Grad equals t.Id_Grad
-    //                          where t.Nume_Angajat.Equals(nume) && t.Prenume_Angajat.Equals(prenume)
-    //                          select c).First();
-    //            newsolda = result.Solda_grad + result.Solda_grad * marire;
-    //            result.Solda_grad = (int)newsolda;
-    //            context.SaveChanges();
-
-
-
-    //            var newsalariu = (from s in context.Angajati
-    //                              join a in context.Salarii on s.Id_Salariu equals a.Id_Salariu
-    //                              where s.Nume_Angajat.Equals(nume) && s.Prenume_Angajat.Equals(prenume)
-    //                              select a).First();
-    //            newsalariu.Solda_grad = (int)newsolda;
-    //            context.SaveChanges();
-
-    //        }
-    //        if (functie != null)
-    //        {
-
-    //            double mariref = 0;
-    //            double change;
-    //            int newsoldaf = 0;
-    //            double.TryParse(functie, out mariref);
-    //            // mariref = mariref / 100;
-
-
-    //            var result1 = (from c in context.Functii
-
-    //                           join t in context.Angajati on c.Id_Functie equals t.Id_Functie
-    //                           where t.Nume_Angajat.Equals(nume) && t.Prenume_Angajat.Equals(prenume)
-    //                           select c).First();
-    //            change = (double)result1.Solda_functie;
-    //            change = change + (change * (mariref / 100));
-    //            newsoldaf = (int)change;
-    //            result1.Solda_functie = newsoldaf;
-    //            context.SaveChanges();
-
-    //            var newsalariu = (from s1 in context.Angajati
-    //                              join a1 in context.Salarii on s1.Id_Salariu equals a1.Id_Salariu
-    //                              where s1.Nume_Angajat.Equals(nume) && s1.Prenume_Angajat.Equals(prenume)
-    //                              select a1).First();
-    //            newsalariu.Solda_functie = (int)newsoldaf;
-    //            context.SaveChanges();
-
-
-    //        }
-    //        if (spor != null)
-    //        {
-    //            double marires = 0;
-    //            double changes;
-    //            int newsoldas = 0;
-    //            double.TryParse(spor, out marires);
-    //            // mariref = mariref / 100;
-
-
-    //            var result1 = (from c in context.Salarii
-
-    //                           join t in context.Angajati on c.Id_Salariu equals t.Id_Salariu
-    //                           where t.Nume_Angajat.Equals(nume) && t.Prenume_Angajat.Equals(prenume)
-    //                           select c).First();
-    //            changes = (double)result1.Spor_conditii_de_munca;
-    //            changes = changes + (changes * (marires / 100));
-    //            newsoldas = (int)changes;
-    //            result1.Spor_conditii_de_munca = newsoldas;
-
-    //            context.SaveChanges();
-
-    //            var newsalariu = (from s2 in context.Angajati
-    //                              join a2 in context.Salarii on s2.Id_Salariu equals a2.Id_Salariu
-    //                              where s2.Nume_Angajat.Equals(nume) && s2.Prenume_Angajat.Equals(prenume)
-    //                              select a2).First();
-    //            newsalariu.Spor_conditii_de_munca = (int)newsoldas;
-    //            context.SaveChanges();
-    //        }
-        
-
-    //}
 
         private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
         }
@@ -256,7 +199,7 @@ namespace Proiect
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-           procentSpor = textBox1.Text;
+            procentSpor = textBox1.Text;
         }
     }
 }
