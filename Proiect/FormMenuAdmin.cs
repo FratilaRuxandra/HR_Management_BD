@@ -372,7 +372,7 @@ namespace Proiect
         {
 
             var context = new HREntities1();
-            context.ModifyDepartamente(nume_dep, nume_nou_dep, nume_sef_nou);
+            context.ModifyDepartamente1(nume_dep, nume_nou_dep, nume_sef_nou);
             panelModDep.Visible = false;
         }
 
