@@ -175,5 +175,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Vechime_Angajati">
+      <EntityTypeMapping TypeName="HRModel.Vechime_Angajati">
+        <MappingFragment StoreEntitySet="Vechime_Angajati">
+          <ScalarProperty Name="Vechime" ColumnName="Vechime" />
+          <ScalarProperty Name="Prenume_Angajat" ColumnName="Prenume_Angajat" />
+          <ScalarProperty Name="Nume_Angajat" ColumnName="Nume_Angajat" />
+          <ScalarProperty Name="Id_Grad" ColumnName="Id_Grad" />
+          <ScalarProperty Name="Id_Functie" ColumnName="Id_Functie" />
+          <ScalarProperty Name="Id_Angajat" ColumnName="Id_Angajat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

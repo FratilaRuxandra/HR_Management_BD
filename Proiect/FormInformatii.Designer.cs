@@ -47,6 +47,7 @@
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonProiecte = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.buttonVechime = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -219,6 +220,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.buttonVechime);
             this.panel2.Controls.Add(this.buttonCancel);
             this.panel2.Controls.Add(this.buttonProiecte);
             this.panel2.Controls.Add(this.buttonDepartamente);
@@ -258,6 +260,16 @@
             this.label4.Size = new System.Drawing.Size(133, 32);
             this.label4.TabIndex = 0;
             this.label4.Text = "Generale";
+            // 
+            // buttonVechime
+            // 
+            this.buttonVechime.Location = new System.Drawing.Point(267, 89);
+            this.buttonVechime.Name = "buttonVechime";
+            this.buttonVechime.Size = new System.Drawing.Size(128, 63);
+            this.buttonVechime.TabIndex = 8;
+            this.buttonVechime.Text = "Vechime";
+            this.buttonVechime.UseVisualStyleBackColor = true;
+            this.buttonVechime.Click += new System.EventHandler(this.buttonVechime_Click);
             // 
             // FormInformatii
             // 
@@ -302,5 +314,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button buttonProiecte;
         private System.Windows.Forms.Button buttonCancel;
+        private System.Windows.Forms.Button buttonVechime;
     }
 }

@@ -192,6 +192,9 @@
     <Compile Include="trecereRezerva.Designer.cs">
       <DependentUpon>trecereRezerva.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vechime_Angajati.cs">
+      <DependentUpon>HR_Model.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Chooseform.resx">
       <DependentUpon>Chooseform.cs</DependentUpon>
     </EmbeddedResource>

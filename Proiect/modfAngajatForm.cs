@@ -70,7 +70,7 @@ namespace Proiect
                                   join t in context.Angajati on c.Id_Grad equals t.Id_Grad
                                   where t.Nume_Angajat.Equals(nume) && t.Prenume_Angajat.Equals(prenume)
                                   select c).First();
-                    newsolda = result.Solda_grad + result.Solda_grad * marire;
+                    newsolda =Convert.ToDouble(result.Solda_grad + result.Solda_grad * marire);
                     result.Solda_grad = (int)newsolda;
                 context.SaveChanges();
 
@@ -174,7 +174,7 @@ namespace Proiect
                               join t in context.Angajati on c.Id_Grad equals t.Id_Grad
                               where t.Nume_Angajat.Equals(nume) && t.Prenume_Angajat.Equals(prenume)
                               select c).First();
-                newsolda = result.Solda_grad -result.Solda_grad * marire;
+                newsolda = Convert.ToDouble(result.Solda_grad -result.Solda_grad * marire);
                 result.Solda_grad = (int)newsolda;
                 context.SaveChanges();
 

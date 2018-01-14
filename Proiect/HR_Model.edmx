@@ -164,6 +164,21 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'HR.dbo.Vechime_Angajati' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Vechime_Angajati">
+          <Key>
+            <PropertyRef Name="Id_Angajat" />
+            <PropertyRef Name="Nume_Angajat" />
+            <PropertyRef Name="Prenume_Angajat" />
+          </Key>
+          <Property Name="Id_Angajat" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_Functie" Type="int" />
+          <Property Name="Id_Grad" Type="int" />
+          <Property Name="Nume_Angajat" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Prenume_Angajat" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Vechime" Type="int" />
+        </EntityType>
         <Association Name="FK__Angajati___Id_An__31EC6D26">
           <End Role="Angajati" Type="Self.Angajati" Multiplicity="1" />
           <End Role="Angajati_Departament" Type="Self.Angajati_Departament" Multiplicity="*" />
@@ -422,6 +437,16 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
     [Grade_Salarii].[Id_Grad] AS [Id_Grad], 
     [Grade_Salarii].[Id_Salariu] AS [Id_Salariu]
     FROM [dbo].[Grade_Salarii] AS [Grade_Salarii]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Vechime_Angajati" EntityType="Self.Vechime_Angajati" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Vechime_Angajati].[Id_Angajat] AS [Id_Angajat], 
+    [Vechime_Angajati].[Id_Functie] AS [Id_Functie], 
+    [Vechime_Angajati].[Id_Grad] AS [Id_Grad], 
+    [Vechime_Angajati].[Nume_Angajat] AS [Nume_Angajat], 
+    [Vechime_Angajati].[Prenume_Angajat] AS [Prenume_Angajat], 
+    [Vechime_Angajati].[Vechime] AS [Vechime]
+    FROM [dbo].[Vechime_Angajati] AS [Vechime_Angajati]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK__Angajati___Id_An__31EC6D26" Association="Self.FK__Angajati___Id_An__31EC6D26">
             <End Role="Angajati" EntitySet="Angajati" />
@@ -825,9 +850,6 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
             <End Role="Angajati" EntitySet="Angajati" />
             <End Role="CVuri" EntitySet="CVuri" />
           </AssociationSet>
-          <FunctionImport Name="NUMEdupaID" ReturnType="Collection(String)">
-            <Parameter Name="IDResponsabil" Type="String" Mode="In" />
-          </FunctionImport>
           <FunctionImport Name="sp_alterdiagram">
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
@@ -874,6 +896,7 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
             <Parameter Name="PrenumeAngajat" Mode="In" Type="String" />
             <Parameter Name="NouaFunctie" Mode="In" Type="String" />
           </FunctionImport>
+          <EntitySet Name="Vechime_Angajati" EntityType="HRModel.Vechime_Angajati" />
         </EntityContainer>
         <EntityType Name="Rude">
           <Key>
@@ -928,6 +951,19 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Vechime_Angajati">
+          <Key>
+            <PropertyRef Name="Id_Angajat" />
+            <PropertyRef Name="Nume_Angajat" />
+            <PropertyRef Name="Prenume_Angajat" />
+          </Key>
+          <Property Name="Id_Angajat" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_Functie" Type="Int32" />
+          <Property Name="Id_Grad" Type="Int32" />
+          <Property Name="Nume_Angajat" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Prenume_Angajat" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Vechime" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1105,6 +1141,18 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
                 <ScalarProperty Name="Cale_fisier" ColumnName="Cale_fisier" />
                 <ScalarProperty Name="Id_Angajat" ColumnName="Id_Angajat" />
                 <ScalarProperty Name="Id_CV" ColumnName="Id_CV" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vechime_Angajati">
+            <EntityTypeMapping TypeName="HRModel.Vechime_Angajati">
+              <MappingFragment StoreEntitySet="Vechime_Angajati">
+                <ScalarProperty Name="Vechime" ColumnName="Vechime" />
+                <ScalarProperty Name="Prenume_Angajat" ColumnName="Prenume_Angajat" />
+                <ScalarProperty Name="Nume_Angajat" ColumnName="Nume_Angajat" />
+                <ScalarProperty Name="Id_Grad" ColumnName="Id_Grad" />
+                <ScalarProperty Name="Id_Functie" ColumnName="Id_Functie" />
+                <ScalarProperty Name="Id_Angajat" ColumnName="Id_Angajat" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

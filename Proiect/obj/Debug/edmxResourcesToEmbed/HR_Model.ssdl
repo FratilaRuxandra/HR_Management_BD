@@ -159,6 +159,21 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HR.dbo.Vechime_Angajati' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vechime_Angajati">
+    <Key>
+      <PropertyRef Name="Id_Angajat" />
+      <PropertyRef Name="Nume_Angajat" />
+      <PropertyRef Name="Prenume_Angajat" />
+    </Key>
+    <Property Name="Id_Angajat" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Functie" Type="int" />
+    <Property Name="Id_Grad" Type="int" />
+    <Property Name="Nume_Angajat" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Prenume_Angajat" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Vechime" Type="int" />
+  </EntityType>
   <Association Name="FK__Angajati___Id_An__31EC6D26">
     <End Role="Angajati" Type="Self.Angajati" Multiplicity="1" />
     <End Role="Angajati_Departament" Type="Self.Angajati_Departament" Multiplicity="*" />
@@ -417,6 +432,16 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
     [Grade_Salarii].[Id_Grad] AS [Id_Grad], 
     [Grade_Salarii].[Id_Salariu] AS [Id_Salariu]
     FROM [dbo].[Grade_Salarii] AS [Grade_Salarii]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vechime_Angajati" EntityType="Self.Vechime_Angajati" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vechime_Angajati].[Id_Angajat] AS [Id_Angajat], 
+    [Vechime_Angajati].[Id_Functie] AS [Id_Functie], 
+    [Vechime_Angajati].[Id_Grad] AS [Id_Grad], 
+    [Vechime_Angajati].[Nume_Angajat] AS [Nume_Angajat], 
+    [Vechime_Angajati].[Prenume_Angajat] AS [Prenume_Angajat], 
+    [Vechime_Angajati].[Vechime] AS [Vechime]
+    FROM [dbo].[Vechime_Angajati] AS [Vechime_Angajati]</DefiningQuery>
     </EntitySet>
     <AssociationSet Name="FK__Angajati___Id_An__31EC6D26" Association="Self.FK__Angajati___Id_An__31EC6D26">
       <End Role="Angajati" EntitySet="Angajati" />

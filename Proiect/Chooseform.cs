@@ -45,8 +45,11 @@ namespace Proiect
                                   where c.Denumire.Equals(selected)
                                   select c).First();
 
-                                 
-                    newsolda = result.Solda_grad + result.Solda_grad * marire;
+
+                    int aux;
+                    aux = (int)result.Solda_grad;
+                    newsolda = aux + aux * marire;
+                    
                     result.Solda_grad = (int)newsolda;
                     context.SaveChanges();
 
@@ -152,8 +155,10 @@ namespace Proiect
                                   where c.Denumire.Equals(selected)
                                   select c).First();
 
-
-                    newsolda = result.Solda_grad - result.Solda_grad * marire;
+                    int aux;
+                    aux = (int)result.Solda_grad;
+                    newsolda = aux - aux * marire;
+                    
                     result.Solda_grad = (int)newsolda;
                     context.SaveChanges();
 

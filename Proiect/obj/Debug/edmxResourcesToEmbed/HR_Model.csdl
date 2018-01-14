@@ -337,9 +337,6 @@
       <End Role="Angajati" EntitySet="Angajati" />
       <End Role="CVuri" EntitySet="CVuri" />
     </AssociationSet>
-    <FunctionImport Name="NUMEdupaID" ReturnType="Collection(String)">
-      <Parameter Name="IDResponsabil" Type="String" Mode="In" />
-    </FunctionImport>
     <FunctionImport Name="sp_alterdiagram">
       <Parameter Name="diagramname" Mode="In" Type="String" />
       <Parameter Name="owner_id" Mode="In" Type="Int32" />
@@ -386,6 +383,7 @@
       <Parameter Name="PrenumeAngajat" Mode="In" Type="String" />
       <Parameter Name="NouaFunctie" Mode="In" Type="String" />
     </FunctionImport>
+    <EntitySet Name="Vechime_Angajati" EntityType="HRModel.Vechime_Angajati" />
   </EntityContainer>
   <EntityType Name="Rude">
     <Key>
@@ -440,4 +438,17 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="Vechime_Angajati">
+    <Key>
+      <PropertyRef Name="Id_Angajat" />
+      <PropertyRef Name="Nume_Angajat" />
+      <PropertyRef Name="Prenume_Angajat" />
+    </Key>
+    <Property Name="Id_Angajat" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Functie" Type="Int32" />
+    <Property Name="Id_Grad" Type="Int32" />
+    <Property Name="Nume_Angajat" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Prenume_Angajat" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Vechime" Type="Int32" />
+  </EntityType>
 </Schema>

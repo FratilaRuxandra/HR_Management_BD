@@ -1438,6 +1438,28 @@ namespace Proiect
         {
             this.Close();
         }
+
+        private void buttonVechime_Click(object sender, EventArgs e)
+        {
+            var context = new HREntities1();
+            var result = from vec in context.Vechime_Angajati
+                         join ang in context.Angajati on vec.Id_Angajat equals ang.Id_Angajat
+                         select new
+                         {
+                             vec.Id_Angajat,
+                             Functie = ang.Functii.Denumire,
+                             Grad = ang.Grade.Denumire,
+                             Nume = vec.Nume_Angajat,
+                             Prenume = vec.Prenume_Angajat,
+                             vec.Vechime
+                         };
+            
+            dataGridView1.DataSource = result.ToList();
+            dataGridView1.Columns[0].HeaderText = "ID Angajat";
+            
+
+
+        }
     }
     }
     

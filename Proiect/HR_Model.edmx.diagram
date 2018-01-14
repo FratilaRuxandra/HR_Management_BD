@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="69657913ce7c4d88bedae0c213a3a7c5" Name="Diagram1" ZoomLevel="90">
+      <Diagram DiagramId="69657913ce7c4d88bedae0c213a3a7c5" Name="Diagram1" ZoomLevel="74">
         <EntityTypeShape EntityType="HRModel.Adrese" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
         <EntityTypeShape EntityType="HRModel.Angajati" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="HRModel.Departamente" Width="1.5" PointX="0.75" PointY="3.25" IsExpanded="true" />
@@ -31,6 +31,7 @@
         <EntityTypeShape EntityType="HRModel.Logins" Width="1.5" PointX="8.875" PointY="1.875" />
         <EntityTypeShape EntityType="HRModel.CVuri" Width="1.5" PointX="5.25" PointY="10.375" />
         <AssociationConnector Association="HRModel.FK__CVuri__Id_Angaja__619B8048" />
+        <EntityTypeShape EntityType="HRModel.Vechime_Angajati" Width="1.5" PointX="8.375" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
