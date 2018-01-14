@@ -44,9 +44,12 @@
             // labelGrupa
             // 
             this.labelGrupa.AutoSize = true;
-            this.labelGrupa.Location = new System.Drawing.Point(2, 30);
+            this.labelGrupa.BackColor = System.Drawing.Color.Transparent;
+            this.labelGrupa.ForeColor = System.Drawing.Color.White;
+            this.labelGrupa.Location = new System.Drawing.Point(3, 37);
+            this.labelGrupa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelGrupa.Name = "labelGrupa";
-            this.labelGrupa.Size = new System.Drawing.Size(70, 13);
+            this.labelGrupa.Size = new System.Drawing.Size(93, 17);
             this.labelGrupa.TabIndex = 5;
             this.labelGrupa.Text = "Grupa Sange";
             this.labelGrupa.Click += new System.EventHandler(this.labelGrupa_Click);
@@ -54,9 +57,12 @@
             // labelInaltime
             // 
             this.labelInaltime.AutoSize = true;
-            this.labelInaltime.Location = new System.Drawing.Point(2, 57);
+            this.labelInaltime.BackColor = System.Drawing.Color.Transparent;
+            this.labelInaltime.ForeColor = System.Drawing.Color.White;
+            this.labelInaltime.Location = new System.Drawing.Point(3, 70);
+            this.labelInaltime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelInaltime.Name = "labelInaltime";
-            this.labelInaltime.Size = new System.Drawing.Size(43, 13);
+            this.labelInaltime.Size = new System.Drawing.Size(56, 17);
             this.labelInaltime.TabIndex = 6;
             this.labelInaltime.Text = "Inaltime";
             this.labelInaltime.Click += new System.EventHandler(this.labelInaltime_Click);
@@ -64,9 +70,12 @@
             // labelGreutate
             // 
             this.labelGreutate.AutoSize = true;
-            this.labelGreutate.Location = new System.Drawing.Point(2, 90);
+            this.labelGreutate.BackColor = System.Drawing.Color.Transparent;
+            this.labelGreutate.ForeColor = System.Drawing.Color.White;
+            this.labelGreutate.Location = new System.Drawing.Point(3, 111);
+            this.labelGreutate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelGreutate.Name = "labelGreutate";
-            this.labelGreutate.Size = new System.Drawing.Size(48, 13);
+            this.labelGreutate.Size = new System.Drawing.Size(64, 17);
             this.labelGreutate.TabIndex = 7;
             this.labelGreutate.Text = "Greutate";
             this.labelGreutate.Click += new System.EventHandler(this.labelGreutate_Click);
@@ -74,9 +83,12 @@
             // labelStareSanatate
             // 
             this.labelStareSanatate.AutoSize = true;
-            this.labelStareSanatate.Location = new System.Drawing.Point(2, 120);
+            this.labelStareSanatate.BackColor = System.Drawing.Color.Transparent;
+            this.labelStareSanatate.ForeColor = System.Drawing.Color.White;
+            this.labelStareSanatate.Location = new System.Drawing.Point(3, 148);
+            this.labelStareSanatate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelStareSanatate.Name = "labelStareSanatate";
-            this.labelStareSanatate.Size = new System.Drawing.Size(78, 13);
+            this.labelStareSanatate.Size = new System.Drawing.Size(103, 17);
             this.labelStareSanatate.TabIndex = 8;
             this.labelStareSanatate.Text = "Stare Sanatate";
             this.labelStareSanatate.Click += new System.EventHandler(this.labelStareSanatate_Click);
@@ -84,9 +96,12 @@
             // labelObservatii
             // 
             this.labelObservatii.AutoSize = true;
-            this.labelObservatii.Location = new System.Drawing.Point(2, 163);
+            this.labelObservatii.BackColor = System.Drawing.Color.Transparent;
+            this.labelObservatii.ForeColor = System.Drawing.Color.White;
+            this.labelObservatii.Location = new System.Drawing.Point(3, 201);
+            this.labelObservatii.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelObservatii.Name = "labelObservatii";
-            this.labelObservatii.Size = new System.Drawing.Size(54, 13);
+            this.labelObservatii.Size = new System.Drawing.Size(72, 17);
             this.labelObservatii.TabIndex = 9;
             this.labelObservatii.Text = "Observatii";
             this.labelObservatii.Click += new System.EventHandler(this.labelObservatii_Click);
@@ -95,25 +110,28 @@
             // 
             this.comboGrupa.AllowDrop = true;
             this.comboGrupa.FormattingEnabled = true;
-            this.comboGrupa.Location = new System.Drawing.Point(118, 27);
+            this.comboGrupa.Location = new System.Drawing.Point(157, 33);
+            this.comboGrupa.Margin = new System.Windows.Forms.Padding(4);
             this.comboGrupa.Name = "comboGrupa";
-            this.comboGrupa.Size = new System.Drawing.Size(121, 21);
+            this.comboGrupa.Size = new System.Drawing.Size(160, 24);
             this.comboGrupa.TabIndex = 10;
             this.comboGrupa.SelectedIndexChanged += new System.EventHandler(this.comboGrupa_SelectedIndexChanged);
             // 
             // textInaltime
             // 
-            this.textInaltime.Location = new System.Drawing.Point(118, 57);
+            this.textInaltime.Location = new System.Drawing.Point(157, 70);
+            this.textInaltime.Margin = new System.Windows.Forms.Padding(4);
             this.textInaltime.Name = "textInaltime";
-            this.textInaltime.Size = new System.Drawing.Size(121, 20);
+            this.textInaltime.Size = new System.Drawing.Size(160, 22);
             this.textInaltime.TabIndex = 11;
             this.textInaltime.TextChanged += new System.EventHandler(this.textInaltime_TextChanged);
             // 
             // textGreutate
             // 
-            this.textGreutate.Location = new System.Drawing.Point(118, 90);
+            this.textGreutate.Location = new System.Drawing.Point(157, 111);
+            this.textGreutate.Margin = new System.Windows.Forms.Padding(4);
             this.textGreutate.Name = "textGreutate";
-            this.textGreutate.Size = new System.Drawing.Size(121, 20);
+            this.textGreutate.Size = new System.Drawing.Size(160, 22);
             this.textGreutate.TabIndex = 12;
             this.textGreutate.TextChanged += new System.EventHandler(this.textGreutate_TextChanged);
             // 
@@ -121,25 +139,28 @@
             // 
             this.comboStare.AllowDrop = true;
             this.comboStare.FormattingEnabled = true;
-            this.comboStare.Location = new System.Drawing.Point(118, 120);
+            this.comboStare.Location = new System.Drawing.Point(157, 148);
+            this.comboStare.Margin = new System.Windows.Forms.Padding(4);
             this.comboStare.Name = "comboStare";
-            this.comboStare.Size = new System.Drawing.Size(121, 21);
+            this.comboStare.Size = new System.Drawing.Size(160, 24);
             this.comboStare.TabIndex = 13;
             this.comboStare.SelectedIndexChanged += new System.EventHandler(this.comboStare_SelectedIndexChanged);
             // 
             // textObservatii
             // 
-            this.textObservatii.Location = new System.Drawing.Point(118, 156);
+            this.textObservatii.Location = new System.Drawing.Point(157, 192);
+            this.textObservatii.Margin = new System.Windows.Forms.Padding(4);
             this.textObservatii.Name = "textObservatii";
-            this.textObservatii.Size = new System.Drawing.Size(121, 20);
+            this.textObservatii.Size = new System.Drawing.Size(160, 22);
             this.textObservatii.TabIndex = 14;
             this.textObservatii.TextChanged += new System.EventHandler(this.textObservatii_TextChanged);
             // 
             // buttonAdauga
             // 
-            this.buttonAdauga.Location = new System.Drawing.Point(88, 216);
+            this.buttonAdauga.Location = new System.Drawing.Point(117, 266);
+            this.buttonAdauga.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAdauga.Name = "buttonAdauga";
-            this.buttonAdauga.Size = new System.Drawing.Size(75, 23);
+            this.buttonAdauga.Size = new System.Drawing.Size(100, 28);
             this.buttonAdauga.TabIndex = 15;
             this.buttonAdauga.Text = "Adauga";
             this.buttonAdauga.UseVisualStyleBackColor = true;
@@ -147,9 +168,10 @@
             // 
             // FormFisaMed
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.BackgroundImage = global::Proiect.Properties.Resources._316016;
+            this.ClientSize = new System.Drawing.Size(379, 321);
             this.Controls.Add(this.buttonAdauga);
             this.Controls.Add(this.textObservatii);
             this.Controls.Add(this.comboStare);
@@ -161,9 +183,10 @@
             this.Controls.Add(this.labelGreutate);
             this.Controls.Add(this.labelInaltime);
             this.Controls.Add(this.labelGrupa);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormFisaMed";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "FormFisaMed";
+            this.Text = "Fisa Medicala";
             this.Load += new System.EventHandler(this.FormFisaMed_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

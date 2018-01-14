@@ -50,7 +50,9 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(608, 34);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(75, 21);
@@ -60,7 +62,9 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(507, 34);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 21);
@@ -71,7 +75,9 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(212, 30);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(273, 28);
@@ -112,7 +118,9 @@
             // labelJudSect
             // 
             this.labelJudSect.AutoSize = true;
+            this.labelJudSect.BackColor = System.Drawing.Color.Transparent;
             this.labelJudSect.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelJudSect.ForeColor = System.Drawing.Color.White;
             this.labelJudSect.Location = new System.Drawing.Point(521, 226);
             this.labelJudSect.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelJudSect.Name = "labelJudSect";
@@ -133,7 +141,9 @@
             // labelOras
             // 
             this.labelOras.AutoSize = true;
+            this.labelOras.BackColor = System.Drawing.Color.Transparent;
             this.labelOras.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelOras.ForeColor = System.Drawing.Color.White;
             this.labelOras.Location = new System.Drawing.Point(192, 224);
             this.labelOras.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelOras.Name = "labelOras";
@@ -154,7 +164,9 @@
             // labelApartament
             // 
             this.labelApartament.AutoSize = true;
+            this.labelApartament.BackColor = System.Drawing.Color.Transparent;
             this.labelApartament.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelApartament.ForeColor = System.Drawing.Color.White;
             this.labelApartament.Location = new System.Drawing.Point(60, 224);
             this.labelApartament.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelApartament.Name = "labelApartament";
@@ -175,7 +187,9 @@
             // labelBloc
             // 
             this.labelBloc.AutoSize = true;
+            this.labelBloc.BackColor = System.Drawing.Color.Transparent;
             this.labelBloc.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBloc.ForeColor = System.Drawing.Color.White;
             this.labelBloc.Location = new System.Drawing.Point(440, 154);
             this.labelBloc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelBloc.Name = "labelBloc";
@@ -196,7 +210,9 @@
             // labelNrStrada
             // 
             this.labelNrStrada.AutoSize = true;
+            this.labelNrStrada.BackColor = System.Drawing.Color.Transparent;
             this.labelNrStrada.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNrStrada.ForeColor = System.Drawing.Color.White;
             this.labelNrStrada.Location = new System.Drawing.Point(302, 152);
             this.labelNrStrada.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNrStrada.Name = "labelNrStrada";
@@ -217,7 +233,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(59, 153);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
@@ -230,6 +248,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Proiect.Properties.Resources._316016;
             this.ClientSize = new System.Drawing.Size(910, 412);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -249,7 +268,7 @@
             this.Controls.Add(this.textStrada);
             this.Controls.Add(this.label1);
             this.Name = "adresaForm";
-            this.Text = "adresaForm";
+            this.Text = "Adresa";
             this.Load += new System.EventHandler(this.adresaForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -38,7 +38,7 @@
             // 
             // buttonAngajatNou
             // 
-            this.buttonAngajatNou.Location = new System.Drawing.Point(71, 56);
+            this.buttonAngajatNou.Location = new System.Drawing.Point(118, 54);
             this.buttonAngajatNou.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAngajatNou.Name = "buttonAngajatNou";
             this.buttonAngajatNou.Size = new System.Drawing.Size(169, 44);
@@ -49,7 +49,7 @@
             // 
             // buttonModificariAngajati
             // 
-            this.buttonModificariAngajati.Location = new System.Drawing.Point(71, 117);
+            this.buttonModificariAngajati.Location = new System.Drawing.Point(118, 119);
             this.buttonModificariAngajati.Margin = new System.Windows.Forms.Padding(4);
             this.buttonModificariAngajati.Name = "buttonModificariAngajati";
             this.buttonModificariAngajati.Size = new System.Drawing.Size(169, 47);
@@ -60,7 +60,7 @@
             // 
             // buttonInformatii
             // 
-            this.buttonInformatii.Location = new System.Drawing.Point(71, 186);
+            this.buttonInformatii.Location = new System.Drawing.Point(118, 187);
             this.buttonInformatii.Margin = new System.Windows.Forms.Padding(4);
             this.buttonInformatii.Name = "buttonInformatii";
             this.buttonInformatii.Size = new System.Drawing.Size(169, 52);
@@ -71,7 +71,7 @@
             // 
             // buttonTransfer
             // 
-            this.buttonTransfer.Location = new System.Drawing.Point(71, 260);
+            this.buttonTransfer.Location = new System.Drawing.Point(118, 260);
             this.buttonTransfer.Margin = new System.Windows.Forms.Padding(4);
             this.buttonTransfer.Name = "buttonTransfer";
             this.buttonTransfer.Size = new System.Drawing.Size(169, 49);
@@ -82,7 +82,7 @@
             // 
             // buttonRezerva
             // 
-            this.buttonRezerva.Location = new System.Drawing.Point(71, 330);
+            this.buttonRezerva.Location = new System.Drawing.Point(118, 330);
             this.buttonRezerva.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRezerva.Name = "buttonRezerva";
             this.buttonRezerva.Size = new System.Drawing.Size(169, 49);
@@ -93,7 +93,7 @@
             // 
             // btnSalarii
             // 
-            this.btnSalarii.Location = new System.Drawing.Point(71, 403);
+            this.btnSalarii.Location = new System.Drawing.Point(118, 400);
             this.btnSalarii.Name = "btnSalarii";
             this.btnSalarii.Size = new System.Drawing.Size(169, 51);
             this.btnSalarii.TabIndex = 5;
@@ -105,7 +105,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(317, 498);
+            this.BackgroundImage = global::Proiect.Properties.Resources._316016;
+            this.ClientSize = new System.Drawing.Size(411, 498);
             this.Controls.Add(this.btnSalarii);
             this.Controls.Add(this.buttonRezerva);
             this.Controls.Add(this.buttonTransfer);

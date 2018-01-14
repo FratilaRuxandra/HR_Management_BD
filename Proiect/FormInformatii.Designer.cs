@@ -44,6 +44,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.buttonDepartamente = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonCVuri = new System.Windows.Forms.Button();
             this.buttonVechime = new System.Windows.Forms.Button();
             this.buttonProiecte = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -51,10 +52,9 @@
             this.buttonExportExcel = new System.Windows.Forms.Button();
             this.buttonExportPDF = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.textFilename = new System.Windows.Forms.TextBox();
             this.buttonExportCSV = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.textFilename = new System.Windows.Forms.TextBox();
-            this.buttonCVuri = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -121,6 +121,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.buttonAdrese);
             this.panel1.Controls.Add(this.buttonProiect);
             this.panel1.Controls.Add(this.buttonFisaMed);
@@ -192,6 +193,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(33, 12);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(218, 32);
@@ -201,18 +203,22 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(36, 207);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 17);
+            this.label2.Size = new System.Drawing.Size(80, 25);
             this.label2.TabIndex = 6;
             this.label2.Text = "Valoare";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(36, 154);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 17);
+            this.label1.Size = new System.Drawing.Size(65, 25);
             this.label1.TabIndex = 5;
             this.label1.Text = "Camp";
             // 
@@ -228,6 +234,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.buttonCVuri);
             this.panel2.Controls.Add(this.buttonVechime);
             this.panel2.Controls.Add(this.buttonProiecte);
@@ -238,6 +245,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(430, 465);
             this.panel2.TabIndex = 6;
+            // 
+            // buttonCVuri
+            // 
+            this.buttonCVuri.Location = new System.Drawing.Point(267, 230);
+            this.buttonCVuri.Name = "buttonCVuri";
+            this.buttonCVuri.Size = new System.Drawing.Size(128, 63);
+            this.buttonCVuri.TabIndex = 9;
+            this.buttonCVuri.Text = "CV-uri";
+            this.buttonCVuri.UseVisualStyleBackColor = true;
+            this.buttonCVuri.Click += new System.EventHandler(this.buttonCVuri_Click);
             // 
             // buttonVechime
             // 
@@ -262,7 +279,9 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Transparent;
             this.label4.Location = new System.Drawing.Point(60, 12);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(133, 32);
@@ -301,6 +320,7 @@
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.textFilename);
             this.panel3.Controls.Add(this.buttonExportCSV);
             this.panel3.Controls.Add(this.label5);
@@ -310,6 +330,13 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(286, 465);
             this.panel3.TabIndex = 11;
+            // 
+            // textFilename
+            // 
+            this.textFilename.Location = new System.Drawing.Point(87, 67);
+            this.textFilename.Name = "textFilename";
+            this.textFilename.Size = new System.Drawing.Size(128, 22);
+            this.textFilename.TabIndex = 13;
             // 
             // buttonExportCSV
             // 
@@ -324,34 +351,20 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(81, 12);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(137, 32);
             this.label5.TabIndex = 11;
             this.label5.Text = "Export To";
             // 
-            // textFilename
-            // 
-            this.textFilename.Location = new System.Drawing.Point(87, 67);
-            this.textFilename.Name = "textFilename";
-            this.textFilename.Size = new System.Drawing.Size(128, 22);
-            this.textFilename.TabIndex = 13;
-            // 
-            // buttonCVuri
-            // 
-            this.buttonCVuri.Location = new System.Drawing.Point(267, 230);
-            this.buttonCVuri.Name = "buttonCVuri";
-            this.buttonCVuri.Size = new System.Drawing.Size(128, 63);
-            this.buttonCVuri.TabIndex = 9;
-            this.buttonCVuri.Text = "CV-uri";
-            this.buttonCVuri.UseVisualStyleBackColor = true;
-            this.buttonCVuri.Click += new System.EventHandler(this.buttonCVuri_Click);
-            // 
             // FormInformatii
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Proiect.Properties.Resources._316016;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);

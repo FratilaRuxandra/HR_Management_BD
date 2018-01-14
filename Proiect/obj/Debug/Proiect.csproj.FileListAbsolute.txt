@@ -93,3 +93,5 @@ C:\Users\EGD\Documents\Visual Studio 2015\Projects\HR_Management_BD\Proiect\bin\
 C:\Users\EGD\Documents\Visual Studio 2015\Projects\HR_Management_BD\Proiect\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\EGD\Documents\Visual Studio 2015\Projects\HR_Management_BD\Proiect\bin\Debug\EntityFramework.xml
 C:\Users\EGD\Documents\Visual Studio 2015\Projects\HR_Management_BD\Proiect\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Rares\source\repos\HR_Management_BD\Proiect\obj\Debug\Proiect.adresaForm.resources
+C:\Users\Rares\source\repos\HR_Management_BD\Proiect\obj\Debug\Proiect.FormTEST.resources

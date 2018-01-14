@@ -63,7 +63,7 @@
             // 
             // boxNewVal
             // 
-            this.boxNewVal.Location = new System.Drawing.Point(201, 382);
+            this.boxNewVal.Location = new System.Drawing.Point(275, 341);
             this.boxNewVal.Name = "boxNewVal";
             this.boxNewVal.Size = new System.Drawing.Size(209, 22);
             this.boxNewVal.TabIndex = 14;
@@ -72,18 +72,22 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(21, 342);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(37, 342);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(194, 21);
+            this.label4.Size = new System.Drawing.Size(190, 21);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Introduceti noua valoare:";
+            this.label4.Text = "Introduceti noua valoare";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(21, 247);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(78, 250);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(153, 21);
             this.label3.TabIndex = 8;
@@ -92,7 +96,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(201, 244);
+            this.comboBox1.Location = new System.Drawing.Point(275, 247);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(209, 24);
             this.comboBox1.TabIndex = 13;
@@ -100,7 +104,7 @@
             // 
             // boxPrenume
             // 
-            this.boxPrenume.Location = new System.Drawing.Point(201, 123);
+            this.boxPrenume.Location = new System.Drawing.Point(275, 158);
             this.boxPrenume.Name = "boxPrenume";
             this.boxPrenume.Size = new System.Drawing.Size(209, 22);
             this.boxPrenume.TabIndex = 12;
@@ -109,8 +113,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(21, 124);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(156, 159);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 21);
             this.label2.TabIndex = 9;
@@ -118,7 +124,7 @@
             // 
             // boxNume
             // 
-            this.boxNume.Location = new System.Drawing.Point(201, 39);
+            this.boxNume.Location = new System.Drawing.Point(275, 73);
             this.boxNume.Name = "boxNume";
             this.boxNume.Size = new System.Drawing.Size(209, 22);
             this.boxNume.TabIndex = 11;
@@ -127,8 +133,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 39);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(177, 74);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 21);
             this.label1.TabIndex = 10;
@@ -138,6 +146,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Proiect.Properties.Resources._316016;
             this.ClientSize = new System.Drawing.Size(617, 546);
             this.Controls.Add(this.btnModifica);
             this.Controls.Add(this.button1);

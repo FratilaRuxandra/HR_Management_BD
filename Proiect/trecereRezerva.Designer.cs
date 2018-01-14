@@ -51,8 +51,9 @@
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(20, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 26);
@@ -72,8 +73,9 @@
             // 
             // label2
             // 
-            this.label2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(20, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 26);
@@ -93,8 +95,9 @@
             // 
             // label3
             // 
-            this.label3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(20, 132);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 26);
@@ -106,7 +109,7 @@
             // 
             this.btnRezerva.BackColor = System.Drawing.Color.Transparent;
             this.btnRezerva.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRezerva.ForeColor = System.Drawing.SystemColors.Info;
+            this.btnRezerva.ForeColor = System.Drawing.Color.White;
             this.btnRezerva.Location = new System.Drawing.Point(627, 19);
             this.btnRezerva.Name = "btnRezerva";
             this.btnRezerva.Size = new System.Drawing.Size(190, 41);
@@ -165,7 +168,7 @@
             // 
             this.btnAfisare.BackColor = System.Drawing.Color.Transparent;
             this.btnAfisare.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAfisare.ForeColor = System.Drawing.SystemColors.Info;
+            this.btnAfisare.ForeColor = System.Drawing.Color.White;
             this.btnAfisare.Location = new System.Drawing.Point(24, 19);
             this.btnAfisare.Name = "btnAfisare";
             this.btnAfisare.Size = new System.Drawing.Size(220, 41);
@@ -176,6 +179,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.nameBox);
             this.panel2.Controls.Add(this.label2);
