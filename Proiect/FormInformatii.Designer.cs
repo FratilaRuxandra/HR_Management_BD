@@ -54,6 +54,7 @@
             this.buttonExportCSV = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.textFilename = new System.Windows.Forms.TextBox();
+            this.buttonCVuri = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -227,6 +228,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.buttonCVuri);
             this.panel2.Controls.Add(this.buttonVechime);
             this.panel2.Controls.Add(this.buttonProiecte);
             this.panel2.Controls.Add(this.buttonDepartamente);
@@ -283,7 +285,7 @@
             this.buttonExportExcel.Name = "buttonExportExcel";
             this.buttonExportExcel.Size = new System.Drawing.Size(128, 63);
             this.buttonExportExcel.TabIndex = 9;
-            this.buttonExportExcel.Text = "Excel";
+            this.buttonExportExcel.Text = "Raport Excel";
             this.buttonExportExcel.UseVisualStyleBackColor = true;
             this.buttonExportExcel.Click += new System.EventHandler(this.buttonExportExcel_Click);
             // 
@@ -293,7 +295,7 @@
             this.buttonExportPDF.Name = "buttonExportPDF";
             this.buttonExportPDF.Size = new System.Drawing.Size(128, 63);
             this.buttonExportPDF.TabIndex = 10;
-            this.buttonExportPDF.Text = "PDF";
+            this.buttonExportPDF.Text = "Raport PDF";
             this.buttonExportPDF.UseVisualStyleBackColor = true;
             this.buttonExportPDF.Click += new System.EventHandler(this.buttonExportPDF_Click);
             // 
@@ -315,7 +317,7 @@
             this.buttonExportCSV.Name = "buttonExportCSV";
             this.buttonExportCSV.Size = new System.Drawing.Size(128, 63);
             this.buttonExportCSV.TabIndex = 12;
-            this.buttonExportCSV.Text = "CSV";
+            this.buttonExportCSV.Text = "Raport CSV";
             this.buttonExportCSV.UseVisualStyleBackColor = true;
             this.buttonExportCSV.Click += new System.EventHandler(this.buttonExportCSV_Click);
             // 
@@ -335,6 +337,16 @@
             this.textFilename.Name = "textFilename";
             this.textFilename.Size = new System.Drawing.Size(128, 22);
             this.textFilename.TabIndex = 13;
+            // 
+            // buttonCVuri
+            // 
+            this.buttonCVuri.Location = new System.Drawing.Point(267, 230);
+            this.buttonCVuri.Name = "buttonCVuri";
+            this.buttonCVuri.Size = new System.Drawing.Size(128, 63);
+            this.buttonCVuri.TabIndex = 9;
+            this.buttonCVuri.Text = "CV-uri";
+            this.buttonCVuri.UseVisualStyleBackColor = true;
+            this.buttonCVuri.Click += new System.EventHandler(this.buttonCVuri_Click);
             // 
             // FormInformatii
             // 
@@ -390,5 +402,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button buttonExportCSV;
         private System.Windows.Forms.TextBox textFilename;
+        private System.Windows.Forms.Button buttonCVuri;
     }
 }

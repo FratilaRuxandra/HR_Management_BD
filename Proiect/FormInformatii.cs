@@ -1471,8 +1471,7 @@ namespace Proiect
         {
             cale = textFilename.Text;
         }
-
-
+        
         public void CSVExport()
         {
             try
@@ -1519,8 +1518,6 @@ namespace Proiect
             }
         }
     
-
-        
         private void ExcelExport()
         {
             try
@@ -1611,7 +1608,7 @@ namespace Proiect
 
                 foreach (var row in result)
                 {
-                    var newline = string.Format("{0}\t\t{1}\t\t{2}\t\t{3}\t\t{4}\t\t{5}\t\t{6}\t\t{7}\t\t{8}\t\t{9}\t\t{10}\r\n", row.ID.ToString().Trim(),
+                    var newline = string.Format("{0}\t\t{1}\t\t{2}\t\t{3}\t\t{4}\t\t{5}\t\t{6}\t\t{7}\t\t{8}\t\t{9}\t\t{10}", row.ID.ToString().Trim(),
                         row.Nume.ToString().Trim(), row.Prenume.ToString().Trim(), row.Grad.ToString().Trim(),
                         row.Functie.ToString().Trim(), row.Departament.ToString().Trim(), row.CNP.ToString().Trim(), row.Telefon.ToString().Trim(),
                         row.Email.ToString().Trim(), row.Data_Nasterii.ToString().Trim(), row.Data_Angajarii.ToString().Trim());
@@ -1620,13 +1617,7 @@ namespace Proiect
 
 
                 }
-                //foreach (var row in query)
-                //{
-                //    var newline = string.Format("{0},{1},{2},{3},{4},\r\n", row.Nume.ToString().Trim(),
-                //        row.CNP.ToString().Trim(), row.Serie_Buletin.ToString().Trim(), row.Numar_Buletin.ToString().Trim(),
-                //        row.Data_Nasterii.ToString().Trim());
-                //    Text.AppendLine(newline);
-                //}
+                
 
             }
             using (var memory = new MemoryStream())
@@ -1661,6 +1652,24 @@ namespace Proiect
         private void buttonExportPDF_Click(object sender, EventArgs e)
         {
             PdfExport();
+        }
+
+        private void buttonCVuri_Click(object sender, EventArgs e)
+        {
+            var context = new HREntities1();
+            var result = from cv in context.CVs
+                         join ang in context.Angajati on cv.Id_Angajat equals ang.Id_Angajat
+                         select new
+                         {
+                             ang.Nume_Angajat,
+                             cv.Cale_fisier,
+                         };
+            
+            dataGridView1.DataSource = result.ToList();
+            dataGridView1.Columns[0].HeaderText = "Nume Angajat";
+            dataGridView1.Columns[1].HeaderText = "Cale catre CV";
+
+
         }
     }
     }

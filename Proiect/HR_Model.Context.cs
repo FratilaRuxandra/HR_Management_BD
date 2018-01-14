@@ -41,6 +41,7 @@ namespace Proiect
         public virtual DbSet<Logins> Logins { get; set; }
         public virtual DbSet<CVuri> CVuri { get; set; }
         public virtual DbSet<Vechime_Angajati> Vechime_Angajati { get; set; }
+        public virtual DbSet<CVs> CVs { get; set; }
     
         public virtual int MoveAngajat(string numeAngajat, string prenumeAngajat, string noulDepartament, string nouaFunctie)
         {

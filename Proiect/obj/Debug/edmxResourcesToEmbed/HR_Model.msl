@@ -187,5 +187,13 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="CVs">
+      <EntityTypeMapping TypeName="HRModel.CVs">
+        <MappingFragment StoreEntitySet="CVs">
+          <ScalarProperty Name="Cale_fisier" ColumnName="Cale_fisier" />
+          <ScalarProperty Name="Id_Angajat" ColumnName="Id_Angajat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

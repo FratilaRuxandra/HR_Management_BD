@@ -80,6 +80,9 @@
       <DependentUpon>Chooseform.cs</DependentUpon>
     </Compile>
     <Compile Include="ComboBox.cs" />
+    <Compile Include="CVs.cs">
+      <DependentUpon>HR_Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="CVuri.cs">
       <DependentUpon>HR_Model.tt</DependentUpon>
     </Compile>

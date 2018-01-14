@@ -384,6 +384,7 @@
       <Parameter Name="NouaFunctie" Mode="In" Type="String" />
     </FunctionImport>
     <EntitySet Name="Vechime_Angajati" EntityType="HRModel.Vechime_Angajati" />
+    <EntitySet Name="CVs" EntityType="HRModel.CVs" />
   </EntityContainer>
   <EntityType Name="Rude">
     <Key>
@@ -450,5 +451,12 @@
     <Property Name="Nume_Angajat" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Prenume_Angajat" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Vechime" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CVs">
+    <Key>
+      <PropertyRef Name="Id_Angajat" />
+    </Key>
+    <Property Name="Id_Angajat" Type="Int32" Nullable="false" />
+    <Property Name="Cale_fisier" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

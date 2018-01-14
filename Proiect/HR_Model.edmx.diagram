@@ -32,6 +32,7 @@
         <EntityTypeShape EntityType="HRModel.CVuri" Width="1.5" PointX="5.25" PointY="10.375" />
         <AssociationConnector Association="HRModel.FK__CVuri__Id_Angaja__619B8048" />
         <EntityTypeShape EntityType="HRModel.Vechime_Angajati" Width="1.5" PointX="8.375" PointY="4.75" />
+        <EntityTypeShape EntityType="HRModel.CVs" Width="1.5" PointX="8.375" PointY="7.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

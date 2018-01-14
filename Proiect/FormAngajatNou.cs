@@ -201,12 +201,12 @@ namespace Proiect
             f.ShowDialog();
             id_fisamed = f.getIdFisa(); 
         }
-
+        string file;
         private void buttonCV_Click(object sender, EventArgs e)
         {
             try
             {
-                string file = null;
+                
                 using (var fbd = new OpenFileDialog())
                 {
                     DialogResult result = fbd.ShowDialog();
@@ -216,11 +216,11 @@ namespace Proiect
 
                     }
 
-                    /////////////////////EROARE////////////////////////
+                
                     var context = new HREntities1();
                     var newCV = new CVuri()
                     {
-                        Id_Angajat = 0,
+                        Id_Angajat = 1,
                         Cale_fisier = file
                     };
                     context.CVuri.Add(newCV);
@@ -412,7 +412,7 @@ namespace Proiect
                     context.SaveChanges();
 
                     var update_CV = (from c in context.CVuri
-                                     where c.Id_Angajat == 0
+                                     where c.Cale_fisier==file
                                      select c).First();
                     update_CV.Id_Angajat = newAngajat.Id_Angajat;
                    

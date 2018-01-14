@@ -165,6 +165,15 @@ warning 6002: The table/view 'HR.dbo.Grade_Salarii' does not have a primary key 
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'HR.dbo.CVs' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="CVs">
+          <Key>
+            <PropertyRef Name="Id_Angajat" />
+          </Key>
+          <Property Name="Id_Angajat" Type="int" Nullable="false" />
+          <Property Name="Cale_fisier" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'HR.dbo.Vechime_Angajati' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Vechime_Angajati">
           <Key>
@@ -437,6 +446,12 @@ warning 6002: The table/view 'HR.dbo.Vechime_Angajati' does not have a primary k
     [Grade_Salarii].[Id_Grad] AS [Id_Grad], 
     [Grade_Salarii].[Id_Salariu] AS [Id_Salariu]
     FROM [dbo].[Grade_Salarii] AS [Grade_Salarii]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="CVs" EntityType="Self.CVs" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [CVs].[Id_Angajat] AS [Id_Angajat], 
+    [CVs].[Cale_fisier] AS [Cale_fisier]
+    FROM [dbo].[CVs] AS [CVs]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="Vechime_Angajati" EntityType="Self.Vechime_Angajati" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -897,6 +912,7 @@ warning 6002: The table/view 'HR.dbo.Vechime_Angajati' does not have a primary k
             <Parameter Name="NouaFunctie" Mode="In" Type="String" />
           </FunctionImport>
           <EntitySet Name="Vechime_Angajati" EntityType="HRModel.Vechime_Angajati" />
+          <EntitySet Name="CVs" EntityType="HRModel.CVs" />
         </EntityContainer>
         <EntityType Name="Rude">
           <Key>
@@ -963,6 +979,13 @@ warning 6002: The table/view 'HR.dbo.Vechime_Angajati' does not have a primary k
           <Property Name="Nume_Angajat" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Prenume_Angajat" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Vechime" Type="Int32" />
+        </EntityType>
+        <EntityType Name="CVs">
+          <Key>
+            <PropertyRef Name="Id_Angajat" />
+          </Key>
+          <Property Name="Id_Angajat" Type="Int32" Nullable="false" />
+          <Property Name="Cale_fisier" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1152,6 +1175,14 @@ warning 6002: The table/view 'HR.dbo.Vechime_Angajati' does not have a primary k
                 <ScalarProperty Name="Nume_Angajat" ColumnName="Nume_Angajat" />
                 <ScalarProperty Name="Id_Grad" ColumnName="Id_Grad" />
                 <ScalarProperty Name="Id_Functie" ColumnName="Id_Functie" />
+                <ScalarProperty Name="Id_Angajat" ColumnName="Id_Angajat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CVs">
+            <EntityTypeMapping TypeName="HRModel.CVs">
+              <MappingFragment StoreEntitySet="CVs">
+                <ScalarProperty Name="Cale_fisier" ColumnName="Cale_fisier" />
                 <ScalarProperty Name="Id_Angajat" ColumnName="Id_Angajat" />
               </MappingFragment>
             </EntityTypeMapping>
