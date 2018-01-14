@@ -80,7 +80,8 @@ namespace Proiect
                         }
                         if (username == "guest")
                         {
-                            MessageBox.Show("in constructie");
+                            FormInformatii formInfo = new FormInformatii();
+                            formInfo.ShowDialog();
                         }
                     }
 

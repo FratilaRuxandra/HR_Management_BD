@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.text.html;
 
 namespace Proiect
 {
@@ -14,6 +19,7 @@ namespace Proiect
     {
         string nume;
         string categorie;
+        string cale;
         public FormInformatii()
         {
             InitializeComponent();
@@ -266,10 +272,10 @@ namespace Proiect
                                      };
                         dataGridView1.DataSource = result.ToList();
                     }
-                   
-                }
 
                 }
+
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -310,8 +316,8 @@ namespace Proiect
                     dataGridView1.Columns[9].HeaderText = "Data nasterii";
                     dataGridView1.Columns[10].HeaderText = "Data angajarii";
                     dataGridView1.Columns[13].HeaderText = "Data plecarii";
-              
-                    
+
+
                 }
             }
             catch (Exception ex)
@@ -323,7 +329,7 @@ namespace Proiect
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             nume = textBox1.Text;
-            
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -349,21 +355,21 @@ namespace Proiect
                                      where c.Id_Angajat.ToString().Contains(nume)
                                      select new
                                      {
-                                       ID=c.Id_Angajat,
-                                       Grad = c.Grade.Denumire,
-                                       Nume =c.Nume_Angajat,
-                                       Prenume=c.Prenume_Angajat,
-                                       Functie=c.Functii.Denumire,
-                                       Departament=c.Departamente.Nume_Departament,
-                                       Solda_Grad=c.Salarii.Solda_grad,
-                                       Solda_Functie=c.Salarii.Solda_functie,
-                                       Spor_conditii=c.Salarii.Spor_conditii_de_munca,
-                                       Salariu_Total = c.Salarii.Total
+                                         ID = c.Id_Angajat,
+                                         Grad = c.Grade.Denumire,
+                                         Nume = c.Nume_Angajat,
+                                         Prenume = c.Prenume_Angajat,
+                                         Functie = c.Functii.Denumire,
+                                         Departament = c.Departamente.Nume_Departament,
+                                         Solda_Grad = c.Salarii.Solda_grad,
+                                         Solda_Functie = c.Salarii.Solda_functie,
+                                         Spor_conditii = c.Salarii.Spor_conditii_de_munca,
+                                         Salariu_Total = c.Salarii.Total
 
 
                                      };
-                       
-                                     
+
+
                         dataGridView1.DataSource = result.ToList();
                         dataGridView1.Columns[0].HeaderText = "ID Angajat";
                         dataGridView1.Columns[6].HeaderText = "Solda de grad";
@@ -571,11 +577,11 @@ namespace Proiect
                                      where c.Id_Angajat.ToString() == nume
                                      select new
                                      {
-                                        ID_Angajat=c.Id_Angajat,
-                                        o.Grad_rudenie,
-                                        o.Nume,
-                                        o.Prenume,
-                                        o.CNP
+                                         ID_Angajat = c.Id_Angajat,
+                                         o.Grad_rudenie,
+                                         o.Nume,
+                                         o.Prenume,
+                                         o.CNP
 
                                      };
 
@@ -583,7 +589,7 @@ namespace Proiect
                         dataGridView1.DataSource = result.ToList();
                         dataGridView1.Columns[0].HeaderText = "ID Angajat";
                         dataGridView1.Columns[1].HeaderText = "Grad de rudenie";
-                      
+
                     }
 
                     if (categorie == "Nume")
@@ -761,7 +767,7 @@ namespace Proiect
                         dataGridView1.Columns[0].HeaderText = "ID Angajat";
                         dataGridView1.Columns[6].HeaderText = "Stare de sanatate";
                         dataGridView1.Columns[7].HeaderText = "Grupa de sange";
-                        
+
                     }
 
                     if (categorie == "Nume")
@@ -948,7 +954,7 @@ namespace Proiect
                                      where c.Id_Angajat.ToString().Contains(nume)
                                      select new
                                      {
-                                        
+
                                          ID = c.Id_Angajat,
                                          Grad = c.Grade.Denumire,
                                          Nume = c.Nume_Angajat,
@@ -958,7 +964,7 @@ namespace Proiect
                                          c.Proiecte.Nume_Proiect,
                                          c.Proiecte.Data_Inceput,
                                          c.Proiecte.Data_Sfarsit,
-                                   
+
                                      };
 
 
@@ -1162,20 +1168,20 @@ namespace Proiect
                                          Functie = c.Functii.Denumire,
                                          Departament = c.Departamente.Nume_Departament,
                                          o.Strada,
-                                         Nr=o.Nr_Strada,
+                                         Nr = o.Nr_Strada,
                                          o.Bloc,
                                          o.Apartament,
                                          o.Oras,
                                          o.Judet_Sector
-                                        
-                                         
+
+
 
                                      };
 
-                
-                             dataGridView1.DataSource = result.ToList();
-                             dataGridView1.Columns[0].HeaderText = "ID Angajat";
-                             dataGridView1.Columns[11].HeaderText = "Judet/Sector";
+
+                        dataGridView1.DataSource = result.ToList();
+                        dataGridView1.Columns[0].HeaderText = "ID Angajat";
+                        dataGridView1.Columns[11].HeaderText = "Judet/Sector";
                     }
 
                     if (categorie == "Nume")
@@ -1393,8 +1399,8 @@ namespace Proiect
                              join ang in context.Angajati on dept.Id_Sef_Departament equals ang.Id_Angajat
                              select new
                              {
-                                   dept.Nume_Departament,
-                                   Sef_Departament=ang.Nume_Angajat,
+                                 dept.Nume_Departament,
+                                 Sef_Departament = ang.Nume_Angajat,
 
 
                              };
@@ -1402,7 +1408,7 @@ namespace Proiect
                 dataGridView1.Columns[0].HeaderText = "Departament";
                 dataGridView1.Columns[1].HeaderText = "Sef Departament";
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -1425,9 +1431,9 @@ namespace Proiect
                              };
                 dataGridView1.DataSource = result.ToList();
                 dataGridView1.Columns[0].HeaderText = "Proiect";
-            
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -1453,15 +1459,213 @@ namespace Proiect
                              Prenume = vec.Prenume_Angajat,
                              vec.Vechime
                          };
-            
+
             dataGridView1.DataSource = result.ToList();
             dataGridView1.Columns[0].HeaderText = "ID Angajat";
-            
+
 
 
         }
+
+        private void textFilename_TextChanged(object sender, EventArgs e)
+        {
+            cale = textFilename.Text;
+        }
+
+
+        public void CSVExport()
+        {
+            try
+            {
+                var csv = new StringBuilder();
+                using (var context = new HREntities1())
+                {
+                    var result = from c in context.Angajati
+                                 select new
+                                 {
+                                     ID = c.Id_Angajat,
+                                     Nume = c.Nume_Angajat,
+                                     Prenume = c.Prenume_Angajat,
+                                     Grad = c.Grade.Denumire,
+                                     Functie = c.Functii.Denumire,
+                                     Departament = c.Departamente.Nume_Departament,
+                                     CNP = c.CNP,
+                                     Telefon = c.Numar_Telefon,
+                                     Email = c.Email,
+                                     Data_Nasterii = c.Data_Nastere,
+                                     Data_Angajarii = c.Data_Angajare,
+
+                                 };
+
+
+                    foreach (var row in result)
+                    {
+                        var newline = string.Format("{0}\t\t{1}\t\t{2}\t\t{3}\t\t{4}\t\t{5}\t\t{6}\t\t{7}\t\t{8}\t\t{9}\t\t{10}", row.ID.ToString().Trim(),
+                            row.Nume.ToString().Trim(), row.Prenume.ToString().Trim(), row.Grad.ToString().Trim(),
+                            row.Functie.ToString().Trim(), row.Departament.ToString().Trim(), row.CNP.ToString().Trim(), row.Telefon.ToString().Trim(),
+                            row.Email.ToString().Trim(), row.Data_Nasterii.ToString().Trim(), row.Data_Angajarii.ToString().Trim());
+
+                        csv.AppendLine(newline);
+
+
+                    }
+                    cale = textFilename.Text;
+                    File.WriteAllText(cale, csv.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+    
+
+        
+        private void ExcelExport()
+        {
+            try
+            {
+                Excel.Application xlApp;
+                Excel.Workbook xlWorkBook;
+                Excel.Worksheet xlWorkSheet;
+                object misValue = System.Reflection.Missing.Value;
+
+                xlApp = new Microsoft.Office.Interop.Excel.Application();
+
+                if (xlApp == null)
+                    throw new Exception("Eroare exportare foaie de calcul!");
+
+                xlWorkBook = xlApp.Workbooks.Add(misValue);
+                xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+                using (var context = new HREntities1())
+                {
+                    var result = from c in context.Angajati
+                                 select new
+                                 {
+                                     ID = c.Id_Angajat,
+                                     Nume = c.Nume_Angajat,
+                                     Prenume = c.Prenume_Angajat,
+                                     Grad = c.Grade.Denumire,
+                                     Functie = c.Functii.Denumire,
+                                     Departament = c.Departamente.Nume_Departament,
+                                     CNP = c.CNP,
+                                     Telefon = c.Numar_Telefon,
+                                     Email = c.Email,
+                                     Data_Nasterii = c.Data_Nastere,
+                                     Data_Angajarii = c.Data_Angajare,
+                                    
+                                 };
+
+
+                    int i = 1;
+                    foreach (var row in result)
+                    {
+                        xlWorkSheet.Cells[i, 1] = row.ID.ToString().Trim();
+                        xlWorkSheet.Cells[i, 2] = row.Nume.ToString().Trim();
+                        xlWorkSheet.Cells[i, 3] = row.Prenume.ToString().Trim();
+                        xlWorkSheet.Cells[i, 4] = row.Grad.ToString().Trim();
+                        xlWorkSheet.Cells[i, 5] = row.Functie.ToString().Trim();
+                        xlWorkSheet.Cells[i, 6] = row.Departament.ToString().Trim();
+                        xlWorkSheet.Cells[i, 7] = row.CNP.ToString().Trim();
+                        xlWorkSheet.Cells[i, 8] = row.Telefon.ToString().Trim();
+                        xlWorkSheet.Cells[i, 9] = row.Email.ToString().Trim();
+                        xlWorkSheet.Cells[i, 10] = row.Data_Nasterii.ToString().Trim();
+                        xlWorkSheet.Cells[i, 11] = row.Data_Angajarii.ToString().Trim();
+                        i++;
+                    }
+                }
+                cale = textFilename.Text;
+                xlWorkBook.SaveAs(cale);
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void PdfExport()
+        {
+            var Text = new StringBuilder();
+            var pdfDoc = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
+            var htmlparser = new iTextSharp.text.html.simpleparser.HTMLWorker(pdfDoc);
+            using (var context = new HREntities1())
+            {
+                var result = from c in context.Angajati
+                             select new
+                             {
+                                 ID = c.Id_Angajat,
+                                 Nume = c.Nume_Angajat,
+                                 Prenume = c.Prenume_Angajat,
+                                 Grad = c.Grade.Denumire,
+                                 Functie = c.Functii.Denumire,
+                                 Departament = c.Departamente.Nume_Departament,
+                                 CNP = c.CNP,
+                                 Telefon = c.Numar_Telefon,
+                                 Email = c.Email,
+                                 Data_Nasterii = c.Data_Nastere,
+                                 Data_Angajarii = c.Data_Angajare,
+
+                             };
+
+                foreach (var row in result)
+                {
+                    var newline = string.Format("{0}\t\t{1}\t\t{2}\t\t{3}\t\t{4}\t\t{5}\t\t{6}\t\t{7}\t\t{8}\t\t{9}\t\t{10}\r\n", row.ID.ToString().Trim(),
+                        row.Nume.ToString().Trim(), row.Prenume.ToString().Trim(), row.Grad.ToString().Trim(),
+                        row.Functie.ToString().Trim(), row.Departament.ToString().Trim(), row.CNP.ToString().Trim(), row.Telefon.ToString().Trim(),
+                        row.Email.ToString().Trim(), row.Data_Nasterii.ToString().Trim(), row.Data_Angajarii.ToString().Trim());
+
+                    Text.AppendLine(newline);
+
+
+                }
+                //foreach (var row in query)
+                //{
+                //    var newline = string.Format("{0},{1},{2},{3},{4},\r\n", row.Nume.ToString().Trim(),
+                //        row.CNP.ToString().Trim(), row.Serie_Buletin.ToString().Trim(), row.Numar_Buletin.ToString().Trim(),
+                //        row.Data_Nasterii.ToString().Trim());
+                //    Text.AppendLine(newline);
+                //}
+
+            }
+            using (var memory = new MemoryStream())
+            {
+                var writer = PdfWriter.GetInstance(pdfDoc, memory);
+                pdfDoc.Open();
+
+                htmlparser.Parse(new StringReader(Text.ToString()));
+                pdfDoc.Close();
+
+                byte[] bytes = memory.ToArray();
+                cale = textFilename.Text;
+                File.WriteAllBytes(cale, bytes);
+
+
+                memory.Close();
+            }
+        }
+
+        private void buttonExportCSV_Click(object sender, EventArgs e)
+        {
+
+            CSVExport();
+
+        }
+
+        private void buttonExportExcel_Click(object sender, EventArgs e)
+        {
+            ExcelExport();
+        }
+
+        private void buttonExportPDF_Click(object sender, EventArgs e)
+        {
+            PdfExport();
+        }
     }
     }
+    
+    
     
     
 
