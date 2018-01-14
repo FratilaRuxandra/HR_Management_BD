@@ -53,7 +53,7 @@ namespace Proiect
 
         private void buttonVeziInfo_Click(object sender, EventArgs e)
         {
-            FormInfoAngajati formInfoAngajati = new FormInfoAngajati();
+            FormInformatii formInfoAngajati = new FormInformatii();
             formInfoAngajati.ShowDialog();
         }
 

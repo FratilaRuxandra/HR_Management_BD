@@ -50,7 +50,6 @@ C:\Users\Rares\source\repos\HR_Management_BD\Proiect\bin\Debug\EntityFramework.x
 C:\Users\Rares\source\repos\HR_Management_BD\Proiect\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Rares\source\repos\HR_Management_BD\Proiect\obj\Debug\Proiect.csprojResolveAssemblyReference.cache
 C:\Users\Rares\source\repos\HR_Management_BD\Proiect\obj\Debug\Proiect.FormFisaMed.resources
-C:\Users\Rares\source\repos\HR_Management_BD\Proiect\obj\Debug\Proiect.FormInfoAngajati.resources
 C:\Users\Rares\source\repos\HR_Management_BD\Proiect\obj\Debug\Proiect.FormLogin.resources
 C:\Users\Rares\source\repos\HR_Management_BD\Proiect\obj\Debug\Proiect.FormMenu.resources
 C:\Users\Rares\source\repos\HR_Management_BD\Proiect\obj\Debug\Proiect.FormAngajatNou.resources
@@ -67,3 +66,4 @@ C:\Users\Rares\source\repos\HR_Management_BD\Proiect\obj\Debug\Proiect.exe
 C:\Users\Rares\source\repos\HR_Management_BD\Proiect\obj\Debug\Proiect.pdb
 C:\Users\EGD\Source\Repos\HR_Management_BD\Proiect\obj\Debug\Proiect.Chooseform.resources
 C:\Users\Rares\Source\Repos\HR_Management_BD\Proiect\obj\Debug\Proiect.Chooseform.resources
+C:\Users\Rares\Source\Repos\HR_Management_BD\Proiect\obj\Debug\Proiect.FormInformatii.resources

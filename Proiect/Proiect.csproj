@@ -88,11 +88,11 @@
     <Compile Include="FormFisaMed.Designer.cs">
       <DependentUpon>FormFisaMed.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormInfoAngajati.cs">
+    <Compile Include="FormInformatii.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormInfoAngajati.Designer.cs">
-      <DependentUpon>FormInfoAngajati.cs</DependentUpon>
+    <Compile Include="FormInformatii.Designer.cs">
+      <DependentUpon>FormInformatii.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
@@ -198,8 +198,8 @@
     <EmbeddedResource Include="FormFisaMed.resx">
       <DependentUpon>FormFisaMed.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormInfoAngajati.resx">
-      <DependentUpon>FormInfoAngajati.cs</DependentUpon>
+    <EmbeddedResource Include="FormInformatii.resx">
+      <DependentUpon>FormInformatii.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>

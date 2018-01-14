@@ -30,7 +30,7 @@
         {
             this.buttonAngajatNou = new System.Windows.Forms.Button();
             this.buttonModificariAngajati = new System.Windows.Forms.Button();
-            this.buttonVeziInfo = new System.Windows.Forms.Button();
+            this.buttonInformatii = new System.Windows.Forms.Button();
             this.buttonTransfer = new System.Windows.Forms.Button();
             this.buttonRezerva = new System.Windows.Forms.Button();
             this.btnSalarii = new System.Windows.Forms.Button();
@@ -58,16 +58,16 @@
             this.buttonModificariAngajati.UseVisualStyleBackColor = true;
             this.buttonModificariAngajati.Click += new System.EventHandler(this.buttonModificariAngajati_Click);
             // 
-            // buttonVeziInfo
+            // buttonInformatii
             // 
-            this.buttonVeziInfo.Location = new System.Drawing.Point(71, 211);
-            this.buttonVeziInfo.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonVeziInfo.Name = "buttonVeziInfo";
-            this.buttonVeziInfo.Size = new System.Drawing.Size(169, 52);
-            this.buttonVeziInfo.TabIndex = 2;
-            this.buttonVeziInfo.Text = "Vezi Informatii Angajati";
-            this.buttonVeziInfo.UseVisualStyleBackColor = true;
-            this.buttonVeziInfo.Click += new System.EventHandler(this.buttonVeziInfo_Click);
+            this.buttonInformatii.Location = new System.Drawing.Point(71, 211);
+            this.buttonInformatii.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonInformatii.Name = "buttonInformatii";
+            this.buttonInformatii.Size = new System.Drawing.Size(169, 52);
+            this.buttonInformatii.TabIndex = 2;
+            this.buttonInformatii.Text = "Informatii";
+            this.buttonInformatii.UseVisualStyleBackColor = true;
+            this.buttonInformatii.Click += new System.EventHandler(this.buttonVeziInfo_Click);
             // 
             // buttonTransfer
             // 
@@ -109,7 +109,7 @@
             this.Controls.Add(this.btnSalarii);
             this.Controls.Add(this.buttonRezerva);
             this.Controls.Add(this.buttonTransfer);
-            this.Controls.Add(this.buttonVeziInfo);
+            this.Controls.Add(this.buttonInformatii);
             this.Controls.Add(this.buttonModificariAngajati);
             this.Controls.Add(this.buttonAngajatNou);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -124,7 +124,7 @@
 
         private System.Windows.Forms.Button buttonAngajatNou;
         private System.Windows.Forms.Button buttonModificariAngajati;
-        private System.Windows.Forms.Button buttonVeziInfo;
+        private System.Windows.Forms.Button buttonInformatii;
         private System.Windows.Forms.Button buttonTransfer;
         private System.Windows.Forms.Button buttonRezerva;
         private System.Windows.Forms.Button btnSalarii;

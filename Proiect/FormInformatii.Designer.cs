@@ -1,6 +1,6 @@
 ﻿namespace Proiect
 {
-    partial class FormInfoAngajati
+    partial class FormInformatii
     {
         /// <summary>
         /// Required designer variable.
@@ -44,6 +44,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.buttonDepartamente = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonProiecte = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -218,6 +219,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.buttonCancel);
             this.panel2.Controls.Add(this.buttonProiecte);
             this.panel2.Controls.Add(this.buttonDepartamente);
             this.panel2.Controls.Add(this.label4);
@@ -226,6 +228,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(963, 465);
             this.panel2.TabIndex = 6;
+            // 
+            // buttonCancel
+            // 
+            this.buttonCancel.Location = new System.Drawing.Point(813, 319);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(89, 40);
+            this.buttonCancel.TabIndex = 7;
+            this.buttonCancel.Text = "Cancel";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // buttonProiecte
             // 
@@ -247,7 +259,7 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Generale";
             // 
-            // FormInfoAngajati
+            // FormInformatii
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -255,11 +267,11 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "FormInfoAngajati";
+            this.Name = "FormInformatii";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Informatii Angajati";
+            this.Text = "Informatii";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FormInfoAngajati_Load);
+            this.Load += new System.EventHandler(this.FormInformatii_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -289,5 +301,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button buttonProiecte;
+        private System.Windows.Forms.Button buttonCancel;
     }
 }

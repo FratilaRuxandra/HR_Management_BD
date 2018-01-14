@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Proiect
 {
-    public partial class FormInfoAngajati : Form
+    public partial class FormInformatii : Form
     {
         string nume;
         string categorie;
-        public FormInfoAngajati()
+        public FormInformatii()
         {
             InitializeComponent();
         }
@@ -35,7 +35,7 @@ namespace Proiect
                                      Functie = c.Functii.Denumire,
                                      Departament = c.Departamente.Nume_Departament,
                                      CNP = c.CNP,
-                                     Tel = c.Numar_Telefon,
+                                     Telefon = c.Numar_Telefon,
                                      Email = c.Email,
                                      Data_Nasterii = c.Data_Nastere,
                                      Data_Angajarii = c.Data_Angajare,
@@ -79,7 +79,7 @@ namespace Proiect
                                          Functie = c.Functii.Denumire,
                                          Departament = c.Departamente.Nume_Departament,
                                          CNP = c.CNP,
-                                         Tel = c.Numar_Telefon,
+                                         Telefon = c.Numar_Telefon,
                                          Email = c.Email,
                                          Data_Nasterii = c.Data_Nastere,
                                          Data_Angajarii = c.Data_Angajare,
@@ -104,7 +104,7 @@ namespace Proiect
                                          Functie = c.Functii.Denumire,
                                          Departament = c.Departamente.Nume_Departament,
                                          CNP = c.CNP,
-                                         Tel = c.Numar_Telefon,
+                                         Telefon = c.Numar_Telefon,
                                          Email = c.Email,
                                          Data_Nasterii = c.Data_Nastere,
                                          Data_Angajarii = c.Data_Angajare,
@@ -129,7 +129,7 @@ namespace Proiect
                                          Functie = c.Functii.Denumire,
                                          Departament = c.Departamente.Nume_Departament,
                                          CNP = c.CNP,
-                                         Tel = c.Numar_Telefon,
+                                         Telefon = c.Numar_Telefon,
                                          Email = c.Email,
                                          Data_Nasterii = c.Data_Nastere,
                                          Data_Angajarii = c.Data_Angajare,
@@ -154,7 +154,7 @@ namespace Proiect
                                          Functie = c.Functii.Denumire,
                                          Departament = c.Departamente.Nume_Departament,
                                          CNP = c.CNP,
-                                         Tel = c.Numar_Telefon,
+                                         Telefon = c.Numar_Telefon,
                                          Email = c.Email,
                                          Data_Nasterii = c.Data_Nastere,
                                          Data_Angajarii = c.Data_Angajare,
@@ -179,7 +179,7 @@ namespace Proiect
                                          Functie = c.Functii.Denumire,
                                          Departament = c.Departamente.Nume_Departament,
                                          CNP = c.CNP,
-                                         Tel = c.Numar_Telefon,
+                                         Telefon = c.Numar_Telefon,
                                          Email = c.Email,
                                          Data_Nasterii = c.Data_Nastere,
                                          Data_Angajarii = c.Data_Angajare,
@@ -204,7 +204,7 @@ namespace Proiect
                                          Functie = c.Functii.Denumire,
                                          Departament = c.Departamente.Nume_Departament,
                                          CNP = c.CNP,
-                                         Tel = c.Numar_Telefon,
+                                         Telefon = c.Numar_Telefon,
                                          Email = c.Email,
                                          Data_Nasterii = c.Data_Nastere,
                                          Data_Angajarii = c.Data_Angajare,
@@ -230,7 +230,7 @@ namespace Proiect
                                          Functie = c.Functii.Denumire,
                                          Departament = c.Departamente.Nume_Departament,
                                          CNP = c.CNP,
-                                         Tel = c.Numar_Telefon,
+                                         Telefon = c.Numar_Telefon,
                                          Email = c.Email,
                                          Data_Nasterii = c.Data_Nastere,
                                          Data_Angajarii = c.Data_Angajare,
@@ -255,7 +255,7 @@ namespace Proiect
                                          Functie = c.Functii.Denumire,
                                          Departament = c.Departamente.Nume_Departament,
                                          CNP = c.CNP,
-                                         Tel = c.Numar_Telefon,
+                                         Telefon = c.Numar_Telefon,
                                          Email = c.Email,
                                          Data_Nasterii = c.Data_Nastere,
                                          Data_Angajarii = c.Data_Angajare,
@@ -276,7 +276,7 @@ namespace Proiect
             }
         }
 
-        private void FormInfoAngajati_Load(object sender, EventArgs e)
+        private void FormInformatii_Load(object sender, EventArgs e)
         {
             try
             {
@@ -1432,6 +1432,11 @@ namespace Proiect
                 MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
     }
