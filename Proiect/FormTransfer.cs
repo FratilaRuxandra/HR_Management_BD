@@ -137,9 +137,9 @@ namespace Proiect
                 var context = new HREntities1();
                 search(nume);
                 if (func == true)
-                    context.MoveFunctie(nume, prenume, functie);
+                    context.MoveFunctie1(nume, prenume, functie);
                 if (dep == true)
-                    context.MoveDepartament(nume, prenume, departament);
+                    context.MoveDepartament1(nume, prenume, departament);
                 this.Close();
             }
             catch (Exception ex)
